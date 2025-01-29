@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <%- include("layout/head.ejs") %>
+  <body>
+    <%- include('layout/header.ejs') %>
+    <section class="products-section">
+      <% if(search && products.length) { %>
+      <h2 class="search_results">Rezultati pretrage za: "<%=search%>"</h2>
+      <%} else if(search && !products.length) { %>
+      <h2 class="search_results">Nema rezultata pretrage za "<%=search%>"</h2>
+      <% }%>
+      <div class="products_container">
+        <% products.forEach((product) => { %>
+        <a href="/proizvod/<%= product.id %>">
+          <div class="product_card">
+            <img src="/assets/pictures/products/<%= product.image %>.webp" />
+
+            <h3 class="product_title"><%= product.name %></h3>
+            <% if (product.sale) { %>
+            <p class="product_price original_price"><%= product.price %> RSD</p>
+            <p class="product_price sale_price">
+              <%= product.sale_price %> RSD
+            </p>
+            <% } else { %>
+            <p class="product_price"><%= product.price %> RSD</p>
+            <% } %> <% if(product.amount < 1 ) { %>
+            <p class="out_of_stock">Nema na stanju</p>
+            <% } else { %>
+            <button
+              data-id="<%= product.id %>"
+              id="add-to-cart"
+              class="phone_add-to_cart"
+            >
+              Dodaj u korpu
+            </button>
+            <% }%>
+          </div></a
+        >
+
+        <% }) %>
+      </div>
+    </section>
+    <%- include("layout/footer.ejs") %>
+  </body>
+</html>

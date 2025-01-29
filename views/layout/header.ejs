@@ -1,0 +1,333 @@
+<header>
+  <a class="logo" href="/"> <%-include("logo.ejs") %></a>
+
+  <nav class="navigation">
+    <ul class="navigation-list">
+      <li id="products_menu-toggle" class="navigation-list-item">
+        <a class="<%= path==='products' ? 'active' : '' %>">Proizvodi</a>
+        <ul class="products_menu">
+          <a href="/proizvodi/nega_lica">
+            <li class="products_menu-item">Nega Lica</li></a
+          >
+          <a href="/proizvodi/nega_tela">
+            <li class="products_menu-item">Nega Tela</li></a
+          >
+          <a href="/proizvodi/nova_ponuda">
+            <li class="products_menu-item">Novo u Ponudi</li></a
+          >
+          <a href="/proizvodi/de_stress">
+            <li class="products_menu-item">De - Stress</li></a
+          >
+
+          <a href="/proizvodi/serumi">
+            <li class="products_menu-item">Serumi</li></a
+          >
+
+          <a href="/proizvodi/pilinzi">
+            <li class="products_menu-item">Pilinzi</li></a
+          >
+        </ul>
+      </li>
+
+      <li id="skin_concern-menu_toggle" class="navigation-list-item">
+        <a class="<%= path==='skin-concern' ? 'active' : '' %>"
+          >Rešenje za svaki izazov</a
+        >
+        <ul class="skin_concern-menu">
+          <a href="/skin_concern/wrinkles">
+            <li class="products_menu-item">Bore i Finije Linije</li></a
+          >
+          <a href="/skin_concern/oily">
+            <li class="products_menu-item">Kontrola Masnoće</li></a
+          >
+          <a href="/skin_concern/tan">
+            <li class="products_menu-item">Neujednačen Ten</li></a
+          >
+          <a href="/skin_concern/relax">
+            <li class="products_menu-item">Opuštanje i Balans</li></a
+          >
+
+          <a href="/skin_concern/pores">
+            <li class="products_menu-item">Proširene Pore</li></a
+          >
+
+          <a href="/skin_concern/dry">
+            <li class="products_menu-item">Suva Koža i Dehidratacija</li></a
+          >
+          <a href="/skin_concern/tired">
+            <li class="products_menu-item">Umorna Koža</li></a
+          >
+          <a href="/skin_concern/urban">
+            <li class="products_menu-item">Urbana Zagađenost</li></a
+          >
+        </ul>
+      </li>
+      <li class="navigation-list-item">
+        <a class="<%= path==='blog' ? 'active' : '' %>" href="/blog">Blog</a>
+      </li>
+      <li class="navigation-list-item">
+        <a href="#about-us" class="<%= path==='about-us' ? 'active' : '' %>"
+          >O Nama</a
+        >
+      </li>
+      <li class="navigation-list-item">
+        <a href="#partners" class="">Naši Partneri</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="menu">
+    <a href="/korpa">
+      <div class="cart_icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 14 14"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12.88 12.39a1 1 0 0 1-.25.78a1 1 0 0 1-.75.33H2.12a1 1 0 0 1-.75-.33a1 1 0 0 1-.25-.78L2 4.5h10ZM4.5 4.5V3a2.5 2.5 0 0 1 5 0v1.5"
+          />
+        </svg>
+        <span class="cart_count"><%= cartCount %></span>
+      </div>
+    </a>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="30"
+      height="30"
+      viewBox="0 0 20 20"
+      class="search"
+    >
+      <path
+        fill="currentColor"
+        stroke-width="0.2"
+        d="M8.195 0c4.527 0 8.196 3.62 8.196 8.084a7.989 7.989 0 0 1-1.977 5.267l5.388 5.473a.686.686 0 0 1-.015.98a.71.71 0 0 1-.993-.014l-5.383-5.47a8.23 8.23 0 0 1-5.216 1.849C3.67 16.169 0 12.549 0 8.084C0 3.62 3.67 0 8.195 0Zm0 1.386c-3.75 0-6.79 2.999-6.79 6.698c0 3.7 3.04 6.699 6.79 6.699s6.791-3 6.791-6.699c0-3.7-3.04-6.698-6.79-6.698Z"
+      />
+    </svg>
+  </div>
+</header>
+<header class="header_phone">
+  <div class="phone_drop-menu">
+    <svg
+      id="drop_menu-open"
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M3 8V7h17v1H3m17 4v1H3v-1h17M3 17h17v1H3v-1Z"
+      />
+    </svg>
+    <svg
+      id="drop_menu-close"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 -960 960 960"
+      width="24px"
+      fill="currentColor"
+      style="display: none"
+    >
+      <path
+        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+      />
+    </svg>
+    <nav class="phone_menu-navigation">
+      <ul class="phone_navigation-list">
+        <li data-id="products" class="phone_navigation-item">
+          Proizvodi
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="currentColor"
+          >
+            <path
+              d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+            />
+          </svg>
+        </li>
+        <li data-id="skin_concern" class="phone_navigation-item">
+          Rešenje za svaki izazov
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="currentColor"
+          >
+            <path
+              d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+            />
+          </svg>
+        </li>
+        <a href="/blog"><li class="phone_navigation-item">Blog</li></a>
+
+        <li data-id="support" class="phone_navigation-item">
+          Podrška
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="currentColor"
+          >
+            <path
+              d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+            />
+          </svg>
+        </li>
+      </ul>
+      <ul id="products" class="phone_navigation-list submenu">
+        <li class="phone_navigation-item back">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="currentColor"
+          >
+            <path
+              d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"
+            />
+          </svg>
+          Proizvodi
+        </li>
+        <a href="/proizvodi/nega_lica">
+          <li class="phone_navigation-item">Nega Lica</li></a
+        >
+        <a href="/proizvodi/nega_tela">
+          <li class="phone_navigation-item">Nega Tela</li></a
+        >
+        <a href="/proizvodi/nova_ponuda">
+          <li class="phone_navigation-item">Novo u Ponudi</li></a
+        >
+        <a href="/proizvodi/de_stress">
+          <li class="phone_navigation-item">De - Stress</li></a
+        >
+
+        <a href="/proizvodi/serumi">
+          <li class="phone_navigation-item">Serumi</li></a
+        >
+
+        <a href="/proizvodi/pilinzi">
+          <li class="phone_navigation-item">Pilinzi</li></a
+        >
+      </ul>
+      <ul id="skin_concern" class="phone_navigation-list submenu">
+        <li class="phone_navigation-item back">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="currentColor"
+          >
+            <path
+              d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"
+            />
+          </svg>
+          Rešenje za Svaki Izazov
+        </li>
+        <a href="/skin_concern/wrinkles">
+          <li class="phone_navigation-item">Bore i Finije Linije</li></a
+        >
+        <a href="/skin_concern/oily">
+          <li class="phone_navigation-item">Kontrola Masnoće</li></a
+        >
+        <a href="/skin_concern/tan">
+          <li class="phone_navigation-item">Neujednačen Ten</li></a
+        >
+        <a href="/skin_concern/relax">
+          <li class="phone_navigation-item">Opuštanje i Balans</li></a
+        >
+
+        <a href="/skin_concern/pores">
+          <li class="phone_navigation-item">Proširene Pore</li></a
+        >
+
+        <a href="/skin_concern/dry">
+          <li class="phone_navigation-item">Suva Koža i Dehidratacija</li></a
+        >
+        <a href="/skin_concern/tired">
+          <li class="phone_navigation-item">Umorna Koža</li></a
+        >
+        <a href="/skin_concern/urban">
+          <li class="phone_navigation-item">Urbana Zagađenost</li></a
+        >
+      </ul>
+      <ul id="support" class="phone_navigation-list submenu">
+        <li class="phone_navigation-item back">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="currentColor"
+          >
+            <path
+              d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"
+            />
+          </svg>
+          Podrška
+        </li>
+        <a href="/uslovi_koriscenja">
+          <li class="phone_navigation-item">Uslovi Korišćenja</li></a
+        >
+        <a href="/politika_privatnosti">
+          <li class="phone_navigation-item">Politika Privatnosti</li></a
+        >
+        <a href=""><li class="phone_navigation-item">Kontakt</li></a>
+        <a href="/contract/Obrazac za odustanak od ugovora.docx" download
+          ><li class="phone_navigation-item">
+            Obrazac za Odustanak od Ugovora
+          </li></a
+        >
+      </ul>
+    </nav>
+  </div>
+  <div class="logo_container">
+    <a class="logo" href="/"> <%- include("logo.ejs") %></a>
+  </div>
+  <div class="phone_navigation">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="30"
+      height="30"
+      viewBox="0 0 20 20"
+      class="search"
+    >
+      <path
+        fill="currentColor"
+        stroke-width="0.2"
+        d="M8.195 0c4.527 0 8.196 3.62 8.196 8.084a7.989 7.989 0 0 1-1.977 5.267l5.388 5.473a.686.686 0 0 1-.015.98a.71.71 0 0 1-.993-.014l-5.383-5.47a8.23 8.23 0 0 1-5.216 1.849C3.67 16.169 0 12.549 0 8.084C0 3.62 3.67 0 8.195 0Zm0 1.386c-3.75 0-6.79 2.999-6.79 6.698c0 3.7 3.04 6.699 6.79 6.699s6.791-3 6.791-6.699c0-3.7-3.04-6.698-6.79-6.698Z"
+      />
+    </svg>
+    <a href="/korpa">
+      <div class="cart_icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 14 14"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12.88 12.39a1 1 0 0 1-.25.78a1 1 0 0 1-.75.33H2.12a1 1 0 0 1-.75-.33a1 1 0 0 1-.25-.78L2 4.5h10ZM4.5 4.5V3a2.5 2.5 0 0 1 5 0v1.5"
+          />
+        </svg>
+      </div> </a
+    ><span class="cart_count"><%= cartCount %></span>
+  </div>
+</header>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <%- include("layout/head.ejs") %>
+  <body>
+    <%- include("layout/header.ejs") %>
+    <section class="blog_page">
+      <h2 class="blog_page-heading">Blog</h2>
+      <div class="blog_cards-container">
+        <% blogContent.forEach(blog => { %>
+
+        <div class="blog_card">
+          <div class="blog_img-container">
+            <img src="<%=blog.imagePath %>" alt="<%=blog.title%>" />
+          </div>
+          <div class="blog_card-content">
+            <h3 class="blog_underline-heading"><%=blog.title%></h3>
+            <p><%=blog.excerpt %></p>
+            <a href="/blog/<%=blog.id %>">Pročitaj više</a>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </section>
+    <%- include("layout/footer.ejs") %>
+  </body>
+</html>

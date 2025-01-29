@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("layout/head.ejs")%>
+  <body>
+    <%- include("layout/header.ejs") %>
+    <section class="skin_concern-page">
+      <div class="skin_concern-header">
+        <picture>
+          <source
+            srcset="/assets/pictures/naslovna_resenje/850px/<%=image%>.webp"
+            media="(max-width: 850px)"
+          />
+          <img
+            src="/assets/pictures/naslovna_resenje/<%= image %>.jpg"
+            alt="<%=header.h%>"
+          />
+        </picture>
+
+        <div class="skin_concern-header_content">
+          <h1><%= header.h %></h1>
+          <p><%= header.p %></p>
+        </div>
+      </div>
+      <div class="products_container">
+        <% products.forEach((product) => { %>
+        <div class="product_card">
+          <img src="/assets/pictures/products/<%= product.image %>.webp" />
+
+          <h3 class="product_title"><%= product.name %></h3>
+          <p class="product_price"><%= product.price %>RSD</p>
+          <button
+            data-id="<%= product.id %>"
+            id="add-to-cart"
+            class="phone_add-to_cart"
+          >
+            Dodaj u korpu
+          </button>
+        </div>
+        <% }) %>
+      </div>
+    </section>
+  </body>
+</html>

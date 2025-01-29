@@ -1,0 +1,248 @@
+.cart_section {
+  padding: 2rem;
+}
+
+/*  PRODUCTS TABLE */
+.cart_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cart_table thead {
+  border-bottom: 1px solid #000;
+}
+.cart_table tbody {
+  border-bottom: 1px solid #000;
+}
+.cart_table-headings th {
+  padding: 1rem 0;
+}
+.cart_table-row:last-child .cart_table-product {
+  margin-bottom: 1rem;
+}
+
+.cart_table-product {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.cart_img {
+  width: 10rem;
+  border-radius: 4px;
+}
+.cart_img img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.cart_product-title {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.cart_qty-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cart_qty {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.cart_qty button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  padding: 1rem 0.5rem;
+}
+.cart_qty button:hover {
+  cursor: pointer;
+}
+.cart_qty svg {
+  width: 1rem;
+}
+
+.cart_qty-value {
+  width: 2rem;
+  border: none;
+  text-align: center;
+}
+.cart_qty-value:focus {
+  outline: none;
+}
+.cart_qty-trash:hover {
+  cursor: pointer;
+}
+.cart_qty-trash svg {
+  width: 1.5rem;
+}
+
+/* CART TOTAL */
+
+.cart_total {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  color: #3b5947;
+}
+.cart_total-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  margin-right: 4rem;
+}
+.progress_container {
+  width: 100%;
+  height: 12px;
+  background-color: #d3d2d2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress_bar {
+  height: 100%;
+  width: 15%;
+  background-color: #3b5947;
+  transition: width 0.3s ease-in-out;
+}
+.progress_text {
+  font-size: medium;
+}
+.progress_text span {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+.cart_subtotal {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #3b5947;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+.cart_subtotal-price {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+}
+.cart_subtotal-tax_price {
+  font-size: x-small;
+  font-weight: 300;
+}
+.cart_subtotal-delivery_price {
+  font-size: x-small;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+}
+.cart_total-price {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: large;
+  gap: 3rem;
+}
+
+.cart_to-checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+.cart_to-checkout button {
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: large;
+}
+.cart_to-checkout a {
+  width: 60%;
+}
+.cart_to-checkout button:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+}
+.proceed_checkout {
+  background-color: rgb(161, 139, 127);
+  color: #fff;
+  border: none;
+  width: 100%;
+}
+
+.continue_shopping {
+  background-color: transparent;
+  color: rgb(102, 100, 99);
+  border: 1.5px solid #3b5947;
+  width: 100%;
+}
+
+/* EMPTY CART */
+
+.empty_cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.empty_cart-header {
+  font-size: x-large;
+  font-weight: 500;
+  color: #3b5947;
+  position: absolute;
+  left: 5rem;
+  top: 3rem;
+}
+
+.empty_cart-image_container {
+  width: 50%;
+}
+.empty_cart-image_container img {
+  width: 100%;
+  height: auto;
+}
+.empty_cart button {
+  background-color: transparent;
+  color: rgb(102, 100, 99);
+  border: 1.5px solid #3b5947;
+  width: 200px;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+.empty_cart button:hover {
+  cursor: pointer;
+  background-color: #3b5947;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 680px) {
+  .cart_table-product {
+    flex-direction: column;
+    gap: 0.2rem;
+    position: relative;
+    align-items: flex-start;
+  }
+  .cart_product-title {
+    gap: 0.2rem;
+    width: 10rem;
+  }
+  .cart_product-package {
+    position: absolute;
+    left: 5%;
+    bottom: 32%;
+  }
+  .cart_qty-container {
+    gap: 0;
+    margin-right: 0.75rem;
+  }
+  .cart_product-price {
+    padding: 0 0.75rem;
+  }
+}

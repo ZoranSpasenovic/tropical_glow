@@ -1,0 +1,74 @@
+.admin-products {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 150px;
+}
+.admin-product {
+  border: 1px solid green;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+
+  align-items: center;
+}
+.admin-img {
+  width: 14%;
+}
+.admin-img img {
+  width: 100%;
+  height: auto;
+}
+.admin-title {
+  font-size: 1.5rem;
+}
+.edit-form {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.edit-input {
+  width: 60px;
+}
+.edit-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.edit-btn {
+  background-color: red;
+  color: white;
+  width: 100px;
+  padding: 0.5rem;
+}
+.edit-btn:hover {
+  cursor: pointer;
+  background-color: rgb(91, 0, 0);
+}
+.save-btn {
+  background-color: green;
+  color: white;
+  width: 100px;
+  padding: 0.5rem;
+}
+.save-btn:hover {
+  background-color: rgb(1, 82, 1);
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.admin-sale {
+  display: flex;
+  flex-direction: column;
+}
+.admin_logout {
+  width: 100%;
+  padding: 1rem 0;
+}
+.admin_logout button {
+  padding: 1rem;
+  margin-left: 5rem;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("layout/head.ejs") %>
+  <body>
+    <%- include("layout/header.ejs") %>
+    <section class="admin-section">
+      <ul class="admin-products">
+        <% products.forEach((product) => { %>
+        <li class="admin-product">
+          <div class="admin-img">
+            <img src="/assets/pictures/products/<%= product.image %>.webp" />
+          </div>
+          <h1 class="admin-title"><%= product.name %></h1>
+          <div class="admin-edit">
+            <form
+              method="POST"
+              action="/admin/edit-product/<%= product.id %>"
+              class="edit-form"
+            >
+              <label class="edit-label" for="price"
+                >Cena:
+                <input
+                  type="number"
+                  class="edit-input"
+                  name="price"
+                  value="<%= product.price %>"
+              /></label>
+              <label class="edit-label" for="amount"
+                >Količina:
+                <input
+                  type="number"
+                  class="edit-input"
+                  name="amount"
+                  value="<%= product.amount %>"
+              /></label>
+              <div class="admin-sale">
+                <label for="sale_price" class="sale-label_check"
+                  >Popust: <input type="checkbox" <%= product.sale ? "checked" :
+                  "" %> class="sale_check" name="sale_check" />
+                </label>
+                <label for="sale_check" class="sale-label_price hidden">
+                  Cena na popustu:
+                  <input
+                    type="number"
+                    class="sale_price"
+                    name="sale_price"
+                    value="<%=product.sale_price%>"
+                  />
+                </label>
+              </div>
+              <button class="save-btn hidden" type="submit">Save</button>
+            </form>
+          </div>
+          <button type="button" class="edit-btn">Edit</button>
+        </li>
+
+        <% })%>
+      </ul>
+    </section>
+    <div class="admin_logout">
+      <form action="/admin/logout" method="POST">
+        <button>Odjava</button>
+      </form>
+    </div>
+  </body>
+</html>

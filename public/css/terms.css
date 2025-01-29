@@ -1,0 +1,37 @@
+.terms-section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3b5947;
+}
+
+.terms-heading {
+  font-size: xx-large;
+  padding: 2rem;
+}
+.terms-content {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+.terms-div {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.terms_div-heading {
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+}
+.terms_div-paragraph {
+  line-height: 1.5;
+}
+.terms_div-paragraph a {
+  color: #6fb7ff;
+}

@@ -1,0 +1,31 @@
+<div class="contact_form">
+  <div class="contact_form-heading"><h2>Postavite nam pitanje</h2></div>
+  <form
+    id="message-form"
+    class="contact_form-form"
+    method="post"
+    action="/podrska/user-question"
+  >
+    <div class="contact_form-div">
+      <div class="contact_form-input_group">
+        <label for="name">Vaše ime</label><input name="name" type="text" />
+      </div>
+      <div class="contact_form-input_group">
+        <label for="last_name">Vaše prezime</label
+        ><input name="last_name" type="text" />
+      </div>
+      <div class="contact_form-input_group">
+        <label for="email">E-mail</label><input name="email" type="email" />
+      </div>
+    </div>
+    <div class="contact_form-div">
+      <div class="contact_form-textarea_group">
+        <label for="message"> Poruka </label>
+        <textarea name="message"></textarea>
+      </div>
+    </div>
+  </form>
+  <div class="contact_form-button">
+    <button type="submit" form="message-form">Pošalji</button>
+  </div>
+</div>

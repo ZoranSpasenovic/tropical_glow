@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("layout/head.ejs") %>
+  <body>
+    <%- include("layout/header.ejs") %>
+    <section class="checkout_section">
+      <div class="checkout_content">
+        <div class="checkout_form-container">
+          <form action="/checkout" method="POST" class="checkout_form">
+            <h2>Detalji o dostavi:</h2>
+            <div class="checkout_form-input_group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="checkout_form-input_group">
+              <label for="firstName">Ime:</label>
+              <input type="text" id="firstName" name="firstName" required />
+            </div>
+            <div class="checkout_form-input_group">
+              <label for="lastName">Prezime:</label>
+              <input type="text" id="lastName" name="lastName" required />
+            </div>
+            <div class="checkout_form-input_group">
+              <label for="address">Adresa:</label>
+              <input type="text" id="address" name="address" required />
+            </div>
+            <div class="checkout_form-input_group">
+              <label for="phone">Telefon:</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="checkout_form-input_group">
+              <label for="postalCode">Poštanski broj:</label>
+              <input type="text" id="postalCode" name="postalCode" required />
+            </div>
+            <div class="checkout_form-input_group">
+              <label for="city">Grad:</label>
+              <input type="text" id="city" name="city" required />
+            </div>
+            <div class="checkout_form-input_group">
+              <label for="deliveryNote">Poruka za dostavu:</label>
+              <textarea
+                id="deliveryNote"
+                name="deliveryNote"
+                rows="4"
+                cols="50"
+                placeholder="Unesite dodatne informacije za dostavu..."
+              ></textarea>
+            </div>
+            <div class="checkout_form-button_container">
+              <button type="submit">Završi kupovinu</button>
+            </div>
+          </form>
+        </div>
+        <div class="checkout_summary-container">
+          <div class="checkout_summary">
+            <span>Pregled kupovine:</span>
+            <span><a href="/korpa">Promeni korpu</a> </span>
+          </div>
+          <div class="checkout_summary-products">
+            <% cart.forEach((product) => { %>
+            <div class="checkout_summary-products_item">
+              <div class="checkout_summary-img_container">
+                <img
+                  src="/assets/pictures/products/<%= product.image %>.webp"
+                  alt="<%= product.name %>"
+                />
+              </div>
+              <div class="checkout_summary-name">
+                <h3><%= product.name %></h3>
+                <p class="checkout_summary-qty">
+                  Količina: <span><%=product.qty%></span>
+                </p>
+              </div>
+              <div class="checkout_summary-price">
+                <p>RSD<%= product.total %></p>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+          <div class="checkout_summary-pricing">
+            <div class="checkout_subtotal">
+              <div class="checkout_subtotal-price">
+                <p>Međuzbir:</p>
+                <span><%=totalPrice %>RSD</span>
+              </div>
+              <div class="checkout_subtotal-tax_price">
+                <p>PDV uračunat u cenu</p>
+              </div>
+              <div class="checkout_subtotal-delivery_price">
+                <p>Troškovi Dostave:</p>
+                <span>450RSD</span>
+              </div>
+              <div class="checkout_total">
+                <p>Iznos za plaćanje:</p>
+                <span>RSD <%=totalPrice %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include("layout/footer.ejs") %>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <%- include("layout/head.ejs") %>
+  <body>
+    <%- include("layout/header.ejs") %>
+    <section class="product_details-section">
+      <div class="product_detail-container">
+        <div class="product_detail-img">
+          <img
+            src="/assets/pictures/products/<%=product.image%>.webp"
+            alt="slika prozivoda"
+          />
+          <span class="package">100ml</span>
+          <% if(product.amount < 1) { %>
+          <p class="product_detail-out_of_stock">Nema na stanju</p>
+          <% } else { %>
+          <div class="product_detail-add_container">
+            <div class="qty_container">
+              <i class="fa-solid fa-plus"></i>
+              <input value="1" type="number" class="qty_value" />
+              <i class="fa-solid fa-minus"></i>
+            </div>
+            <button data-id="<%=product.id%>" class="product_detail-button">
+              <span class="material-symbols-outlined"> shopping_cart </span>
+              Dodaj u Korpu
+            </button>
+          </div>
+
+          <% } %>
+        </div>
+        <div class="product_detail-content">
+          <h2 class="product_detail-title"><%= product.name %></h2>
+          <p class="product_detail-price"><%= product.price %> RSD</p>
+          <div class="product_detail-content_container">
+            <ul class="product_detail-content_list">
+              <li class="product_detail-list_item" data-id="1">
+                Opis i Efekti
+              </li>
+              <li class="product_detail-list_item" data-id="2">Tip Kože</li>
+              <li class="product_detail-list_item" data-id="3">
+                Način Upotrebe
+              </li>
+              <li class="product_detail-list_item" data-id="4">
+                Prirodni Aktivni Sastojci
+              </li>
+              <li class="product_detail-list_item" data-id="5">Sastav</li>
+            </ul>
+            <div class="product_detail-text">
+              <button class="product_detail-back_btn">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span></span>
+              </button>
+              <p class="details" id="effects-details"><%= product.effects %></p>
+              <p class="details" id="skin-details"><%= product.skin %></p>
+              <p class="details" id="use-details"><%= product.use %></p>
+              <p class="details" id="natural-details"><%= product.natural %></p>
+              <p class="details" id="ingrd-details">
+                <%= product.ingredients %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include("layout/footer.ejs") %>
+  </body>
+</html>

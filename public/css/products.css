@@ -1,0 +1,225 @@
+/* PRODUCT CARD */
+
+.product_card {
+  z-index: 10;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 0.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  color: #3b5947;
+  position: relative;
+}
+
+@keyframes scroll-products {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3));
+  }
+}
+#add-to-cart {
+  background-color: #3b5947;
+  margin-top: 0.5rem;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.125rem;
+  border: 1px solid #3b5947;
+  width: 50%;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#add-to-cart:hover {
+  background-color: transparent;
+  color: #3b5947;
+}
+#add-to-cart:disabled {
+  cursor: not-allowed;
+  background-color: #3b5947;
+  color: #ffffff;
+}
+#add-to-cart:disabled:hover {
+  background-color: #3b5947;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+.product_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.product_card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.product_title {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  font-family: SeasonsLight;
+}
+
+.product_price {
+  font-size: 1.2rem;
+}
+
+.product_price.original_price {
+  text-decoration: line-through;
+  color: #805240;
+  font-size: 0.9rem;
+}
+.product_price.sale_price {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.out_of_stock {
+  color: #805240;
+  font-size: 1.4rem;
+}
+
+/* PRODUCTS PAGE */
+
+.products-section {
+  margin: 0 auto;
+}
+.products_container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  row-gap: 2rem;
+  justify-items: center;
+  padding: 2.5rem;
+  grid-auto-rows: 1fr;
+}
+.search_results {
+  margin-left: 4rem;
+  padding: 2rem 0;
+}
+
+/* SKIN CONCERN PRODUCTS */
+
+.skin_concern-header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #3b5947;
+}
+.skin_concern-header img {
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  opacity: 0.7;
+}
+.skin_concern-header_content {
+  position: absolute;
+  text-align: center;
+  padding: 0 20rem;
+}
+.skin_concern-header_content h1 {
+  font-size: 2rem;
+}
+.skin_concern-header_content p {
+  margin-top: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.skin_concern-products {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 1rem;
+  background-color: #f9f5f2;
+  padding: 0 2rem;
+}
+
+@media (max-width: 850px) {
+  html {
+    font-size: 14px;
+  }
+
+  .products_container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    row-gap: 4rem;
+    padding: 3rem 1rem 5rem;
+  }
+  .product_title {
+    font-size: 1.5rem;
+    color: #3b5947;
+  }
+
+  .skin_concern-header_content {
+    padding: 0 6rem;
+  }
+
+  .skin_concern-header_content h1 {
+    font-size: 2.5rem;
+  }
+  .skin_concern-header_content p {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 680px) {
+  .product_card {
+    position: relative;
+  }
+  .products-section {
+    padding: 0 0.5rem;
+  }
+  .skin_concern-header_content {
+    padding: 0;
+  }
+  .skin_concern-header_content h1 {
+    font-size: 1.7rem;
+  }
+  .skin_concern-header_content p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+  .out_of_stock {
+    position: absolute;
+    bottom: -2rem;
+  }
+
+  #add-to-cart {
+    width: 75%;
+    font-size: 1.3rem;
+    padding: 0.5rem 0.5rem;
+  }
+  #add-to-cart.phone_add-to_cart {
+    position: absolute;
+    bottom: -3rem;
+  }
+}
+@media (max-width: 405px) {
+  #add-to-cart {
+    width: 90%;
+  }
+}
+@media (max-width: 350px) {
+  .products_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #add-to-cart.phone_add-to_cart {
+    width: 50%;
+    bottom: -10%;
+  }
+}

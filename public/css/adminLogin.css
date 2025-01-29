@@ -1,0 +1,19 @@
+.admin_login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 20rem;
+}
+input {
+    width: 100%;
+}
+button {
+  width: 50%;
+}

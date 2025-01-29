@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <%- include("layout/head.ejs") %>
+  <body>
+    <%- include('layout/header.ejs') %>
+
+    <section class="hero-section">
+      <video autoplay muted loop id="background-video">
+        <source
+          src="/assets/videos/Tropical Glow Full Hd.webm"
+          type="video/mp4"
+          media="(min-width:850px)"
+        />
+        <source
+          src="/assets/videos/Tropical Glow 1080X1080.webm"
+          type="video/mp4"
+          media="(max-width: 849px)"
+        />
+      </video>
+      <div class="hero_content">
+        <h1>Tropical Glow</h1>
+        <p>Osetite sjaj tropske prirode</p>
+      </div>
+      <div class="buy_now-button">
+        <button>Kupi Odmah</button>
+      </div>
+      <div class="marketing_section">
+        <div class="marketing_container">
+          <div class="marketing">
+            <span>Besplatna dostava za kupovinu preko 10.000 RSD</span
+            ><span>Besplatna dostava za kupovinu preko 10.000 RSD</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="new_products">
+      <div class="heading_container-new_products"><h1>Novi Proizvodi</h1></div>
+      <div class="new_products-container">
+        <% newProducts.forEach((product) => { %>
+        <a class="product_details-link" href="/proizvod/<%=product.id%>">
+          <div class="new_product-card">
+            <img src="assets/pictures/products/<%=product.image%>.webp" />
+            <h3 class="product_title"><%= product.name %></h3>
+            <p class="product_price"><%= product.price %>RSD</p>
+            <button data-id="<%= product.id %>" id="add-to-cart">
+              Dodaj u korpu
+            </button>
+          </div></a
+        >
+        <% }) %> <% newProducts.forEach((product) => { %>
+        <a class="product_details-link" href="/proizvod/<%=product.id%>">
+          <div class="new_product-card">
+            <img src="assets/pictures/products/<%=product.image%>.webp" />
+            <h3 class="product_title"><%= product.name %></h3>
+            <p class="product_price"><%= product.price %>RSD</p>
+            <button
+              data-id="<%= product.id %>"
+              id="add-to-cart"
+              class="new_product-add_to_cart"
+            >
+              Dodaj u korpu
+            </button>
+          </div></a
+        >
+        <% }) %> <% newProducts.forEach((product) => { %>
+        <a class="product_details-link" href="/proizvod/<%=product.id%>">
+          <div class="new_product-card">
+            <img src="assets/pictures/products/<%=product.image%>.webp" />
+            <h3 class="product_title"><%= product.name %></h3>
+            <p class="product_price"><%= product.price %>RSD</p>
+            <button data-id="<%= product.id %>" id="add-to-cart">
+              Dodaj u korpu
+            </button>
+          </div></a
+        >
+        <% }) %>
+      </div>
+    </section>
+    <section class="awards-section">
+      <div class="awards_heading">
+        <h1>Spa Ceylon - najbolji wellbeing brend 2024.</h1>
+      </div>
+      <div class="awards_container">
+        <div class="award_container">
+          <div class="award_image-container">
+            <img src="assets/pictures/awards/nagrade_1.webp" />
+          </div>
+          <div class="award_content-container">
+            <p>Najbolji prirodni</p>
+            <p>organski proizvodi</p>
+          </div>
+        </div>
+        <div class="award_container">
+          <div class="award_image-container">
+            <img src="assets/pictures/awards/nagrade_2.webp" />
+          </div>
+          <div class="award_content-container">
+            <p>Najbolji wellbeing</p>
+            <p>brand 2024.</p>
+          </div>
+        </div>
+
+        <div class="award_container">
+          <div class="award_image-container">
+            <img src="assets/pictures/awards/nagrade_3.webp" />
+          </div>
+          <div class="award_content-container">
+            <p>Najbolji wellness</p>
+            <p>proizvod</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="stats-section">
+      <div class="stats-container">
+        <h2 class="stats-number">>150.000</h2>
+        <p class="stats-description">Zadovoljnih korisnika</p>
+      </div>
+      <div class="stats-container">
+        <h2 class="stats-number">30</h2>
+        <p class="stats-description">Zemalja sveta</p>
+      </div>
+    </section>
+    <section class="testimonials-section">
+      <div class="testimonial-header-container">
+        <h1>Utisci Kupaca</h1>
+      </div>
+      <div class="testimonials_carousel">
+        <button class="arrow left">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="36px"
+            viewBox="0 -960 960 960"
+            width="36px"
+            fill="currentColor"
+          >
+            <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+          </svg>
+        </button>
+        <div class="carousel_track-container">
+          <div class="carousel_track">
+            <div class="testimonial_card">
+              <img
+                src="/assets/pictures/testimonials/1.webp"
+                alt="utisak kupca"
+              />
+            </div>
+            <div class="testimonial_card">
+              <img
+                src="/assets/pictures/testimonials/2.webp"
+                alt="utisak kupca"
+              />
+            </div>
+            <div class="testimonial_card">
+              <img
+                src="/assets/pictures/testimonials/3.webp"
+                alt="utisak kupca"
+              />
+            </div>
+            <div class="testimonial_card">
+              <img
+                src="/assets/pictures/testimonials/4.webp"
+                alt="utisak kupca"
+              />
+            </div>
+            <div class="testimonial_card">
+              <img
+                src="/assets/pictures/testimonials/5.webp"
+                alt="utisak kupca"
+              />
+            </div>
+            <div class="testimonial_card">
+              <img
+                src="/assets/pictures/testimonials/6.webp"
+                alt="utisak kupca"
+              />
+            </div>
+            <div class="testimonial_card">
+              <img
+                src="/assets/pictures/testimonials/7.webp"
+                alt="utisak kupca"
+              />
+            </div>
+            <div class="testimonial_card">
+              <img
+                src="/assets/pictures/testimonials/8.webp"
+                alt="utisak kupca"
+              />
+            </div>
+            <div class="testimonial_card">
+              <img
+                src="/assets/pictures/testimonials/9.webp"
+                alt="utisak kupca"
+              />
+            </div>
+            <div class="testimonial_card">
+              <img
+                src="/assets/pictures/testimonials/10.webp"
+                alt="utisak kupca"
+              />
+            </div>
+          </div>
+        </div>
+        <button class="arrow right">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="36px"
+            viewBox="0 -960 960 960"
+            width="36px"
+            fill="currentColor"
+          >
+            <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+          </svg>
+        </button>
+      </div>
+    </section>
+    <section class="blog-section">
+      <h1 class="blog_heading">Blog</h1>
+      <div class="blog-item-container">
+        <div class="blog-video-container">
+          <video autoplay muted loop class="blog-video">
+            <source src="assets/videos/Bakuchiol BLOG.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="blog-content">
+          <h2 class="blog-item-heading">
+            Bakuchiol – Prirodna <br />Zamena Za Retinol <br />
+            Bez Nuspojava
+          </h2>
+          <p class="blog-text">
+            Retinol je dugo bio zlatni standard u anti-age nezi kože, ali sa
+            sobom nosi rizik iritacije i osetljivosti, posebno kod onih sa
+            osetljivom kožom. Srećom, bakuchiol, prirodni biljni sastojak, nudi
+            alternativu sa sličnim prednostima bez rizika od nuspojava.
+          </p>
+          <p class="blog-bold-text">Šta je Bakuciol i zašto ga volimo?</p>
+          <p class="blog-text">
+            Bakuchiol je ekstrakt iz biljke Psoralea corylifolia, poznat kao
+            ajurvedska čudotvorna biljka zbog svojih brojnih blagotvornih
+            efekata na kožu. Njegova najveća prednost leži u tome što je
+            dovoljno blag i siguran za sve tipove kože, a istovremeno nudi
+            slične efekte kao retinol – stimulaciju proizvodnje kolagena
+          </p>
+        </div>
+      </div>
+      <div class="blog-item-container">
+        <div class="blog-content">
+          <h2 class="blog-item-heading">
+            Vitamin C i Kurkuma <br />Tajna Prirodnog <br />
+            Sjaja koze
+          </h2>
+          <p class="blog-text">
+            U svetu prirodne nege kože, vitamin C i kurkuma su postali ključni
+            sastojci za postizanje zdravog i blistavog tena. U našoj ponudi
+            luksuzne ajurvede, donosimo vam dva proizvoda koji sadrže ovu moćnu
+            kombinaciju – Vitamin C Pena za čišćenje lica i Glinena maska za
+            lice. Zahvaljujući sinergiji vitamina C i kurkume, ovi proizvodi ne
+            samo da čiste kožu, već je i revitalizuju, ujednačavaju ten i
+            podstiču prirodan sjaj. Evo kako ovi sastojci deluju i zašto su
+            idealni za vašu kožu.
+          </p>
+          <p class="blog-bold-text">
+            Vitamin C – Moćan antioksidant za posvetljivanje i oporavak
+          </p>
+          <p class="blog-text">
+            Vitamin C je poznat po svom snažnom antioksidativnom dejstvu koje
+            štiti kožu od štetnih efekata slobodnih radikala i UV zračenja. U
+            našim proizvodima, vitamin C je prirodno poreklom iz šipurka i
+            enzima ananasa, što znači da pruža maksimalnu efikasnost u borbi
+            protiv tamnih fleka i pigmentacija.
+          </p>
+        </div>
+        <div class="blog-video-container">
+          <video autoplay muted loop class="blog-video">
+            <source src="assets/videos/Vitamin C BLOG.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+    <section class="skin-concern-section">
+      <h1 class="skin-concern-heading">Rešenje Za Svaki Izazov</h1>
+      <div class="skin-concern-content">
+        <a href="/skin_concern/wrinkles"
+          ><div class="skin-concern-card">
+            <img
+              src="assets//pictures/resenje za svaki izazov slike/bore i fine linije, nakrivljena.webp"
+              alt="skin concern image"
+            />
+            <h3>Bore i Fine Linije</h3>
+          </div></a
+        >
+        <a href="/skin_concern/oily"
+          ><div class="skin-concern-card">
+            <img
+              src="assets//pictures/resenje za svaki izazov slike/kontrola masnoce.webp"
+              alt="skin concern image"
+            />
+            <h3>Kontola Masnoće</h3>
+          </div></a
+        >
+        <a href="/skin_concern/tan"
+          ><div class="skin-concern-card">
+            <img
+              src="assets//pictures/resenje za svaki izazov slike/neujednacen ten.webp"
+              alt="skin concern image"
+            />
+            <h3>Neujednačen Ten</h3>
+          </div></a
+        >
+        <a href="/skin_concern/relax"
+          ><div class="skin-concern-card">
+            <img
+              src="assets//pictures/resenje za svaki izazov slike/opustanje i balans.webp"
+              alt="skin concern image"
+            />
+            <h3>Opuštanje i Balans</h3>
+          </div></a
+        >
+        <a href="/skin_concern/pores"
+          ><div class="skin-concern-card">
+            <img
+              src="assets//pictures/resenje za svaki izazov slike/Prosirene pore.webp"
+              alt="skin concern image"
+            />
+            <h3>Proširene Pore</h3>
+          </div></a
+        >
+        <a href="/skin_concern/dry"
+          ><div class="skin-concern-card">
+            <img
+              src="assets//pictures/resenje za svaki izazov slike/suva koža i dehidratacija.webp"
+              alt="skin concern image"
+            />
+            <h3>Suva Koža i Dehidratacija</h3>
+          </div></a
+        >
+        <a href="/skin_concern/tired"
+          ><div class="skin-concern-card">
+            <img
+              src="assets//pictures/resenje za svaki izazov slike/umorna koža.webp"
+              alt="skin concern image"
+            />
+            <h3>Umorna Koža</h3>
+          </div></a
+        >
+        <a href="/skin_concern/urban"
+          ><div class="skin-concern-card">
+            <img
+              src="assets//pictures/resenje za svaki izazov slike/urbana zagadjenost.webp"
+              alt="skin concern image"
+            />
+            <h3>Urbana Zagađenost</h3>
+          </div></a
+        >
+      </div>
+    </section>
+    <section class="about-us-section">
+      <div id="about-us" class="about-us-container">
+        <div class="about-us-image-container">
+          <img src="assets//pictures/about us/O nama manja.jpg" alt="O nama" />
+        </div>
+        <div class="about-us-content">
+          <h1 class="centered-underline">O Nama</h1>
+          <p>
+            Dobrodošli u naš svet lepote koja dolazi iz prirode. Iz srca
+            tropskih predela, donosimo vam ekskluzivnu kolekciju kozmetičkih
+            proizvoda, dizajniranu da obogati vašu svakodnevnu rutinu nege kože.
+            Naša ponuda obuhvata kozmetičke proizvode napravljene od prirodnih i
+            učinkovitih egzotičnih sastojaka, koja pored vrhunske nege lica i
+            tela, nudi iskustvo koje budi sva čula.
+          </p>
+        </div>
+      </div>
+      <div id="partners" class="about-us-container">
+        <div class="about-us-content">
+          <h1 class="centered-underline">
+            Naš partner - Spa Ceylon<br />
+            u Ponudi Prirodnog<br />
+            Luksuza
+          </h1>
+          <p>
+            Iz srca tropskih šuma, ovaj brend donosi esenciju ajurvedske
+            tradicije u vašu rutinu lepote, nudeći ne samo proizvode za negu,
+            već i ultimativno iskustvo luksuza i blagostanja. Sa skoro pola veka
+            iskustva, ovaj brend je utemeljen na ajurvedskim ritualima opuštanja
+            i isceljenja, koje su vekovima negovale kraljevske porodice drevnog
+            Ceylona. Svaki proizvod iz linije Spa Ceylon je pažljivo formulisana
+            kombinacija najkvalitetnijih prirodnih sastojaka. Sertifikovana
+            organska esencijalna ulja, sveža aloe vera, čisto devičansko
+            kokosovo ulje, soli Indijskog okeana i autentične ajurveske biljke
+            Ceylona
+          </p>
+        </div>
+        <div class="about-us-image-container">
+          <img
+            src="assets//pictures/about us/Spa Ceylon nas partner manja.jpg"
+            alt="O nama"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="vegan-section">
+      <div class="vegan-img-container">
+        <img src="assets/pictures/Vegan 0.jpg" alt="vegan-products" />
+      </div>
+    </section>
+    <%- include('layout/footer.ejs') %>
+  </body>
+</html>

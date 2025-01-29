@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("layout/head.ejs") %>
+  <body>
+    <%- include("layout/header.ejs") %>
+    <section class="cart_section">
+      <% if(cart && cart.length) { %>
+      <table class="cart_table">
+        <thead>
+          <tr class="cart_table-headings">
+            <th>Proizvod</th>
+            <th>Cena</th>
+            <th>Količina</th>
+            <th>Ukupno</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cart.forEach((prod) => { %>
+          <tr data-id="<%= prod.id %>" class="cart_table-row">
+            <td>
+              <div class="cart_table-product">
+                <div class="cart_img">
+                  <img
+                    src="/assets/pictures/products/<%= prod.image %>.webp"
+                    alt="slika proizvoda"
+                  />
+                </div>
+                <div class="cart_product-title">
+                  <h2 class="cart_product-name"><%= prod.name %></h2>
+                  <span class="cart_product-package"><%= prod.package %></span>
+                </div>
+              </div>
+            </td>
+            <td><p class="cart_product-price"><%= prod.price %>RSD</p></td>
+            <td class="cart_table-qty">
+              <div class="cart_qty-container">
+                <div class="cart_qty">
+                  <button class="plus">
+                    <svg
+                      class="icon icon-plus"
+                      width="13"
+                      height="12"
+                      viewBox="0 0 13 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="5.81836"
+                        y="0.0605469"
+                        width="1.69697"
+                        height="11.8788"
+                        fill="currentColor"
+                      ></rect>
+                      <rect
+                        x="0.726562"
+                        y="6.84766"
+                        width="1.69697"
+                        height="11.8788"
+                        transform="rotate(-90 0.726562 6.84766)"
+                        fill="currentColor"
+                      ></rect>
+                    </svg>
+                  </button>
+
+                  <input
+                    value="<%= prod.qty %>"
+                    type="number"
+                    class="cart_qty-value"
+                  />
+                  <button class="minus">
+                    <svg
+                      class="icon icon-minus"
+                      width="13"
+                      height="2"
+                      viewBox="0 0 13 2"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="0.576172"
+                        y="1.84766"
+                        width="1.69697"
+                        height="11.8788"
+                        transform="rotate(-90 0.576172 1.84766)"
+                        fill="currentColor"
+                      ></rect>
+                    </svg>
+                  </button>
+                </div>
+                <div class="cart_qty-trash">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#5f6368"
+                  >
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </td>
+            <td class="cart_product-total"><%= prod.total %>RSD</td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <div class="cart_total">
+        <div class="cart_total-container">
+          <p class="progress_text">
+            Još samo <span><%=10000-totalPrice %>RSD</span> do besplatne dostave
+          </p>
+          <div class="progress_container">
+            <div class="progress_bar"></div>
+          </div>
+          <div class="cart_subtotal">
+            <div class="cart_subtotal-price">
+              <p>Međuzbir:</p>
+              <span><%=totalPrice %>RSD</span>
+            </div>
+            <div class="cart_subtotal-tax_price">
+              <p>PDV uračunat u cenu</p>
+            </div>
+            <div class="cart_subtotal-delivery_price">
+              <p>Troškovi Dostave:</p>
+              <span>450RSD</span>
+            </div>
+          </div>
+          <div class="cart_total-price">
+            <p>Iznos za plaćanje:</p>
+            <span><%=(totalPrice + 450) %>RSD</span>
+          </div>
+          <div class="cart_to-checkout">
+            <a href="/checkout"> <button class="proceed_checkout">Naruči</button></a>
+
+            <span>ili</span>
+
+            <a href="/">
+              <button class="continue_shopping">Nastavi Kupovinu</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <% } else { %>
+      <div class="empty_cart">
+        <a href="/"> <button>Nastavi Kupovinu</button></a>
+        <h1 class="empty_cart-header">Vaša Korpa je Prazna!</h1>
+        <div class="empty_cart-image_container">
+          <img src="/assets/pictures/cart/empty-cart.webp" alt="prazna korpa" />
+        </div>
+      </div>
+
+      <%} %>
+    </section>
+  </body>
+</html>

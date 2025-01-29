@@ -13,7 +13,7 @@ const cartRoutes = require("./routes/cart");
 const supportRoutes = require("./routes/support");
 const checkoutRoutes = require("./routes/checkout");
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

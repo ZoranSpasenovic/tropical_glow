@@ -23,7 +23,11 @@ app.use(
     name: "cart",
     secret: process.env.SESSION_KEY_CART,
     maxAge: 2 * 1000 * 60 * 60,
-    secure: process.env.NODE_ENV === "production",
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+      sameSite: "Lax",
+    },
   })
 );
 app.use(
@@ -31,7 +35,11 @@ app.use(
     name: "adminSession",
     secret: process.env.SESSION_KEY_ADMIN,
     maxAge: 2 * 1000 * 60 * 60,
-    secure: process.env.NODE_ENV === "production",
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+      sameSite: "Lax",
+    },
   })
 );
 

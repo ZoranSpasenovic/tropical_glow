@@ -5,7 +5,7 @@
     <%- include('layout/header.ejs') %>
 
     <section class="hero-section">
-      <video autoplay muted loop playsinline id="background-video">
+      <video autoplay muted loop loading="lazy" id="background-video">
         <!-- <source
           src="/assets/videos/Tropical Glow Full Hd.webm"
           type="video/webm"
@@ -229,7 +229,14 @@
       <h1 class="blog_heading">Blog</h1>
       <div class="blog-item-container">
         <div class="blog-video-container">
-          <video autoplay muted loop playsinline class="blog-video">
+          <video
+            autoplay
+            loading="lazy"
+            muted
+            loop
+            playsinline
+            class="blog-video"
+          >
             <source src="assets/videos/Bakuchiol BLOG.mp4" type="video/mp4" />
           </video>
         </div>
@@ -282,7 +289,14 @@
           </p>
         </div>
         <div class="blog-video-container">
-          <video autoplay muted loop playsinline class="blog-video">
+          <video
+            autoplay
+            muted
+            loading="lazy"
+            loop
+            playsinline
+            class="blog-video"
+          >
             <source src="assets/videos/Vitamin C BLOG.mp4" type="video/mp4" />
           </video>
         </div>

@@ -475,9 +475,13 @@ header.header_phone {
   color: #3b5947;
 }
 .awards_heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: SeasonsLight;
+  gap: 1rem;
   font-size: 3rem;
-  margin: auto;
-  padding: 2rem;
+  padding: 1rem 0 3.5rem;
 }
 .awards_container {
   display: flex;
@@ -499,7 +503,7 @@ header.header_phone {
 .award_content-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 }
 .award_content-container p {
   text-align: center;
@@ -515,6 +519,7 @@ header.header_phone {
   text-align: center;
   gap: 3rem;
   background-image: url("/assets/pictures/stats/background_image_stats.jpeg");
+  font-family: SeasonsLight;
 }
 .stats-number {
   font-size: 3rem;
@@ -526,7 +531,7 @@ header.header_phone {
 /* TESTIMONIALS section */
 .testimonial-header-container {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3.5rem;
   font-size: 3rem;
   color: #3e5d4b;
 }
@@ -780,9 +785,10 @@ footer {
   }
   .hero_content h1 {
     text-align: left;
+    font-size: 3rem;
   }
   .hero_content p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .marketing span {
     font-size: 1.8rem;
@@ -798,9 +804,17 @@ footer {
     justify-content: flex-start;
     gap: 1rem;
     align-items: center;
+    padding: 2rem 0;
+  }
+  .awards_heading {
+    gap: 1.5rem;
+    font-size: 2rem;
+    padding: 1rem 1rem 3.5rem;
   }
   .awards_container {
     flex-direction: column;
+    gap: 1rem;
+    padding: 0 2rem;
   }
   .award_container {
     flex-direction: row;
@@ -808,7 +822,7 @@ footer {
   }
   .award_content-container {
     flex: 2;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     margin-left: 2rem;
   }
   .award_content-container p {
@@ -913,12 +927,7 @@ footer {
   }
 
   /* CAROUSEL */
-  .testimonial-header-container {
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 3rem;
-    color: #3e5d4b;
-  }
+
   .testimonials_carousel {
     overflow: hidden;
   }

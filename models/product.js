@@ -1,13 +1,9 @@
-const fs = require("fs");
-const path = require("path");
-const p = require("../helpers/path");
-const source = path.join(p, "data", "products.json");
 
 const { DataTypes } = require("sequelize");
 
 const sequelize = require("../util/database");
 
-const Product = sequelize.define("Product", {
+const Product = sequelize.define("product", {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -80,7 +76,6 @@ const Product = sequelize.define("Product", {
 
 module.exports = Product;
 
-// module.exports = class Product2 {
 //   static async fetchAll() {
 //     try {
 //       const fileContent = await fs.promises.readFile(source);

@@ -37,7 +37,7 @@
     <section class="new_products">
       <div class="heading_container-new_products"><h1>Novi Proizvodi</h1></div>
       <div class="new_products-container">
-        <% newProducts.forEach((product) => { %>
+        <% newProducts?.forEach((product) => { %>
         <a class="product_details-link" href="/proizvod/<%=product.id%>">
           <div class="new_product-card">
             <img src="assets/pictures/products/<%=product.image%>.webp" />

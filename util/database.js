@@ -1,8 +1,22 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("tropical_glow", "root", "thuglife7", {
+const databaseUrl =
+  process.env.DATABASE_URL ||
+  "mysql://root:thuglife7@localhost:3306/tropical_glow";
+
+const sequelize = new Sequelize(databaseUrl, {
   dialect: "mysql",
-  host: "localhost",
+  logging: false,
 });
+
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("Veza sa bazom je uspešna!");
+  })
+  .catch((err) => {
+    console.error("Nemoguće se povezati sa bazom:", err);
+  });
 
 module.exports = sequelize;

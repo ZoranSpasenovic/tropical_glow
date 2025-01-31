@@ -18,14 +18,7 @@
   position: relative;
 }
 
-@keyframes scroll-products {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100% / 3));
-  }
-}
+
 #add-to-cart {
   background-color: #3b5947;
   margin-top: 0.5rem;

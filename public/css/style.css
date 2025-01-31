@@ -439,7 +439,16 @@ header.header_phone {
   justify-content: flex-start;
   padding-top: 2rem;
   animation: scroll-products 50s linear infinite;
+  will-change: transform;
 }
+  @keyframes scroll-products {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% / 3));
+    }
+  }
 .new_product-card {
   z-index: 10;
   background-color: #fff;

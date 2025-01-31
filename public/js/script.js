@@ -190,3 +190,9 @@ document.querySelectorAll(".new_product-card").forEach((card) => {
     cardsSlideShow.style.animationPlayState = "running";
   });
 });
+
+window.addEventListener("pageshow", function () {
+  if (cardsSlideShow) {
+    cardsSlideShow.style.animationPlayState = "running";
+  }
+});

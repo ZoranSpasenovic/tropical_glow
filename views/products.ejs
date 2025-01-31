@@ -26,11 +26,7 @@
             <% } %> <% if(product.amount < 1 ) { %>
             <p class="out_of_stock">Nema na stanju</p>
             <% } else { %>
-            <button
-              data-id="<%= product.id %>"
-              id="add-to-cart"
-              class="phone_add-to_cart"
-            >
+            <button data-id="<%= product.id %>" id="add-to-cart">
               Dodaj u korpu
             </button>
             <% }%>

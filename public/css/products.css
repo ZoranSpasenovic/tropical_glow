@@ -18,7 +18,6 @@
   position: relative;
 }
 
-
 #add-to-cart {
   background-color: #3b5947;
   margin-top: 0.5rem;
@@ -148,7 +147,7 @@
   }
 
   .products_container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
     row-gap: 4rem;
     padding: 3rem 1rem 5rem;
@@ -197,22 +196,13 @@
     font-size: 1.3rem;
     padding: 0.5rem 0.5rem;
   }
-  #add-to-cart.phone_add-to_cart {
-    position: absolute;
-    bottom: -3rem;
-  }
+
 }
 @media (max-width: 405px) {
-  #add-to-cart {
+  /* #add-to-cart {
     width: 90%;
-  }
+  } */
 }
 @media (max-width: 350px) {
-  .products_container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  #add-to-cart.phone_add-to_cart {
-    width: 50%;
-    bottom: -10%;
-  }
+
 }

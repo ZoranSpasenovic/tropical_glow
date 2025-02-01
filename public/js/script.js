@@ -123,36 +123,69 @@ openMenu.addEventListener("click", () => {
 closeMenu.addEventListener("click", () => {
   closeMenuFn(true);
 });
+
+const scrollLinks = document.querySelectorAll("a[href^='#']");
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.pathname !== "/") {
+    scrollLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        closeMenuFn(true);
+        const targetId = link.getAttribute("href");
+        sessionStorage.setItem("scrollTo", targetId);
+        window.location.href = "/";
+      });
+    });
+  } else {
+    scrollLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        closeMenuFn(true);
+      });
+    });
+    const scrollTo = sessionStorage.getItem("scrollTo");
+    if (scrollTo) {
+      console.log(scrollTo);
+      window.location.href = scrollTo;
+      sessionStorage.removeItem("scrollTo");
+    }
+  }
+});
+
 const navigationList = navigationMenu.querySelector(".phone_navigation-list");
 
 navigationList.addEventListener("click", (event) => {
   const navigationItem = event.target.closest(".phone_navigation-item");
   const eventId = navigationItem.dataset.id;
-  const submenuList = navigationMenu.querySelector(
-    ` .phone_navigation-list.submenu#${eventId}`
-  );
-  submenuList.classList.add("open");
-  const backItem = submenuList.querySelector(".phone_navigation-item.back");
-  backItem.addEventListener("click", () => {
-    submenuList.classList.add("closing");
-    submenuList.addEventListener(
-      "transitionend",
-      () => {
-        submenuList.classList.remove("open");
-        submenuList.classList.remove("closing");
-        return;
-      },
-      { once: true }
+  if (eventId) {
+    const submenuList = navigationMenu.querySelector(
+      ` .phone_navigation-list.submenu#${eventId}`
     );
-  });
-  const subMenuItems = submenuList.querySelectorAll("a .phone_navigation-item");
-  subMenuItems.forEach((item) =>
-    item.addEventListener("click", () => {
-      closeMenuFn(false);
-      submenuList.classList.remove("open");
-    })
-  );
+    submenuList.classList.add("open");
+    const backItem = submenuList.querySelector(".phone_navigation-item.back");
+    backItem.addEventListener("click", () => {
+      submenuList.classList.add("closing");
+      submenuList.addEventListener(
+        "transitionend",
+        () => {
+          submenuList.classList.remove("open");
+          submenuList.classList.remove("closing");
+          return;
+        },
+        { once: true }
+      );
+    });
+    const subMenuItems = submenuList.querySelectorAll(
+      "a .phone_navigation-item"
+    );
+    subMenuItems.forEach((item) =>
+      item.addEventListener("click", () => {
+        closeMenuFn(false);
+        submenuList.classList.remove("open");
+      })
+    );
+  }
 });
+
 // Add TO Cart Product CARD
 
 const addToCartButtons = document.querySelectorAll("#add-to-cart");

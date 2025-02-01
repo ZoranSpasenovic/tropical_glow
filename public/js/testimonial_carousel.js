@@ -83,14 +83,26 @@ leftArrow.addEventListener("click", moveLeft);
 
 let touchStartX = 0;
 let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
 
 track.addEventListener("touchstart", (event) => {
   touchStartX = event.touches[0].clientX;
 });
 
-track.addEventListener("touchend", (event) => {
-  touchEndX = event.changedTouches[0].clientX;
+track.addEventListener("touchmove", (event) => {
+  touchEndX = event.touches[0].clientX;
+  touchEndY = event.touches[0].clientY;
 
+  const deltaX = touchEndX - touchStartX;
+  const deltaY = touchEndY - touchStartY;
+
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    event.preventDefault();
+  }
+});
+
+track.addEventListener("touchend", () => {
   const swipeDistance = touchEndX - touchStartX;
 
   if (swipeDistance > 50) {

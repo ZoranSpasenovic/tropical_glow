@@ -97,7 +97,7 @@ track.addEventListener("touchmove", (event) => {
   const deltaX = touchEndX - touchStartX;
   const deltaY = touchEndY - touchStartY;
 
-  if (Math.abs(deltaX) > 0.3 * Math.abs(deltaY)) {
+  if (Math.abs(deltaX) > 0.1 * Math.abs(deltaY)) {
     event.preventDefault();
   }
 });

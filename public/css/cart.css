@@ -14,7 +14,7 @@
   border-bottom: 1px solid #000;
 }
 .cart_table-headings th {
-  padding: 1rem 0;
+  padding: 1rem 0 1rem 1rem;
 }
 .cart_table-row:last-child .cart_table-product {
   margin-bottom: 1rem;
@@ -223,26 +223,29 @@
 }
 
 @media (max-width: 680px) {
+  .cart_section {
+    padding: 0;
+  }
   .cart_table-product {
     flex-direction: column;
     gap: 0.2rem;
     position: relative;
     align-items: flex-start;
+    width: 8rem;
+    padding-left: 1rem;
   }
   .cart_product-title {
     gap: 0.2rem;
-    width: 10rem;
   }
-  .cart_product-package {
-    position: absolute;
-    left: 5%;
-    bottom: 32%;
+  .cart_img {
+    width: auto;
   }
+
   .cart_qty-container {
     gap: 0;
     margin-right: 0.75rem;
   }
   .cart_product-price {
-    padding: 0 0.75rem;
+    padding: 0;
   }
 }

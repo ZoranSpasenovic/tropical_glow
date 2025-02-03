@@ -142,6 +142,9 @@
   margin-top: 1rem;
   padding-top: 1rem;
 }
+.error_message {
+  color: #805240;
+}
 @media (max-width: 850px) {
   .checkout_content {
     flex-direction: column-reverse;

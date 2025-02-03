@@ -6,13 +6,41 @@ const { Sequelize } = require("sequelize");
 const { name } = require("ejs");
 
 const validateOrder = Joi.object({
-  email: Joi.string().email().required(),
-  firstName: Joi.string().min(2).required(),
-  lastName: Joi.string().min(2).required(),
-  address: Joi.string().min(5).required(),
-  phone: Joi.string().min(9).required(),
-  postalCode: Joi.string().min(5).required(),
-  city: Joi.string().min(2).required(),
+  email: Joi.string().email().required().messages({
+    "string.empty": "Molimo vas unesite email adresu.",
+    "string.email": "Molimo vas unesite pravilnu email adresu.",
+  }),
+
+  firstName: Joi.string().min(2).required().messages({
+    "string.empty": "Molimo vas unesite ime.",
+    "string.min": "Molimo vas unesite pravilno ime.",
+  }),
+
+  lastName: Joi.string().min(2).required().messages({
+    "string.empty": "Molimo vas unesite prezime.",
+    "string.min": "Molimo vas unesite pravilno prezime.",
+  }),
+
+  address: Joi.string().min(5).required().messages({
+    "string.empty": "Molimo vas unesite adresu.",
+    "string.min": "Molimo vas unesite pravilnu adresu.",
+  }),
+
+  phone: Joi.string().min(9).required().messages({
+    "string.empty": "Molimo vas unesite broj telefona.",
+    "string.min": "Molimo vas unesite ispravan broj telefona.",
+  }),
+
+  postalCode: Joi.string().min(5).required().messages({
+    "string.empty": "Molimo vas unesite poštanski broj.",
+    "string.min": "Molimo vas unesite ispravan poštanski broj.",
+  }),
+
+  city: Joi.string().min(2).required().messages({
+    "string.empty": "Molimo vas unesite grad.",
+    "string.min": "Molimo vas unesite ispravan naziv grada.",
+  }),
+
   deliveryNote: Joi.string().allow("").optional(),
 });
 
@@ -26,13 +54,38 @@ const getCheckoutPage = async (req, res, next) => {
     totalPrice,
     cssFiles: ["/css/checkout.css"],
     jsFiles: [],
+    errors: [],
+    formData: {
+      email: "",
+      firstName: "",
+      lastName: "",
+      address: "",
+      phone: "",
+      postalCode: "",
+      city: "",
+      deliveryNote: "",
+    },
   });
 };
 
 const createOrder = async (req, res, next) => {
   try {
     await validateOrder.validateAsync(req.body);
-
+  } catch (error) {
+    const { cart, totalPrice } = await getCartProducts(req);
+    return res.render("checkout", {
+      pageTitle: "Tropical Glow - Napravi Porudzbinu",
+      cartCount: cart.length,
+      path: "/checkout",
+      cart,
+      totalPrice,
+      cssFiles: ["/css/checkout.css"],
+      jsFiles: [],
+      errors: error.details.map((err) => err.message),
+      formData: req.body,
+    });
+  }
+  try {
     const { cart, totalPrice } = await getCartProducts(req);
     const errors = [];
 
@@ -47,7 +100,7 @@ const createOrder = async (req, res, next) => {
     if (errors.length > 0) {
       return res.status(400).json({ errors });
     }
-    
+
     const orderRows = cart
       .map((item) => {
         return `      <tr>

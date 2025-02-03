@@ -7,39 +7,91 @@
       <div class="checkout_content">
         <div class="checkout_form-container">
           <form action="/checkout" method="POST" class="checkout_form">
+            <% if (errors && errors.length > 0) { %>
+            <div class="error_container">
+              <ul>
+                <% errors.forEach(error => { %>
+                <li class="error_message"><%= error %></li>
+                <% }); %>
+              </ul>
+            </div>
+            <% } %>
             <h2>Detalji o dostavi:</h2>
             <div class="checkout_form-input_group">
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
+              <input
+                value="<%= formData.email %>"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
             </div>
 
             <div class="checkout_form-input_group">
               <label for="firstName">Ime:</label>
-              <input type="text" id="firstName" name="firstName" required />
+              <input
+                value="<%= formData.firstName %>"
+                type="text"
+                id="firstName"
+                name="firstName"
+                required
+              />
             </div>
             <div class="checkout_form-input_group">
               <label for="lastName">Prezime:</label>
-              <input type="text" id="lastName" name="lastName" required />
+              <input
+                value="<%= formData.lastName %>"
+                type="text"
+                id="lastName"
+                name="lastName"
+                required
+              />
             </div>
             <div class="checkout_form-input_group">
               <label for="address">Adresa:</label>
-              <input type="text" id="address" name="address" required />
+              <input
+                value="<%= formData.address %>"
+                type="text"
+                id="address"
+                name="address"
+                required
+              />
             </div>
             <div class="checkout_form-input_group">
               <label for="phone">Telefon:</label>
-              <input type="tel" id="phone" name="phone" required />
+              <input
+                value="<%= formData.phone %>"
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+              />
             </div>
             <div class="checkout_form-input_group">
               <label for="postalCode">Poštanski broj:</label>
-              <input type="text" id="postalCode" name="postalCode" required />
+              <input
+                value="<%= formData.postalCode %>"
+                type="text"
+                id="postalCode"
+                name="postalCode"
+                required
+              />
             </div>
             <div class="checkout_form-input_group">
               <label for="city">Grad:</label>
-              <input type="text" id="city" name="city" required />
+              <input
+                value="<%= formData.city %>"
+                type="text"
+                id="city"
+                name="city"
+                required
+              />
             </div>
             <div class="checkout_form-input_group">
               <label for="deliveryNote">Poruka za dostavu:</label>
               <textarea
+                value="<%= formData.deliveryNote %>"
                 id="deliveryNote"
                 name="deliveryNote"
                 rows="4"

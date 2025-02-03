@@ -2,6 +2,7 @@ const Product = require("../models/product");
 const headings = require("../helpers/skin_concern_headings");
 const blogContent = require("../helpers/blog_content");
 const sequelize = require("../util/database");
+const { Op } = require("sequelize");
 
 const findByCtg = async (ctg) => {
   try {
@@ -112,9 +113,22 @@ const getProductDetails = (req, res, next) => {
   });
 };
 
-const getSearchPage = (req, res, next) => {
+const getSearchPage = async (req, res, next) => {
   const cartCount = req.session.cart ? req.session.cart.length : 0;
-  Product.fetchSearch(req.query.query).then((products) => {
+  const keyword = req.query.query?.trim();
+  
+  if (!keyword) {
+    res.redirect("/");
+  }
+  try {
+    const products = await Product.findAll({
+      where: {
+        [Op.or]: [
+          { name: { [Op.like]: `%${keyword}%` } },
+          { effects: { [Op.like]: `%${keyword}%` } },
+        ],
+      },
+    });
     res.render("products", {
       pageTitle: "Tropical Glow - Proizvodi",
       path: "products",
@@ -124,7 +138,10 @@ const getSearchPage = (req, res, next) => {
       jsFiles: [],
       search: req.query.query,
     });
-  });
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: "Došlo je do greške, molimo vas pokušajte ponovo" });
+  }
 };
 
 module.exports = {

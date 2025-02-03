@@ -93,12 +93,20 @@ const createOrder = async (req, res, next) => {
       const product = await Product.findByPk(item.id);
       if (!product || product.amount < item.qty) {
         errors.push(
-          `Proizvoda "${item.name}" nema dovoljno na stanju. Dostupno: ${product.amount}, trazeno : ${item.qty}`
+          `Proizvoda "${item.name}" nema dovoljno na stanju. Trenutna dostupna kolicina je :${product.amount}, hvala na razumevanju`
         );
+        return res.render("checkout", {
+          pageTitle: "Tropical Glow - Napravi Porudzbinu",
+          cartCount: cart.length,
+          path: "/checkout",
+          cart,
+          totalPrice,
+          cssFiles: ["/css/checkout.css"],
+          jsFiles: [],
+          errors,
+          formData: req.body,
+        });
       }
-    }
-    if (errors.length > 0) {
-      return res.status(400).json({ errors });
     }
 
     const orderRows = cart

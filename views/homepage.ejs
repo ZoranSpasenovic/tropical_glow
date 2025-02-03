@@ -88,7 +88,7 @@
     <section class="awards-section">
       <div class="awards_heading">
         <h1>Spa Ceylon</h1>
-        <p>najbolji wellbeing brend 2024</p>
+        <p>Najbolji Wellbeing Brend 2024</p>
       </div>
       <div class="awards_container">
         <div class="award_container">
@@ -433,7 +433,13 @@
     </section>
     <section class="vegan-section">
       <div class="vegan-img-container">
-        <img src="assets/pictures/Vegan 0.jpg" alt="vegan-products" />
+        <picture>
+          <source
+            media="(max-width:850px)"
+            srcset="/assets/pictures/TG_VEGAN.webp"
+          />
+          <img src="/assets/pictures/Vegan 0.jpg" alt="vegan-products" />
+        </picture>
       </div>
     </section>
     <%- include('layout/footer.ejs') %>

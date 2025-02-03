@@ -1,7 +1,8 @@
 const Product = require("../models/product");
+const getCartCount = require("../helpers/getCartCount");
 
 const getAdminPage = (req, res) => {
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
 
   Product.findAll().then((products) => {
     res.render("admin", {
@@ -38,7 +39,7 @@ const editProduct = (req, res, next) => {
 };
 
 const adminLogin = (req, res, next) => {
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
   res.render("adminLogin", {
     products: [],
     pageTitle: "Tropical Glow",
@@ -59,7 +60,7 @@ const adminAuth = (req, res, next) => {
 };
 const adminLogout = (req, res, next) => {
   req.session.isAdmin = false;
-  res.redirect("/")
+  res.redirect("/");
 };
 
 module.exports = {
@@ -67,5 +68,5 @@ module.exports = {
   editProduct,
   adminLogin,
   adminAuth,
-  adminLogout
+  adminLogout,
 };

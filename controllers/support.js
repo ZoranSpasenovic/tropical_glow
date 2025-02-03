@@ -1,8 +1,9 @@
 const { text } = require("express");
 const nodemailer = require("nodemailer");
+const getCartCount = require("../helpers/getCartCount");
 
 const getTermsConditionsPage = (req, res, next) => {
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
   res.render("terms_conditions", {
     pageTitle: "Uslovi koriscenja Tropical Glow",
     cssFiles: ["/css/terms.css", "/css/contactForm.css"],
@@ -13,7 +14,7 @@ const getTermsConditionsPage = (req, res, next) => {
 };
 
 const getPrivacyPolicyPage = (req, res, next) => {
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
   res.render("privacy_policy", {
     pageTitle: "Politika Privatnosti Tropical Glow",
     cssFiles: ["/css/privacyPolicy.css", "/css/contactForm.css"],

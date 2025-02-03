@@ -9,6 +9,7 @@ const {
   getSkinConcernPage,
   getBlogDetails,
   getSearchPage,
+  getAllProducts,
 } = storeControllers;
 
 const router = express.Router();
@@ -20,6 +21,8 @@ router.get("/blog", getBlog);
 router.get("/blog/:blogId", getBlogDetails);
 
 router.get("/skin_concern/:ctg", getSkinConcernPage);
+
+router.get("/proizvodi", getAllProducts);
 
 router.get("/proizvodi/:ctg", getProductsPage);
 

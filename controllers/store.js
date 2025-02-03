@@ -3,6 +3,7 @@ const headings = require("../helpers/skin_concern_headings");
 const blogContent = require("../helpers/blog_content");
 const sequelize = require("../util/database");
 const { Op } = require("sequelize");
+const getCartCount = require("../helpers/getCartCount");
 
 const findByCtg = async (ctg) => {
   try {
@@ -24,7 +25,7 @@ const findByCtg = async (ctg) => {
 };
 
 const getHomePage = (req, res, next) => {
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
   findByCtg("nova_ponuda").then((newProducts) => {
     res.render("homepage", {
       pageTitle: "Tropical Glow",
@@ -38,7 +39,7 @@ const getHomePage = (req, res, next) => {
 };
 
 const getBlog = (req, res, next) => {
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
 
   res.render("blog", {
     pageTitle: "Tropical Glow - Blog",
@@ -51,7 +52,7 @@ const getBlog = (req, res, next) => {
 };
 const getBlogDetails = (req, res, next) => {
   const blogId = req.params.blogId;
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
   const blogData = blogContent.find((blog) => blog.id === +blogId);
 
   res.render("blog_details", {
@@ -66,7 +67,7 @@ const getBlogDetails = (req, res, next) => {
 
 const getProductsPage = (req, res, next) => {
   const ctg = req.params.ctg;
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
 
   findByCtg(ctg).then((products) => {
     res.render("products", {
@@ -83,7 +84,7 @@ const getProductsPage = (req, res, next) => {
 
 const getSkinConcernPage = (req, res, next) => {
   const ctg = req.params.ctg;
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
   findByCtg(ctg).then((products) => {
     res.render("skin_concern", {
       pageTitle: "Rešenje za Svaki Izazov",
@@ -100,7 +101,7 @@ const getSkinConcernPage = (req, res, next) => {
 
 const getProductDetails = (req, res, next) => {
   const prodId = req.params.prodId;
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
   Product.findByPk(prodId).then((product) => {
     res.render("product", {
       product,
@@ -113,10 +114,25 @@ const getProductDetails = (req, res, next) => {
   });
 };
 
+const getAllProducts = (req, res, next) => {
+  const cartCount = getCartCount(req);
+  Product.findAll().then((products) => {
+    res.render("products", {
+      pageTitle: "Tropical Glow - Proizvodi",
+      path: "products",
+      products,
+      cartCount,
+      cssFiles: [],
+      jsFiles: [],
+      search: false,
+    });
+  });
+};
+
 const getSearchPage = async (req, res, next) => {
-  const cartCount = req.session.cart ? req.session.cart.length : 0;
+  const cartCount = getCartCount(req);
   const keyword = req.query.query?.trim();
-  
+
   if (!keyword) {
     res.redirect("/");
   }
@@ -139,8 +155,10 @@ const getSearchPage = async (req, res, next) => {
       search: req.query.query,
     });
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ error: "Došlo je do greške, molimo vas pokušajte ponovo" });
+    console.log(error);
+    res
+      .status(500)
+      .json({ error: "Došlo je do greške, molimo vas pokušajte ponovo" });
   }
 };
 
@@ -152,4 +170,5 @@ module.exports = {
   getSkinConcernPage,
   getBlogDetails,
   getSearchPage,
+  getAllProducts,
 };

@@ -755,6 +755,109 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
         </div>
       </div>`,
   },
+  {
+    id: 11,
+    title: `Vitamin C i Kurkuma – Tajna Prirodnog Sjaja Kože`,
+    imagePath: "/assets/pictures/slike za blog/vitaminc3.webp",
+
+    excerpt: `U svetu prirodne nege kože, vitamin C i kurkuma su postali ključni sastojci za postizanje zdravog i blistavog tena. U našoj ponudi luksuzne ajurvede, donosimo vam dva proizvoda koji sadrže ovu moćnu kombinaciju – Vitamin C Pena za čišćenje lica i Glinena maska za lice. Zahvaljujući sinergiji vitamina C i kurkume, ovi proizvodi ne samo da čiste kožu, već je i revitalizuju, ujednačavaju ten i podstiču prirodan sjaj. Evo kako ovi sastojci deluju i zašto su idealni za vašu kožu.`,
+    html: `<div class="blog_details-image_container">
+        <img
+          src="/assets/pictures/blog_details/cvitamin.webp"
+          alt="slika za blog"
+        />
+      </div>
+      <div class="blog_details-heading">
+        <h1>Vitamin C i Kurkuma – Tajna Prirodnog Sjaja Kože</h1>
+      </div
+      <div class="blog_details-content">
+        <div class="blog_details-div">
+          <p class="blog_details-paragraph">
+            U svetu prirodne nege kože, vitamin C i kurkuma su postali ključni sastojci za postizanje zdravog i blistavog tena. U našoj ponudi luksuzne ajurvede, donosimo vam dva proizvoda koji sadrže ovu moćnu kombinaciju – Vitamin C Pena za čišćenje lica i Glinena maska za lice. Zahvaljujući sinergiji vitamina C i kurkume, ovi proizvodi ne samo da čiste kožu, već je i revitalizuju, ujednačavaju ten i podstiču prirodan sjaj. Evo kako ovi sastojci deluju i zašto su idealni za vašu kožu.
+          </p> 
+        </div>
+        <div class="blog_details-div">
+          <h2 class="blog_details-paragraph_heading">
+            Vitamin C – Moćan  antioksidant za posvetljivanje i oporavak
+          </h2>
+          <p class="blog_details-paragraph">
+             Vitamin C je poznat po svom snažnom antioksidativnom dejstvu koje štiti kožu od štetnih efekata slobodnih radikala i UV zračenja. U našim proizvodima, vitamin C je prirodno poreklom iz šipurka i enzima ananasa, što znači da pruža maksimalnu efikasnost u borbi protiv tamnih fleka i pigmentacija.
+          </p>
+          <ul class="blog_details-list">
+            <li class="blog_details-list_item">
+              Posvetljava kožu: Vitamin C podstiče proizvodnju kolagena i pomaže u smanjenju tamnih fleka, što koži daje ujednačen ton i zdrav sjaj.
+            </li>
+            <li class="blog_details-list_item">
+              Usporava proces starenja: Antioksidativna svojstva vitamina C pomažu u smanjenju finih linija i bora, što kožu čini mladalačkom i elastičnom.
+            </li>
+          </ul>
+        </div>
+        <div class="blog_details-div">
+            <h2 class="blog_details-paragraph_heading">
+              Kurkuma – Antiinflamatorni eliksir za ujednačavanje tena
+            </h2>
+            <p class="blog_details-paragraph">
+             Kurkuma, poznata po svojim antiinflamatornim i antibakterijskim svojstvima, vekovima se koristi u ajurvedskoj medicini za negu kože. Njen visok sadržaj kurkumina smanjuje upale i iritacije, što je čini idealnim sastojkom za problematičnu kožu.
+            </p> 
+              <ul class="blog_details-list">
+            <li class="blog_details-list_item">
+             Smanjuje upale i akne: Kurkuma smiruje upaljene delove kože, smanjuje crvenilo i doprinosi bržem oporavku kože.
+            </li>
+            <li class="blog_details-list_item">
+              Ujednačava ten: Smanjuje hiperpigmentaciju i daje koži prirodan, zdrav sjaj.
+            </li>
+          </ul>
+        </div>
+      </div>`,
+  },
+  {
+    id: 12,
+    title: `Bakuchiol – Prirodna Zamena Za Retinol Bez Nuspojava`,
+    imagePath: "/assets/pictures/slike za blog/bakuchiol.webp",
+
+    excerpt: `Retinol je dugo bio zlatni standard u anti-age nezi kože, ali sa sobom nosi rizik iritacije i osetljivosti, posebno kod onih sa osetljivom kožom. Srećom, bakuchiol, prirodni biljni sastojak, nudi alternativu sa sličnim prednostima bez rizika od nuspojava.`,
+    html: `<div class="blog_details-image_container">
+        <img
+          src="/assets/pictures/blog_details/bakuchiol.webp"
+          alt="slika za blog"
+        />
+      </div>
+      <div class="blog_details-heading">
+        <h1>Bakuchiol – Prirodna Zamena Za Retinol Bez Nuspojava</h1>
+      </div>
+      <div class="blog_details-content">
+        <div class="blog_details-div">
+          <p class="blog_details-paragraph">
+            Retinol je dugo bio zlatni standard u anti-age nezi kože, ali sa sobom nosi rizik iritacije i osetljivosti, posebno kod onih sa osetljivom kožom. Srećom, bakuchiol, prirodni biljni sastojak, nudi alternativu sa sličnim prednostima bez rizika od nuspojava.
+          </p>
+        </div>
+        <div class="blog_details-div">
+          <h2 class="blog_details-paragraph_heading">
+            Šta je Bakuciol i zašto ga volimo?
+          </h2>
+          <p class="blog_details-paragraph">
+           Bakuchiol je ekstrakt iz biljke Psoralea corylifolia, poznat kao ajurvedska čudotvorna biljka zbog svojih brojnih blagotvornih efekata na kožu. Njegova najveća prednost leži u tome što je dovoljno blag i siguran za sve tipove kože, a istovremeno nudi slične efekte kao retinol – stimulaciju proizvodnje kolagena, obnavljanje ćelija i ujednačavanje tona kože. S obzirom na to da ne izaziva iritacije i nije fotosenzitivan, bakuchiol se može koristiti tokom dana bez bojazni od reakcija na sunce, čineći ga idealnim izborom za negu u bilo koje doba.
+          </p>
+          <p class="blog_details-div"> U našoj ponudi izdvajamo Bakučiol kremu i Bakučiol serum, dva proizvoda osmišljena da pruže sveobuhvatnu negu uz revitalizaciju kože, inspirisanu tropskim rajem. </p>
+        </div>
+        <div class="blog_details-div">
+          <h2 class="blog_details-paragraph_heading">
+            Bakuchiol krema: Ultra-hranjivi podmladjujući tretman
+          </h2>
+          <p class="blog_details-paragraph">
+           Naša bogata Bakuchiol krema sadrži moćne sastojke kao što su devičansko kokosovo ulje, ulje pirinčanih mekinja, badem, pšenične klice i moringa. Ova kombinacija pomaže u dubinskoj hidrataciji, obnovi i zaštiti kože, pružajući joj blistav sjaj i mladalački izgled. Hamamelis, zeleni čaj i ulje semenki grožđa dodatno jačaju zaštitu kože od slobodnih radikala – glavnih uzročnika starenja.
+          </p>
+        </div>
+        <div class="blog_details-div">
+          <h2 class="blog_details-paragraph_heading">
+            Bakuchiol serum: Intenzivna obnova za čvrstu i hidriranu kožu
+          </h2>
+          <p class="blog_details-paragraph">
+            Ovaj tretman sadrži četvorodimenzionalnu hijaluronsku kiselinu koja duboko hidrira i ubrzava regeneraciju kože, omogućavajući vam da uživate u koži koja je glatka, hidrirana i čvrsta. Kombinacija bakuchiola sa moćnim nevenom, hamamelisom i prirodnim probioticima smiruje i obnavlja kožu, jačajući njen prirodni balans.
+          </p>
+        </div>
+      </div>`,
+  },
 ];
 
 module.exports = blogContent;

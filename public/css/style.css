@@ -81,13 +81,13 @@ footer {
   padding: 0;
   z-index: 10;
 }
-.navigation-list-item a:hover {
-  cursor: pointer;
-}
-
 .navigation-list-item a {
   text-decoration: none;
   color: #faf9f7;
+  font-size: 1.25rem;
+}
+.navigation-list-item a:hover {
+  cursor: pointer;
 }
 
 .navigation-list-item a.scrolled-link {

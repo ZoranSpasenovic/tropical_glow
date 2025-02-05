@@ -4,6 +4,7 @@ const blogContent = require("../helpers/blog_content");
 const sequelize = require("../util/database");
 const { Op } = require("sequelize");
 const getCartCount = require("../helpers/getCartCount");
+const naturalEffects = require("../helpers/natural_effects");
 
 const findByCtg = async (ctg) => {
   try {
@@ -99,18 +100,23 @@ const getSkinConcernPage = (req, res, next) => {
   });
 };
 
-const getProductDetails = (req, res, next) => {
+const getProductDetails = async (req, res, next) => {
   const prodId = req.params.prodId;
   const cartCount = getCartCount(req);
-  Product.findByPk(prodId).then((product) => {
-    res.render("product", {
-      product,
-      pageTitle: product.name,
-      path: "products",
-      cartCount,
-      cssFiles: ["/css/product.css"],
-      jsFiles: ["/js/product_detail.js"],
-    });
+  const product = await Product.findByPk(prodId);
+  const naturalIngredients = {};
+  product.natural.forEach(
+    (item) => (naturalIngredients[item] = naturalEffects[item])
+  );
+
+  res.render("product", {
+    product,
+    pageTitle: product.name,
+    path: "products",
+    cartCount,
+    cssFiles: ["/css/product.css"],
+    jsFiles: ["/js/product_detail.js"],
+    naturalIngredients,
   });
 };
 

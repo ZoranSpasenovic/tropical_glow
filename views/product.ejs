@@ -53,7 +53,12 @@
               <p class="details" id="effects-details"><%= product.effects %></p>
               <p class="details" id="skin-details"><%= product.skin %></p>
               <p class="details" id="use-details"><%= product.use %></p>
-              <p class="details" id="natural-details"><%= product.natural %></p>
+              <ul class="details list" id="natural-details">
+                <% for(const key in naturalIngredients) { %>
+                <span><%=key%></span>
+                <li><%=naturalIngredients[key]%></li>
+                <%}%>
+              </ul>
               <p class="details" id="ingrd-details">
                 <%= product.ingredients %>
               </p>

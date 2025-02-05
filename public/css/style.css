@@ -1058,7 +1058,6 @@ footer {
     -webkit-line-clamp: 8;
     line-clamp: 8;
     font-size: 1.2rem;
-    text-align: left;
   }
 }
 @media (max-width: 400px) {

@@ -93,7 +93,7 @@ const getSkinConcernPage = (req, res, next) => {
       products,
       header: headings[ctg],
       cartCount,
-      cssFiles: [],
+      cssFiles: ["/css/skin_concern.css"],
       jsFiles: [],
     });
   });

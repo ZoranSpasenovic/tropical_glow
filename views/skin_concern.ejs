@@ -24,15 +24,17 @@
       </div>
       <div class="products_container">
         <% products.forEach((product) => { %>
-        <div class="product_card">
-          <img src="/assets/pictures/products/<%= product.image %>.webp" />
+        <a href="/proizvod/<%= product.id %>">
+          <div class="product_card">
+            <img src="/assets/pictures/products/<%= product.image %>.webp" />
 
-          <h3 class="product_title"><%= product.name %></h3>
-          <p class="product_price"><%= product.price %>RSD</p>
-          <button data-id="<%= product.id %>" id="add-to-cart">
-            Dodaj u korpu
-          </button>
-        </div>
+            <h3 class="product_title"><%= product.name %></h3>
+            <p class="product_price"><%= product.price %>RSD</p>
+            <button data-id="<%= product.id %>" id="add-to-cart">
+              Dodaj u korpu
+            </button>
+          </div></a
+        >
         <% }) %>
       </div>
     </section>

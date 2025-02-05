@@ -1058,6 +1058,7 @@ footer {
     -webkit-line-clamp: 8;
     line-clamp: 8;
     font-size: 1.2rem;
+    hyphens: auto;
   }
 }
 @media (max-width: 400px) {
@@ -1067,7 +1068,6 @@ footer {
   .blog-text {
     -webkit-line-clamp: 7;
     line-clamp: 7;
-    font-size: 1.2rem;
   }
   .blog-content a {
     margin-top: 1rem;

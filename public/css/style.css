@@ -637,7 +637,6 @@ header.header_phone {
   flex: 1 1 50%;
   color: #3b5947;
   max-width: 400px;
-  text-align: left;
 }
 .blog-content a {
   text-transform: uppercase;
@@ -661,7 +660,8 @@ header.header_phone {
 .blog-text {
   margin-top: 1rem;
   line-height: 1.5;
-  text-align: justify;
+  text-align: justify !important;
+  -webkit-text-align: justify;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 18;
@@ -1068,7 +1068,6 @@ footer {
     -webkit-line-clamp: 7;
     line-clamp: 7;
     font-size: 1.2rem;
-    text-align: left;
   }
   .blog-content a {
     margin-top: 1rem;

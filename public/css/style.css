@@ -657,6 +657,11 @@ header.header_phone {
   line-height: 2;
   font-weight: 500;
 }
+@supports (-webkit-touch-callout: none) {
+  .blog-text {
+    text-align: left !important;
+  }
+}
 .blog-text {
   margin-top: 1rem;
   line-height: 1.5;

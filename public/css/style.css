@@ -657,11 +657,7 @@ header.header_phone {
   line-height: 2;
   font-weight: 500;
 }
-@supports (-webkit-touch-callout: none) {
-  .blog-text {
-    text-align: left !important;
-  }
-}
+
 .blog-text {
   margin-top: 1rem;
   line-height: 1.5;
@@ -671,12 +667,6 @@ header.header_phone {
   -webkit-line-clamp: 18;
   line-clamp: 18;
   overflow: hidden !important;
-}
-
-.blog-bold-text {
-  font-weight: 600;
-  margin-top: 1.5rem;
-  display: block;
 }
 
 /* SKIN CONCERN SECTION */
@@ -896,9 +886,7 @@ footer {
 
     font-size: 1.3rem;
   }
-  .blog-bold-text {
-    margin-top: 0.5rem;
-  }
+
   .blog-cards-container {
     gap: 1rem;
     padding: 1.5rem;

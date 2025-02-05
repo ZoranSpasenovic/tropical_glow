@@ -670,7 +670,7 @@ header.header_phone {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 18;
   line-clamp: 18;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .blog-bold-text {

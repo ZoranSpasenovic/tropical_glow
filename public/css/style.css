@@ -302,7 +302,7 @@ header.header_phone {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
 }
 .phone_navigation-item.back {
   justify-content: flex-start;
@@ -619,8 +619,8 @@ header.header_phone {
 .blog-item-container {
   display: flex;
   flex-wrap: nowrap;
-  gap: 2rem;
-  padding: 2rem 8rem;
+  gap: 4rem;
+  padding: 2rem 6rem 2rem 9rem;
   border-bottom: 1px solid #3b5947;
 }
 
@@ -863,14 +863,8 @@ footer {
   .blog-video-container {
     flex-grow: 2;
   }
-  /* .blog-video-container {
-    width: 90%;
-    align-items: center;
-  } */
+
   .blog-item-container {
-    /* flex-direction: column;
-    align-items: center;
-    justify-content: center; */
     padding: 1rem;
     gap: 1rem;
   }
@@ -883,7 +877,6 @@ footer {
   }
   .blog-text {
     margin-top: 0.5rem;
-
     font-size: 1.3rem;
   }
 

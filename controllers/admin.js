@@ -10,8 +10,8 @@ const getAdminPage = (req, res) => {
       pageTitle: "Tropical Glow",
       path: "admin",
       cartCount,
-      cssFiles: [],
-      jsFiles: [],
+      cssFiles: ["/css/admin.css"],
+      jsFiles: ["/js/admin.js"],
     });
   });
 };

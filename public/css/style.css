@@ -395,7 +395,8 @@ header.header_phone {
   display: flex;
   justify-content: flex-start;
   gap: 10rem;
-  animation: scroll-left 8s linear infinite;
+  width: max-content;
+  animation: scroll-left 16s linear infinite;
 }
 
 .marketing span {

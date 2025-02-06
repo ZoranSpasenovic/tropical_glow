@@ -40,3 +40,14 @@ edit_buttons.forEach((btn) => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollPosition = localStorage.getItem("scrollPosition");
+  if (scrollPosition) {
+    window.scrollTo(0, parseInt(scrollPosition));
+  }
+
+  window.addEventListener("scroll", function () {
+    localStorage.setItem("scrollPosition", window.scrollY);
+  });
+});

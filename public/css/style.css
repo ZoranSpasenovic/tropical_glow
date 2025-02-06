@@ -48,7 +48,7 @@ footer {
   color: inherit;
 }
 .scrolled {
-  background-color: #faf9f7;
+  background-color: #f9f5f2;
   color: #3b5947;
 }
 .cart_icon {
@@ -250,7 +250,7 @@ header.header_phone {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #faf9f7;
+  background-color: #f9f5f2;
   z-index: 10;
   height: 100vh;
   transition: transform 0.3 ease, opacity 0.3s ease;
@@ -371,7 +371,7 @@ header.header_phone {
   border-radius: 2px;
 }
 .buy_now-button button.scrolled {
-  background-color: #faf9f7;
+  background-color: #f9f5f2;
   color: #3b5947;
 }
 
@@ -928,7 +928,7 @@ footer {
     font-family: SeasonsLight;
   }
   .header_phone.scrolled {
-    background-color: #faf9f7;
+    background-color: #f9f5f2;
     color: #3b5947;
   }
   .phone_logo {
@@ -1051,7 +1051,6 @@ footer {
     font-size: 12px;
   }
   .skin-concern-card h3 {
-    
     font-size: 0.95rem;
   }
 }

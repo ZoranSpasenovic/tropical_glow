@@ -60,12 +60,14 @@
 .product_title {
   font-size: 1.2rem;
   display: flex;
+  font-weight: 600;
   align-items: center;
   font-family: SeasonsLight;
 }
 
 .product_price {
   font-size: 1.2rem;
+  font-weight: 300;
 }
 
 .product_price.original_price {

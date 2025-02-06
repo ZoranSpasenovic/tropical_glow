@@ -155,14 +155,14 @@ footer {
 .products_menu-item {
   font-size: 1rem;
   padding: 0.5rem;
-  /* border-bottom: 1px solid rgb(190, 185, 185); */
+
   cursor: pointer;
   z-index: 100;
 }
 .products_menu-item:hover {
   background-color: #e7e7e7;
-  /* font-weight: 700; */
-  /* color: #3b5947; */
+
+  color: #3b5947;
 }
 .search:hover {
   cursor: pointer;
@@ -377,14 +377,14 @@ header.header_phone {
 .marketing_section {
   width: 100%;
   height: 50px;
-  overflow: hidden;
-  padding: 1rem;
+  padding: 1rem 0;
   position: absolute;
   bottom: 0;
 }
 
 .marketing_container {
   position: relative;
+  overflow: hidden;
   width: 100%;
   display: flex;
   align-items: center;
@@ -393,8 +393,9 @@ header.header_phone {
 
 .marketing {
   display: flex;
-  gap: 2rem;
-  animation: scroll-left 15s linear infinite;
+  justify-content: flex-start;
+  gap: 10rem;
+  animation: scroll-left 8s linear infinite;
 }
 
 .marketing span {
@@ -407,10 +408,10 @@ header.header_phone {
 
 @keyframes scroll-left {
   0% {
-    transform: translateX(140%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-140%);
+    transform: translateX(calc(-100% / 5));
   }
 }
 
@@ -787,6 +788,7 @@ footer {
 }
 .footer_navigation-list a {
   display: block;
+  font-size: 1.25rem;
 }
 @media (max-width: 1150px) {
   .blog-text {

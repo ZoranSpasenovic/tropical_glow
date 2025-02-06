@@ -18,7 +18,14 @@ const getAdminPage = (req, res) => {
 const editProduct = (req, res, next) => {
   const id = req.params.prodId;
 
-  const { price, amount, sale_price, sale_check = false } = req.body;
+  const {
+    price,
+    amount,
+    sale_price,
+    package,
+    unit,
+    sale_check = false,
+  } = req.body;
 
   Product.update(
     {
@@ -26,6 +33,8 @@ const editProduct = (req, res, next) => {
       amount: +amount,
       sale_price: +sale_price,
       sale: sale_check ? true : false,
+      package: +package,
+      unit: unit,
     },
     {
       where: {

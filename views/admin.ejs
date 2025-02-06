@@ -33,6 +33,23 @@
                   name="amount"
                   value="<%= product.amount %>"
               /></label>
+              <label class="edit-label" for="package"
+              >Pakovanje:
+              <input
+                type="number"
+                class="edit-input"
+                name="package"
+                value="<%= product.package %>"
+            /></label>
+            <label class="edit-label" for="package"
+            >jedinica:
+            <input
+              type="string"
+              class="edit-input"
+              name="unit"
+              value="<%= product.unit %>"
+          /></label>
+
               <div class="admin-sale">
                 <label for="sale_price" class="sale-label_check"
                   >Popust: <input type="checkbox" <%= product.sale ? "checked" :

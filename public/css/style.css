@@ -355,10 +355,11 @@ header.header_phone {
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: 3rem;
+  bottom: 4rem;
   width: 100%;
   z-index: 10;
 }
+
 .buy_now-button button {
   margin: auto;
   padding: 0.5rem 1.5rem;
@@ -367,7 +368,13 @@ header.header_phone {
   border: 0.5px solid #faf9f7;
   font-size: 1.2rem;
   font-family: "Montserrat";
+  border-radius: 2px;
 }
+.buy_now-button button.scrolled {
+  background-color: #faf9f7;
+  color: #3b5947;
+}
+
 .buy_now-button button:hover {
   cursor: pointer;
 }
@@ -393,10 +400,10 @@ header.header_phone {
 
 .marketing {
   display: flex;
-  justify-content: flex-start;
-  gap: 10rem;
+  justify-content: flex-end;
+
   width: max-content;
-  animation: scroll-left 16s linear infinite;
+  animation: scroll-left 8s linear infinite;
 }
 
 .marketing span {
@@ -405,6 +412,7 @@ header.header_phone {
   color: #faf9f7;
   font-family: "Montserrat";
   text-transform: uppercase;
+  padding: 0 5rem;
 }
 
 @keyframes scroll-left {
@@ -412,7 +420,7 @@ header.header_phone {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% / 5));
+    transform: translateX(calc(-10%));
   }
 }
 
@@ -699,6 +707,7 @@ header.header_phone {
 }
 .skin-concern-card h3 {
   color: #3b5947;
+  font-size: 1.25rem;
 }
 
 /* ABOUT US SECTION */
@@ -895,12 +904,9 @@ footer {
   }
   .skin-concern-heading {
     padding: 1rem 0;
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
-  .skin-concern-card h3 {
-    color: #3b5947;
-    font-size: 0.8rem;
-  }
+
   /* header for phone */
   header {
     display: none;

@@ -31,8 +31,12 @@
 .blog_underline-heading {
   position: relative;
   text-align: center;
-  font-size: x-large;
+  font-size: 1.25rem;
   margin-top: 0.5rem;
+  font-family: SeasonsLight;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
 }
 
 .blog_underline-heading::after {
@@ -59,13 +63,8 @@
   padding: 0 1rem 1rem;
   gap: 1rem;
   flex: 1;
-  font-size: 0.75rem;
 }
-.blog_card-content h3 {
-  text-align: center;
-  width: 100%;
-  font-size: 2em;
-}
+
 .blog_card-content p {
   line-height: 1.5;
   display: -webkit-box;
@@ -73,7 +72,9 @@
   -webkit-line-clamp: 4;
   line-clamp: 4;
   overflow: hidden;
-  font-size: 1.5em;
+  text-align: left;
+
+  font-size: 1.125em;
 }
 .blog_card-content a {
   text-transform: uppercase;

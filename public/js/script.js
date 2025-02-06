@@ -16,6 +16,7 @@ const phoneDropMenu = document.querySelector(".phone_drop-menu");
 const closeMenu = phoneDropMenu.querySelector("#drop_menu-close");
 const openMenu = phoneDropMenu.querySelector("#drop_menu-open");
 const navigationMenu = phoneDropMenu.querySelector(".phone_menu-navigation");
+const buyNow = document.querySelector(".buy_now-button button");
 
 // SCROLL HEADER LOGIC
 
@@ -24,6 +25,7 @@ const scrollEffect = () => {
     if (window.scrollY > 1) {
       header.classList.add("scrolled");
       phoneHeader.classList.add("scrolled");
+      buyNow.classList.add("scrolled")
       links.forEach((link) => link.classList.add("scrolled-link"));
       productsMenu.style.backgroundColor = "#faf9f7";
       skinConcernMenu.style.backgroundColor = "#faf9f7";
@@ -33,6 +35,7 @@ const scrollEffect = () => {
       }
       header.classList.remove("scrolled");
       phoneHeader.classList.remove("scrolled");
+      buyNow.classList.remove("scrolled")
       links.forEach((link) => link.classList.remove("scrolled-link"));
       productsMenu.style.backgroundColor = "transparent";
       skinConcernMenu.style.backgroundColor = "transparent";

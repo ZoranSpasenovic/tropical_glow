@@ -10,7 +10,7 @@
             src="/assets/pictures/products/<%=product.image%>.webp"
             alt="slika prozivoda"
           />
-          <span class="package">100ml</span>
+          <span class="package"><%=product.package%><%=product.unit%></span>
           <% if(product.amount < 1) { %>
           <p class="product_detail-out_of_stock">Nema na stanju</p>
           <% } else { %>

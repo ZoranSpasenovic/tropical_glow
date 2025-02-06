@@ -1050,6 +1050,10 @@ footer {
   html {
     font-size: 12px;
   }
+  .skin-concern-card h3 {
+    
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 450px) {

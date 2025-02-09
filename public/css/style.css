@@ -329,7 +329,6 @@ header.header_phone {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  visibility: hidden;
 }
 .hero_content {
   width: 100%;

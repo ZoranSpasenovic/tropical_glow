@@ -232,20 +232,3 @@ window.addEventListener("pageshow", function () {
     cardsSlideShow.style.animationPlayState = "running";
   }
 });
-
-// BACKGROUND VIDEo
-const updatePoster = () => {
-  const backgroundVideo = document.querySelector(".background-video");
-  if (window.innerWidth < 850) {
-    backgroundVideo.poster = "/assets/videos/posteri/bakuchiol.webp";
-  } else {
-    backgroundVideo.poster = "/assets/videos/posteri/tropicalglow.webp";
-  }
-  backgroundVideo.style.visibility = "visible";
-};
-document.addEventListener("DOMContentLoaded", () => {
-  updatePoster();
-});
-document.addEventListener("resize", () => {
-  updatePoster();
-});

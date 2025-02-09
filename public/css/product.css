@@ -169,6 +169,7 @@
   transform: translate(0);
   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s ease;
 }
+
 .details {
   line-height: 1.5;
   border-top: 1px solid #3b5947;
@@ -179,10 +180,11 @@
 }
 .details.list {
   list-style-type: circle;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 0.4rem;
 }
+
 .details.list span {
   font-weight: 500;
 }

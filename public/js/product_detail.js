@@ -43,6 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
         backBtnText.textContent = "Sastav";
       }
       detailsItem.style.display = "block";
+      if (item.dataset.id === "4") {
+        detailsItem.style.display = "flex";
+      }
       const backBtn = productDetailsDiv.querySelector(
         ".product_detail-back_btn"
       );

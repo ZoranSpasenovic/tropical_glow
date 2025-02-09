@@ -29,5 +29,14 @@
   }
   .contact_form {
     margin-top: 1rem;
+    width: 85%;
+  }
+}
+@media (max-width: 680px) {
+  .contact_form {
+    width: 95%;
+  }
+  .email_contact-container {
+    width: 95%;
   }
 }

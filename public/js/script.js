@@ -25,7 +25,7 @@ const scrollEffect = () => {
     if (window.scrollY > 1) {
       header.classList.add("scrolled");
       phoneHeader.classList.add("scrolled");
-      buyNow.classList.add("scrolled")
+      buyNow.classList.add("scrolled");
       links.forEach((link) => link.classList.add("scrolled-link"));
       productsMenu.style.backgroundColor = "#faf9f7";
       skinConcernMenu.style.backgroundColor = "#faf9f7";
@@ -35,7 +35,7 @@ const scrollEffect = () => {
       }
       header.classList.remove("scrolled");
       phoneHeader.classList.remove("scrolled");
-      buyNow.classList.remove("scrolled")
+      buyNow.classList.remove("scrolled");
       links.forEach((link) => link.classList.remove("scrolled-link"));
       productsMenu.style.backgroundColor = "transparent";
       skinConcernMenu.style.backgroundColor = "transparent";
@@ -231,4 +231,21 @@ window.addEventListener("pageshow", function () {
   if (cardsSlideShow) {
     cardsSlideShow.style.animationPlayState = "running";
   }
+});
+
+// BACKGROUND VIDEo
+const updatePoster = () => {
+  const backgroundVideo = document.querySelector(".background-video");
+  if (window.innerWidth < 850) {
+    backgroundVideo.poster = "/assets/videos/posteri/bakuchiol.webp";
+  } else {
+    backgroundVideo.poster = "/assets/videos/posteri/tropicalglow.webp";
+  }
+  backgroundVideo.style.visibility = "visible";
+};
+document.addEventListener("DOMContentLoaded", () => {
+  updatePoster();
+});
+document.addEventListener("resize", () => {
+  updatePoster();
 });

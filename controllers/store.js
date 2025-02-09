@@ -46,7 +46,7 @@ const getBlog = (req, res, next) => {
     pageTitle: "Tropical Glow - Blog",
     path: "blog",
     cssFiles: ["/css/blog.css"],
-    jsFiles: [],
+    jsFiles: ["/js/blog.js"],
     cartCount,
     blogContent,
   });

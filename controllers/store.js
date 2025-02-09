@@ -77,7 +77,7 @@ const getProductsPage = (req, res, next) => {
       products,
       cartCount,
       cssFiles: [],
-      jsFiles: [],
+      jsFiles: ["/js/products.js"],
       search: false,
     });
   });
@@ -95,7 +95,7 @@ const getSkinConcernPage = (req, res, next) => {
       header: headings[ctg],
       cartCount,
       cssFiles: ["/css/skin_concern.css"],
-      jsFiles: [],
+      jsFiles: ["/js/products.js"],
     });
   });
 };

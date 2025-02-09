@@ -18,6 +18,34 @@ body {
 section {
   height: auto;
 }
+/* LOADER */
+/* Loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: rotate 2.5s linear infinite;
+  color: #3b5947;
+}
+
+.loader svg {
+  width: 130px;
+  height: 130px;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /* Header */
 
@@ -283,8 +311,9 @@ header.header_phone {
   top: 0;
   right: 0;
   left: 0;
+  bottom: 0;
   z-index: 20;
-  background-color: #faf9f7;
+  background-color: #f9f5f2;
 }
 .phone_navigation-list.submenu.open {
   visibility: visible;

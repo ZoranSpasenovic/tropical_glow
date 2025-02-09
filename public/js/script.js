@@ -232,3 +232,16 @@ window.addEventListener("pageshow", function () {
     cardsSlideShow.style.animationPlayState = "running";
   }
 });
+
+// LOADER LOGIC
+
+const loader = document.querySelector(".loader");
+if (
+  window.location.pathname === "/" ||
+  window.location.pathname === "/korpa" ||
+  window.location.pathname === "/checkout"
+) {
+  window.addEventListener("load", () => {
+    loader.style.display = "none";
+  });
+}

@@ -550,7 +550,7 @@ header.header_phone {
 /* TESTIMONIALS section */
 .testimonial-header-container {
   text-align: center;
-  padding: 3.5rem;
+  padding: 7rem 3.5rem 3.5rem;
   font-size: 3rem;
   color: #3e5d4b;
 }
@@ -663,17 +663,17 @@ header.header_phone {
 }
 
 .blog-item-heading {
-  font-size: 1.5rem;
+  font-size: 2.3rem;
   line-height: 1.5;
   font-weight: 600;
   font-family: SeasonsLight;
+  word-spacing: 1rem;
 }
 
 .blog-text {
   margin-top: 1rem;
   line-height: 1.5;
-  text-align: justify !important;
-  -webkit-text-align: justify;
+  text-align: left;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 18;
@@ -879,7 +879,7 @@ footer {
   }
 
   .blog-item-container {
-    padding: 1rem;
+    padding: 1rem 0.5rem 1rem 1rem;
     gap: 1rem;
   }
   .blog-content {
@@ -891,7 +891,7 @@ footer {
   }
   .blog-text {
     margin-top: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .blog-cards-container {
@@ -1055,6 +1055,21 @@ footer {
   .skin-concern-card h3 {
     font-size: 0.95rem;
   }
+  .stats-section {
+    padding: 5rem 2rem;
+    justify-content: space-between;
+    gap: unset;
+  }
+  .stats-number {
+    font-size: 4rem;
+  }
+  .stats-description {
+    font-size: 2rem;
+  }
+  .blog-item-heading {
+    word-spacing: 0px;
+    font-size: 1.625rem;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1066,6 +1081,12 @@ footer {
     line-clamp: 8;
     font-size: 1.2rem;
     hyphens: auto;
+  }
+  .stats-number {
+    font-size: 3rem;
+  }
+  .stats-description {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 400px) {

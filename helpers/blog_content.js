@@ -96,13 +96,10 @@ const blogContent = [
         />
       </div>
       <div class="blog_details-heading">
-        <h1>Spa Ceylon: Naš partner u ponudi prirodnog luksuza</h1>
+        <h1>Kako koža zna da li je dan ili noć?  </h1>
       </div>
       <div class="blog_details-content">
         <div class="blog_details-div">
-          <h2 class="blog_details-paragraph_heading">
-            Kako koža zna da li je dan ili noć?
-          </h2>
           <p class="blog_details-paragraph">
             Itekako zna. Kada je reč o nezi kože, nije svejedno koje proizvode
             koristimo u različitim delovima dana. Naša koža ima različite
@@ -696,7 +693,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
         />
       </div>
       <div class="blog_details-heading">
-        <h1>Efekat glinenih maski na sužavanje pora na licu</h1>
+        <h1>Strategije za borbu protiv "Strawberry Skin"</h1>
       </div>
       <div class="blog_details-content">
         <div class="blog_details-div">

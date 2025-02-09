@@ -13,7 +13,11 @@
             <img src="<%=blog.imagePath %>" alt="<%=blog.title%>" />
           </div>
           <div class="blog_card-content">
-            <h2 class="blog_underline-heading"><%=blog.title%></h2>
+            <div class="blog_underline-heading">
+              <h2><%=blog.title%></h2>
+              <div class="blog_underline"></div>
+            </div>
+            
             <p><%=blog.excerpt %></p>
             <a href="/blog/<%=blog.id %>">Pročitaj više</a>
           </div>

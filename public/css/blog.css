@@ -29,24 +29,31 @@
 }
 
 .blog_underline-heading {
-  position: relative;
   text-align: center;
   font-size: 1.25rem;
-  margin-top: 0.5rem;
-  font-family: SeasonsLight;
-  font-weight: 600;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
+  min-height: 5.3rem;
 }
 
-.blog_underline-heading::after {
-  content: "";
-  display: block;
+.blog_underline-heading h2 {
+  font-weight: 600;
+  text-align: center;
+  font-family: SeasonsLight;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  flex: 2;
+}
+.blog_underline {
   width: 45%;
   height: 0.5px;
-  margin: 0 auto;
-  margin-top: 1rem;
   background-color: #3b5947;
+  margin: auto;
+  font-weight: 500;
 }
 
 .blog_img-container img {
@@ -60,7 +67,7 @@
   align-items: start;
   justify-content: space-between;
   color: #3b5947;
-  padding: 0 1rem 1rem;
+  padding: 0 1.5rem 1rem;
   gap: 1rem;
   flex: 1;
 }
@@ -74,19 +81,23 @@
   overflow: hidden;
   text-align: left;
 
-  font-size: 1.125em;
+  font-size: 0.9rem;
 }
 .blog_card-content a {
   text-transform: uppercase;
   text-decoration: underline;
   text-underline-offset: 0.6rem;
   text-decoration-thickness: 0.5px;
-  font-size: 1.33em;
+  font-size: 0.9rem;
 }
 .blog_card-content a:hover {
   color: rgb(109, 149, 121);
 }
-
+@media (max-width: 1197px) {
+  .blog_underline-heading h2 {
+    font-size: 1.3rem;
+  }
+}
 @media (max-width: 950px) {
   .blog_cards-container {
     grid-template-columns: repeat(2, 1fr);
@@ -100,5 +111,12 @@
 @media (max-width: 680px) {
   .blog_cards-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .blog_underline-heading {
+    gap: 1rem;
+    min-height: fit-content;
+  }
+  .blog_underline-heading h2 {
+    font-size: 2rem;
   }
 }

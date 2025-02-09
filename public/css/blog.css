@@ -123,4 +123,7 @@
   .blog_underline-heading h2 {
     font-size: 2rem;
   }
+  .blog_underline-heading h2 {
+    font-weight: 400;
+  }
 }

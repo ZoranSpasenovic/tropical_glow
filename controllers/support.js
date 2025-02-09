@@ -12,6 +12,16 @@ const getTermsConditionsPage = (req, res, next) => {
     path: "",
   });
 };
+const getContactPage = (req, res, next) => {
+  const cartCount = getCartCount(req);
+  res.render("contact", {
+    pageTitle: "Tropical Glow - Kontaktirajte nas",
+    cssFiles: ["/css/contactForm.css", "/css/contact.css"],
+    jsFiles: [],
+    cartCount,
+    path: "",
+  });
+};
 
 const getPrivacyPolicyPage = (req, res, next) => {
   const cartCount = getCartCount(req);
@@ -53,4 +63,9 @@ const sendMessage = async (req, res, next) => {
   res.redirect("/");
 };
 
-module.exports = { getTermsConditionsPage, sendMessage, getPrivacyPolicyPage };
+module.exports = {
+  getTermsConditionsPage,
+  sendMessage,
+  getPrivacyPolicyPage,
+  getContactPage,
+};

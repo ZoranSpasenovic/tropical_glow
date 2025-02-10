@@ -6,5 +6,5 @@ document.addEventListener("DOMContentLoaded", () => {
     loader.style.display = "none";
     products.style.opacity = "1";
     if (headerContent) headerContent.style.opacity = "1";
-  }, 500);
+  }, 350);
 });

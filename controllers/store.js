@@ -58,11 +58,11 @@ const getBlogDetails = (req, res, next) => {
 
   res.render("blog_details", {
     pageTitle: "Tropical Glow - Proizvodi",
-    path: "products",
+    path: "blog",
     blogData,
     cartCount,
     cssFiles: ["/css/blogDetails.css", "/css/contactForm.css"],
-    jsFiles: [],
+    jsFiles: ["/js/blogDetails.js"],
   });
 };
 

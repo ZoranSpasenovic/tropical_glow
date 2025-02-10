@@ -82,3 +82,15 @@ tableBody?.addEventListener("click", async (event) => {
     window.location.reload();
   }
 });
+
+// LOADER
+const loader = document.querySelector(".loader");
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cart = document.querySelector(".cart_section");
+
+  setTimeout(() => {
+    loader.style.display = "none";
+    cart.style.opacity = "1";
+  }, 350);
+});

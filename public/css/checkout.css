@@ -1,5 +1,7 @@
 .checkout_section {
   padding: 2rem 3rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 .checkout_content {
   display: flex;

@@ -1,11 +1,8 @@
 import { addToCartFn } from "/js/helpFns/addToCart.js";
 
 // SHOWING DETAILS LOGIC
-
+const productDetailSection = document.querySelector(".product_details-section");
 document.addEventListener("DOMContentLoaded", () => {
-  const productDetailSection = document.querySelector(
-    ".product_details-section"
-  );
   const productDetails = document.querySelector(
     ".product_detail-content_container"
   );
@@ -65,18 +62,29 @@ const removeQty = document.querySelector(".fa-minus");
 const qty = document.querySelector(".qty_value");
 const cartCount = document.querySelector(".cart_count");
 
-addQty.addEventListener("click", () => {
+addQty?.addEventListener("click", () => {
   qty.value = +qty.value + 1;
 });
-removeQty.addEventListener("click", () => {
+removeQty?.addEventListener("click", () => {
   if (qty.value === "1") {
     return;
   }
   qty.value = +qty.value - 1;
 });
-const prodId = addToCart.dataset.id;
-addToCart.addEventListener("click", async () => {
+const prodId = addToCart?.dataset.id;
+addToCart?.addEventListener("click", async () => {
   const req = { qty: +qty.value, id: +prodId };
   const data = await addToCartFn(req);
   cartCount.textContent = data.cart.length;
+});
+
+// LOADER
+const loader = document.querySelector(".loader");
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log(loader, productDetailSection)
+  setTimeout(() => {
+    loader.style.display = "none";
+    productDetailSection.style.opacity = "1";
+  }, 350);
 });

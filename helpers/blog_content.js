@@ -835,7 +835,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
           <p class="blog_details-paragraph">
            Bakuchiol je ekstrakt iz biljke Psoralea corylifolia, poznat kao ajurvedska čudotvorna biljka zbog svojih brojnih blagotvornih efekata na kožu. Njegova najveća prednost leži u tome što je dovoljno blag i siguran za sve tipove kože, a istovremeno nudi slične efekte kao retinol – stimulaciju proizvodnje kolagena, obnavljanje ćelija i ujednačavanje tona kože. S obzirom na to da ne izaziva iritacije i nije fotosenzitivan, bakuchiol se može koristiti tokom dana bez bojazni od reakcija na sunce, čineći ga idealnim izborom za negu u bilo koje doba.
           </p>
-          <p class="blog_details-div"> U našoj ponudi izdvajamo Bakučiol kremu i Bakučiol serum, dva proizvoda osmišljena da pruže sveobuhvatnu negu uz revitalizaciju kože, inspirisanu tropskim rajem. </p>
+          <p class="blog_details-paragraph"> U našoj ponudi izdvajamo Bakučiol kremu i Bakučiol serum, dva proizvoda osmišljena da pruže sveobuhvatnu negu uz revitalizaciju kože, inspirisanu tropskim rajem. </p>
         </div>
         <div class="blog_details-div">
           <h2 class="blog_details-paragraph_heading">

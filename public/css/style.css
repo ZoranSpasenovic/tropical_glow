@@ -358,6 +358,8 @@ header.header_phone {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 .hero_content {
   width: 100%;
@@ -567,13 +569,19 @@ header.header_phone {
   gap: 10rem;
   font-family: SeasonsLight;
   background-color: rgb(204, 191, 191);
-  margin-top: 5rem;
+  margin-top: 5em;
+}
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .stats-number {
   font-size: 5rem;
 }
 .stats-description {
   font-size: 2rem;
+  text-align: center;
 }
 
 /* TESTIMONIALS section */
@@ -1094,10 +1102,13 @@ footer {
   }
   .stats-description {
     font-size: 2rem;
+    max-width: 8ch;
   }
   .blog-item-heading {
     word-spacing: 0px;
     font-size: 1.625rem;
+    font-family: Montserrat;
+    font-weight: 500;
   }
 }
 

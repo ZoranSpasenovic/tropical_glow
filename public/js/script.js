@@ -236,12 +236,14 @@ window.addEventListener("pageshow", function () {
 // LOADER LOGIC
 
 const loader = document.querySelector(".loader");
-if (
-  window.location.pathname === "/" ||
-  window.location.pathname === "/korpa" ||
-  window.location.pathname === "/checkout"
-) {
-  window.addEventListener("load", () => {
-    loader.style.display = "none";
+const video = document.querySelector(".background-video");
+if (window.location.pathname === "/") {
+  video.pause();
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      loader.style.display = "none";
+      video.style.opacity = "1";
+      video.play();
+    }, 350);
   });
 }

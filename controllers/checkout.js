@@ -53,7 +53,7 @@ const getCheckoutPage = async (req, res, next) => {
     cart,
     totalPrice,
     cssFiles: ["/css/checkout.css"],
-    jsFiles: [],
+    jsFiles: ["/js/checkout.js"],
     errors: [],
     formData: {
       email: "",

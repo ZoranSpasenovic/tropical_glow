@@ -6,5 +6,5 @@ document.addEventListener("DOMContentLoaded", () => {
     loader.style.display = "none";
     blog.style.opacity = "1";
     blogHeading.style.opacity = "1";
-  }, 500);
+  }, 350);
 });

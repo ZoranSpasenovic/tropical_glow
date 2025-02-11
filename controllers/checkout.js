@@ -80,7 +80,7 @@ const createOrder = async (req, res, next) => {
       cart,
       totalPrice,
       cssFiles: ["/css/checkout.css"],
-      jsFiles: [],
+      jsFiles: ["/js/checkout.js"],
       errors: error.details.map((err) => err.message),
       formData: req.body,
     });
@@ -160,7 +160,7 @@ const createOrder = async (req, res, next) => {
     });
     const orderId = "" + Math.floor(Math.random() * 1000000);
     const mailToUser = {
-      from: "spalespasenovic@gmail.com",
+      from: process.env.MAIL_USER,
       to: email,
       subject: `Uspesno kreiranje porudzbine br. ${orderId}`,
       text: `Uspesno ste kreirali porudzbinu br. ${orderId} , podaci o vasoj porudzbini su : 

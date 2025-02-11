@@ -51,3 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("scrollPosition", window.scrollY);
   });
 });
+
+// LOADER
+const loader = document.querySelector(".loader");
+loader.style.display = "none";

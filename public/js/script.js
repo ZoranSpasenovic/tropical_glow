@@ -247,3 +247,9 @@ if (window.location.pathname === "/") {
     }, 350);
   });
 }
+if (
+  window.location.pathname === "admin" ||
+  window.location.pathname === "/admin/login"
+) {
+  loader.style.display = "none";
+}

@@ -129,7 +129,7 @@ const getAllProducts = (req, res, next) => {
       products,
       cartCount,
       cssFiles: [],
-      jsFiles: [],
+      jsFiles: ["/js/products.js"],
       search: false,
     });
   });

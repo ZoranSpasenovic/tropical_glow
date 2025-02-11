@@ -7,7 +7,7 @@ const getTermsConditionsPage = (req, res, next) => {
   res.render("terms_conditions", {
     pageTitle: "Uslovi koriscenja Tropical Glow",
     cssFiles: ["/css/terms.css", "/css/contactForm.css"],
-    jsFiles: [],
+    jsFiles: ["/js/support.js"],
     cartCount,
     path: "",
   });
@@ -17,7 +17,7 @@ const getContactPage = (req, res, next) => {
   res.render("contact", {
     pageTitle: "Tropical Glow - Kontaktirajte nas",
     cssFiles: ["/css/contactForm.css", "/css/contact.css"],
-    jsFiles: [],
+    jsFiles: ["/js/support.js"],
     cartCount,
     path: "",
   });
@@ -28,7 +28,7 @@ const getPrivacyPolicyPage = (req, res, next) => {
   res.render("privacy_policy", {
     pageTitle: "Politika Privatnosti Tropical Glow",
     cssFiles: ["/css/privacyPolicy.css", "/css/contactForm.css"],
-    jsFiles: [],
+    jsFiles: ["/js/support.js"],
     cartCount,
     path: "",
   });
@@ -43,13 +43,13 @@ const sendMessage = async (req, res, next) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "spalespasenovic@gmail.com",
-      pass: "ivmd zsuj qhhz wwkj",
+      user: process.env.MAIL_USER,
+      pass: process.env.MAIL_KEY,
     },
   });
   const mailOptions = {
     from: email,
-    to: "spalespasenovic@gmail.com",
+    to: "tropicalglowsrbija@gmail.com",
     subject: `Nova poruka od ${name} ${last_name}`,
     text: `Primili ste novu poruku od korisnika " ${name} ${last_name} ", poruka glasi : "${message}", odgovor na ovu poruku mozete poslati na email adresu : ${email} `,
   };

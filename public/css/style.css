@@ -465,10 +465,11 @@ header.header_phone {
   margin-bottom: 1rem;
   overflow: hidden;
 }
-.new_products h1 {
+.new_products h2 {
   font-size: 3rem;
   padding: 2rem;
   color: #3b5947;
+  font-family: SeasonsLight;
 }
 
 .new_products-container {
@@ -480,6 +481,7 @@ header.header_phone {
   padding-top: 2rem;
   animation: scroll-products 50s linear infinite;
   will-change: transform;
+  align-items: stretch;
 }
 @keyframes scroll-products {
   0% {
@@ -505,7 +507,9 @@ header.header_phone {
   align-items: center;
   min-height: 450px;
   color: #3b5947;
+  flex-grow: 1;
 }
+
 .new_product-card img {
   width: 100%;
   height: auto;
@@ -1109,6 +1113,9 @@ footer {
     font-size: 1.625rem;
     font-family: Montserrat;
     font-weight: 500;
+  }
+  .new_product-card .product_title {
+    min-height: 7rem;
   }
 }
 

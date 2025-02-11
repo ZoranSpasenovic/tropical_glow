@@ -157,7 +157,7 @@ const getSearchPage = async (req, res, next) => {
       products,
       cartCount,
       cssFiles: [],
-      jsFiles: [],
+      jsFiles: ["/js/products.js"],
       search: req.query.query,
     });
   } catch (error) {

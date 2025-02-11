@@ -4,6 +4,8 @@
   align-items: center;
   color: #3b5947;
   padding: 0 5rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 .privacy_policy-content {
   width: 75%;

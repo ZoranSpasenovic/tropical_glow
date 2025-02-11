@@ -159,131 +159,136 @@ const createOrder = async (req, res, next) => {
       },
     });
     const orderId = "" + Math.floor(Math.random() * 1000000);
-    const mailToUser = {
-      from: process.env.MAIL_USER,
-      to: email,
-      subject: `Uspesno kreiranje porudzbine br. ${orderId}`,
-      text: `Uspesno ste kreirali porudzbinu br. ${orderId} , podaci o vasoj porudzbini su : 
-      ukupna cena: ${totalPrice},
-      proizvodi : ${JSON.stringify(cart)}`,
-      html: `<html>
-  <body
-    style="
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      margin: 0 auto;
-      padding: 2rem;
-      font-size: 20px;
-    "
-  >
-    <h2 style="text-align: center">Informacije o porudzbini br. ${orderId}</h2>
-
-    <table style="width: 100%; border-collapse: collapse">
-      <tr>
-        <td style="width: 50%; padding: 10px; vertical-align: top">
-          <h3 style="margin: 0">Informacije o kupcu</h3>
-          <p style="margin: 5px 0"><strong>${firstName} ${lastName}</strong></p>
-          <p style="margin: 5px 0">${phone}</p>
-          <p style="margin: 5px 0">
-            <a
-              href="mailto:${email}"
-              style="color: #0073aa; text-decoration: none"
-              >${email}</a
-            >
-          </p>
-        </td>
-
-        <td style="width: 50%; padding: 10px; vertical-align: top">
-          <h3 style="margin: 0">Informacije o dostavi</h3>
-      
-          <p style="margin: 5px 0">${city}</p>
-          <p style="margin: 5px 0">
-            <a
-              href="https://maps.google.com/?q=${city}+${address}"
-              style="color: #0073aa; text-decoration: none"
-              >${address}</a
-            >
-          </p>
-          <p style="margin: 5px 0">${postalCode}</p>
-        </td>
-      </tr>
-    </table>
-
-    <p style="margin: 10px 0"><strong>Nacin isporuke:</strong>Standard</p>
-
-    <h3 style="border-bottom: 2px solid #ddd; padding-bottom: 5px">
-      Informacije o porudzbini
-    </h3>
-    <p>Br. porudzbine: ${orderId}</p>
-    <table style="width: 100%; border-collapse: collapse">
-      <tr>
-        <th
-          style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd"
-        >
-          Proizvod
-        </th>
-        <th
-          style="
-            text-align: right;
-            padding: 10px;
-            border-bottom: 2px solid #ddd;
-          "
-        >
-          Kolicina
-        </th>
-        <th
-          style="
-            text-align: right;
-            padding: 10px;
-            border-bottom: 2px solid #ddd;
-          "
-        >
-          Ukupno
-        </th>
-      </tr>
-     ${orderRows}
-    </table>
-
-    <!-- Order Summary -->
-    <table
+    const mailOrder = (mail) => {
+      return {
+        from: process.env.MAIL_USER,
+        to: mail,
+        subject: `Uspesno kreiranje porudzbine br. ${orderId}`,
+        text: `Uspesno ste kreirali porudzbinu br. ${orderId} , podaci o vasoj porudzbini su : 
+        ukupna cena: ${totalPrice},
+        proizvodi : ${JSON.stringify(cart)}`,
+        html: `<html>
+    <body
       style="
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0 auto;
+        padding: 2rem;
         font-size: 20px;
       "
     >
-      <tr>
-        <td style="text-align: left; padding: 10px">Medjuzbir</td>
-        <td style="text-align: right; padding: 10px">RSD${totalPrice}</td>
-      </tr>
-      <tr>
-        <td style="text-align: left; padding: 10px">Dostava</td>
-        <td style="text-align: right; padding: 10px">RSD450.00</td>
-      </tr>
-      <tr>
-        <td style="text-align: left; padding: 10px; font-weight: bold">
-          Ukupno za placanje
-        </td>
-        <td style="text-align: right; padding: 10px; font-weight: bold">
-         RSD${totalPrice}
-        </td>
-      </tr>
-    </table>
-
-    <div style="margin-top: 30px; text-align: center">
-      <p>
-        ukoliko imate dodatnih pitanja vezano za isporuku mozete nam se obratiti
-        na email :
-        <a href="mailto:tropicalglow.rs@gmail.com">tropicalglow.rs@gmail.com</a>
-      </p>
-    </div>
-  </body>
-</html>
-`,
+      <h2 style="text-align: center">Informacije o porudzbini br. ${orderId}</h2>
+  
+      <table style="width: 100%; border-collapse: collapse">
+        <tr>
+          <td style="width: 50%; padding: 10px; vertical-align: top">
+            <h3 style="margin: 0">Informacije o kupcu</h3>
+            <p style="margin: 5px 0"><strong>${firstName} ${lastName}</strong></p>
+            <p style="margin: 5px 0">${phone}</p>
+            <p style="margin: 5px 0">
+              <a
+                href="mailto:${email}"
+                style="color: #0073aa; text-decoration: none"
+                >${email}</a
+              >
+            </p>
+          </td>
+  
+          <td style="width: 50%; padding: 10px; vertical-align: top">
+            <h3 style="margin: 0">Informacije o dostavi</h3>
+        
+            <p style="margin: 5px 0">${city}</p>
+            <p style="margin: 5px 0">
+              <a
+                href="https://maps.google.com/?q=${city}+${address}"
+                style="color: #0073aa; text-decoration: none"
+                >${address}</a
+              >
+            </p>
+            <p style="margin: 5px 0">${postalCode}</p>
+          </td>
+        </tr>
+      </table>
+  
+      <p style="margin: 10px 0"><strong>Nacin isporuke:</strong>Standard</p>
+  
+      <h3 style="border-bottom: 2px solid #ddd; padding-bottom: 5px">
+        Informacije o porudzbini
+      </h3>
+      <p>Br. porudzbine: ${orderId}</p>
+      <table style="width: 100%; border-collapse: collapse">
+        <tr>
+          <th
+            style="text-align: left; padding: 10px; border-bottom: 2px solid #ddd"
+          >
+            Proizvod
+          </th>
+          <th
+            style="
+              text-align: right;
+              padding: 10px;
+              border-bottom: 2px solid #ddd;
+            "
+          >
+            Kolicina
+          </th>
+          <th
+            style="
+              text-align: right;
+              padding: 10px;
+              border-bottom: 2px solid #ddd;
+            "
+          >
+            Ukupno
+          </th>
+        </tr>
+       ${orderRows}
+      </table>
+  
+      <!-- Order Summary -->
+      <table
+        style="
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+          font-size: 20px;
+        "
+      >
+        <tr>
+          <td style="text-align: left; padding: 10px">Medjuzbir</td>
+          <td style="text-align: right; padding: 10px">RSD${totalPrice}</td>
+        </tr>
+        <tr>
+          <td style="text-align: left; padding: 10px">Dostava</td>
+          <td style="text-align: right; padding: 10px">RSD450.00</td>
+        </tr>
+        <tr>
+          <td style="text-align: left; padding: 10px; font-weight: bold">
+            Ukupno za placanje
+          </td>
+          <td style="text-align: right; padding: 10px; font-weight: bold">
+           RSD${totalPrice}
+          </td>
+        </tr>
+      </table>
+  
+      <div style="margin-top: 30px; text-align: center">
+        <p>
+          ukoliko imate dodatnih pitanja vezano za isporuku mozete nam se obratiti
+          na email :
+          <a href="mailto:tropicalglow.rs@gmail.com">tropicalglow.rs@gmail.com</a>
+        </p>
+      </div>
+    </body>
+  </html>
+  `,
+      };
     };
+    const mailToUser = mailOrder(email);
+    const mailToAdmin = mailOrder(process.env.MAIL_USER);
     await transporter.sendMail(mailToUser);
+    await transporter.sendMail(mailToAdmin);
 
     for (const item of cart) {
       await Product.update(
@@ -302,8 +307,5 @@ const createOrder = async (req, res, next) => {
   res.redirect("/checkout");
 };
 
-const testingEmail = (req, res, next) => {
-  res.render("test");
-};
 
-module.exports = { getCheckoutPage, createOrder, testingEmail };
+module.exports = { getCheckoutPage, createOrder,};

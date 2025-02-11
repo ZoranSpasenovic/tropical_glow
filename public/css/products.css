@@ -119,8 +119,9 @@
     padding: 3rem 1rem 5rem;
   }
   .product_title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #3b5947;
+    font-weight: 400;
   }
 }
 @media (max-width: 680px) {

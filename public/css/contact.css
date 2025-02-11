@@ -2,6 +2,8 @@
   display: flex;
   min-height: 100vh;
   padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 .email_contact-container {
   color: #3b5947;

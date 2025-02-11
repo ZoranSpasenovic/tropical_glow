@@ -49,6 +49,7 @@
 .checkout_form-button_container button {
   padding: 0.5rem 1rem;
   color: #3b5947;
+  background-color: #f9f5f2;
   border: 1px solid #3b5947;
   border-radius: 2px;
   transition: all 0.3s ease;
@@ -56,7 +57,7 @@
 }
 .checkout_form-button_container button:hover {
   background-color: #3b5947;
-  color: #fff;
+  color: #f9f5f2;
   cursor: pointer;
 }
 .checkout_summary-container {

@@ -473,15 +473,15 @@ header.header_phone {
 }
 
 .new_products-container {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 320px;
+  grid-auto-rows: 1fr;
   overflow: hidden;
   gap: 3rem;
-  justify-content: flex-start;
   padding-top: 2rem;
   animation: scroll-products 50s linear infinite;
   will-change: transform;
-  align-items: stretch;
 }
 @keyframes scroll-products {
   0% {
@@ -497,15 +497,15 @@ header.header_phone {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 0 0.5rem 1rem;
-  width: 320px;
+  align-items: center;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  min-height: 450px;
+  height: 100%;
+
   color: #3b5947;
   flex-grow: 1;
 }
@@ -760,7 +760,7 @@ header.header_phone {
 }
 .about-us-container {
   display: flex;
-  padding: 2rem 1rem;
+  padding: 2rem;
   gap: 3rem;
   border-bottom: 1px solid #3b5947;
 }
@@ -784,6 +784,7 @@ header.header_phone {
   text-align: center;
   font-size: 2rem;
   margin-top: 2rem;
+  font-family: SeasonsLight;
 }
 
 .centered-underline::after {
@@ -1028,7 +1029,6 @@ footer {
     margin-top: 2rem;
     line-height: 1.5;
     font-size: 1.2rem;
-    text-align: justify;
   }
 
   .centered-underline {
@@ -1113,9 +1113,6 @@ footer {
     font-size: 1.625rem;
     font-family: Montserrat;
     font-weight: 500;
-  }
-  .new_product-card .product_title {
-    min-height: 7rem;
   }
 }
 

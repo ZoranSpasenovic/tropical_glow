@@ -8,6 +8,7 @@
 .cart_table {
   width: 100%;
   border-collapse: collapse;
+  color: #3b5947;
 }
 .cart_table thead {
   border-bottom: 1px solid #000;
@@ -65,6 +66,7 @@
 }
 .cart_qty svg {
   width: 1rem;
+  color: #3b5947;
 }
 
 .cart_qty-value {
@@ -159,22 +161,36 @@
   margin-top: 1rem;
 }
 .cart_to-checkout button {
-  padding: 0.5rem;
-  border-radius: 4px;
-  font-size: large;
+  padding: 0.5rem 1rem;
+
+  border: 1px solid #3b5947;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
 }
+.continue_shopping {
+  color: #3b5947;
+  background-color: #f9f5f2;
+}
+
 .cart_to-checkout a {
   width: 60%;
 }
-.cart_to-checkout button:hover {
+.continue_shopping:hover {
+  background-color: #3b5947;
+  color: #f9f5f2;
   cursor: pointer;
-  transform: translateY(-1px);
 }
 .proceed_checkout {
-  background-color: rgb(161, 139, 127);
-  color: #fff;
+  background-color: #3b5947;
+  color: #f9f5f2;
   border: none;
   width: 100%;
+}
+.proceed_checkout:hover {
+  color: #3b5947;
+  background-color: #f9f5f2;
+  cursor: pointer;
 }
 
 .continue_shopping {

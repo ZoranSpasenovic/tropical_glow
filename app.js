@@ -4,6 +4,7 @@ const path = require("path");
 const app = express();
 const session = require("cookie-session");
 require("dotenv").config();
+const helmet = require("helmet");
 
 app.set("view engine", "ejs");
 
@@ -48,12 +49,13 @@ app.use(adminRoutes);
 app.use(cartRoutes);
 app.use(supportRoutes);
 app.use(checkoutRoutes);
+app.use(helmet());
 
 app.use((req, res, next) => {
   res.status(404).send("<h1>Page is not found </h1>");
 });
 
 const server = http.createServer(app);
-server.listen(PORT, "0.0.0.0", () => {
+server.listen(PORT, () => {
   console.log(`Server je pokrenut na portu ${PORT}`);
 });

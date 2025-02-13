@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin
+Disallow: /korpa
+Disallow: /checkout
+Disallow: /kontakt
+Disallow: /politika_privatnosti
+Disallow: /uslovi_koriscenja

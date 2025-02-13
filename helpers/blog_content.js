@@ -3,6 +3,8 @@ const blogContent = [
     id: 1,
     title: "Spa Ceylon: Naš partner u ponudi prirodnog luksuza",
     imagePath: "/assets/pictures/slike za blog/1.1 Spa Ceylon nas partner.webp",
+    metaDescription:
+      "Spa Ceylon proizvodi sada dostupni u našoj online prodavnici! Doživite luksuz ajurvedske tradicije i tropskih šuma kroz premium proizvode za negu kože i tela.",
     excerpt:
       "Sa ponosom predstavljamo Spa Ceylon, našeg partnera čije proizvode sada možete pronaći u našoj online prodavnici. Iz srca tropskih šuma, ovaj brend donosi esenciju ajurvedske tradicije u vašu rutinu lepote, nudeći ne samo proizvode za negu, već i ultimativno iskustvo luksuza i blagostanja.",
     html: ` <div class="blog_details-image_container">
@@ -87,6 +89,8 @@ const blogContent = [
     title: "Kako koža zna da li je dan ili noć?",
     imagePath:
       "/assets/pictures/slike za blog/1.1BLOG kako koža zna da li je dan ili noc.webp",
+    metaDescription:
+      "Koža ima različite potrebe tokom dana i noći. Otkrijte zašto su specijalizovani proizvodi ključni za optimalnu negu u različitim delovima dana.",
     excerpt:
       "Itekako zna. Kada je reč o nezi kože, nije svejedno koje proizvode koristimo u različitim delovima dana. Naša koža ima različite potrebe preko dana i noći, što zahteva specijalizovane proizvode koji će odgovarati tim specifičnim potrebama.",
     html: `<div class="blog_details-image_container">
@@ -171,6 +175,8 @@ const blogContent = [
     title: "Značaj duplog čišćenja",
     imagePath:
       "/assets/pictures/slike za blog/1.1BLOG znacaj duplog ciscenja.webp",
+    metaDescription:
+      "Dvostruko čišćenje je ključ za temeljno čistu i zdravu kožu. Otkrijte kako kombinacija uljanog čistača i umivalice osigurava dubinsko uklanjanje nečistoća i šminke.",
     excerpt:
       "U svetu napredne nege kože, dvostruko čišćenje je postalo nezaobilazan korak za sve koji teže temeljno čistoj i zdravoj koži. Ovaj proces uključuje dva koraka: najpre korišćenje uljanog čistača, a zatim umivalice na bazi vode, osiguravajući dubinsko čišćenje koje efikasno uklanja nečistoće, šminku i višak sebuma.",
     html: ` <div class="blog_details-image_container">
@@ -236,6 +242,8 @@ const blogContent = [
     title: "Hijaluronska kiselina: tajna podmladjivanja kože",
     imagePath:
       "/assets/pictures/slike za blog/1.1 BLOG hijaluronska kiselina tajna podmladjivanja kože.webp",
+    metaDescription:
+      "Hijaluronska kiselina intenzivno hidrira kožu, zadržavajući 1000x svoju težinu u vodi. Otkrijte zašto je ovaj prirodni sastojak ključan za revitalizaciju i duboku hidrataciju.",
     excerpt:
       "Hijaluronska kiselina može zadržati do 1000 puta svoju težinu u vodi, što je čini idealnom za duboku hidrataciju kože. Ovaj prirodni sastojak kože postao je nezaobilazni sastojak u svetu moderne kozmetike, naročito zbog svoje sposobnosti da intenzivno hidrira i revitalizuje kožu.",
     html: ` <div class="blog_details-image_container">
@@ -323,6 +331,8 @@ const blogContent = [
     title: "Značaj pH balansa za negu kože",
     imagePath:
       "/assets/pictures/slike za blog/1.1BLOG Značaj pH balansa za negu kože.webp",
+    metaDescription:
+      "Otkrijte zašto je ravnoteža pH vrednosti ključna za zdravu i sjajnu kožu. Saznajte kako pH štiti prirodni zaštitni sloj i održava kožu čistom i očuvanom.",
     excerpt:
       "Ravnoteža pH vrednosti kože je ključni element u održavanju zdrave, čiste i sjajne kože. pH, koji predstavlja nivo kiselosti ili alkalnosti, igra vitalnu ulogu u zaštiti kože i održavanju njenog prirodnog zaštitnog sloja.",
     html: `  <div class="blog_details-image_container">
@@ -394,6 +404,8 @@ const blogContent = [
     title: "Održivi luksuz: Staklo kao tajni sastojak kvalitetne kozmetike",
     imagePath:
       "/assets/pictures/slike za blog/1.1BLOG održivi luksuz-staklo kao tajni sastojak kvalitetne nege.webp",
+    metaDescription:
+      "Spa Ceylon koristi staklo za pakovanje kako bi očuvala kvalitet i luksuz svoje ayurvedske kozmetike. Otkrijte zašto je staklo simbol čistoće, elegancije i dugotrajne svežine.",
     excerpt:
       "U misiji da pruži samo najkvalitetniju, luksuznu prirodnu kozmetiku, Spa Ceylon Luxury Ayurveda posebnu pažnju posvećuje ne samo formulacijama proizvoda, već i načinu na koji ih pakuje. Iz tog razloga, staklo je primarni materijal za pakovanja proizvoda za negu. Staklo nije samo simbol čistoće i elegancije, već i garancija očuvanja kvaliteta i integriteta svakog proizvoda.",
     html: `<div class="blog_details-image_container">
@@ -466,6 +478,8 @@ const blogContent = [
     title: "Nežna eksfolijacija za gladak ten lica",
     imagePath:
       "/assets/pictures/slike za blog/1.1 BLOG Nežna eksfolijacija za gladak ten lica.webp",
+    metaDescription:
+      "Otkrijte koristi eksfolijacije za zdravu kožu! Uklanjanje mrtvih ćelija poboljšava teksturu, smanjuje bore, akne i pigmentaciju. Saveti za hemijsku i fizičku eksfolijaciju.",
     excerpt:
       "Eksfolijacija je proces uklanjanja mrtvih ćelija sa površine kože, koristeći hemijske ili fizičke eksfolijante. Ovaj postupak poboljšava teksturu kože, povećava njenu sposobnost upijanja proizvoda za negu, i može smanjiti pojavu bora, akni, i pigmentacije.",
     html: ` <div class="blog_details-image_container">
@@ -535,6 +549,8 @@ const blogContent = [
     title: "Efekat glinenih maski na sužavanje pora na licu",
     imagePath:
       "/assets/pictures/slike za blog/1.1 BLOG Efekat glinenih maski na sužavanje pora na licu.webp",
+    metaDescription:
+      "Kako glinene maske pomažu u smanjenju pora i čišćenju kože?",
     excerpt: `Pore na licu igraju ključnu ulogu u zdravlju kože, omogućujući joj da diše i izlučuje toksine. Međutim, proširene pore mogu dovesti do problema kao što su akne i masna koža. Glinene maske, naročito one koje sadrže bentonit ili kaolin su moćan alat za dubinsko čišćenje kože i sužavanje pora. Zahvaljujući svojim prirodnim apsorptivnim svojstvima, glina efikasno uklanja višak masnoće, nečistoće i toksine iz pora, što doprinosi njihovom smanjenju. Osim toga, glinene maske poboljšavaju cirkulaciju i pomažu u regeneraciji kože, čineći ten čistijim i glatkijim.
 Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno formulisane glinene maske koje su prilagođene različitim tipovima kože, obe obećavaju unapređenje zdravlja i izgleda kože, kao i sužene pore. 
 `,
@@ -621,6 +637,8 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
     title: "Dva najefikasnija sastojka u borbi protiv hiperpigmentacije",
     imagePath:
       "/assets/pictures/slike za blog/1.1 BLOG Dva najefikasnija sastojka u borbi protiv hiperpigmentacije.webp",
+    metaDescription:
+      "Koji su najbolji tretmani za ublažavanje tamnih mrlja i neujednačenog tena?",
     excerpt:
       "Hiperpigmentacija je stanje kože karakterisano prekomernom produkcijom melanina, što rezultira tamnim mrljama i neujednačenim tenom. Uzroci ovog upornog i dosadnog problema mogu uključivati izlaganje suncu, hormonske promene, oštećenja kože, i upotrebu određenih lekova. Za efikasno rešenje ovog problema, predstavljamo serum koji sadrži medveđu bobicu i seme grožđa.",
     html: `<div class="blog_details-image_container">
@@ -684,7 +702,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
     title: `Strategije za borbu protiv "Strawberry Skin" `,
     imagePath:
       "/assets/pictures/slike za blog/1.1 Strategije za borbu protiv strawberry skin.webp",
-
+    metaDescription: "Šta je jagodasta koža i kako nastaje?",
     excerpt: `"Strawberry skin" ili "jagodasta koža" je pojam koji se koristi za opisivanja izgleda kože koji nastaje kada se pore na nogama i drugim delovima tela začepe i postanu vidljive poput sitnih tačkica na jagodama. Evo nekoliko saveta kako da ublažite ovaj problem i poboljšate izgled svoje kože:`,
     html: `<div class="blog_details-image_container">
         <img
@@ -756,7 +774,8 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
     id: 11,
     title: `Vitamin C i Kurkuma – Tajna Prirodnog Sjaja Kože`,
     imagePath: "/assets/pictures/slike za blog/vitaminc3.webp",
-
+    metaDescription:
+      "Koje su prednosti korišćenja proizvoda sa vitaminom C i kurkumom u svakodnevnoj nezi kože?",
     excerpt: `U svetu prirodne nege kože, vitamin C i kurkuma su postali ključni sastojci za postizanje zdravog i blistavog tena. U našoj ponudi luksuzne ajurvede, donosimo vam dva proizvoda koji sadrže ovu moćnu kombinaciju – Vitamin C Pena za čišćenje lica i Glinena maska za lice. Zahvaljujući sinergiji vitamina C i kurkume, ovi proizvodi ne samo da čiste kožu, već je i revitalizuju, ujednačavaju ten i podstiču prirodan sjaj. Evo kako ovi sastojci deluju i zašto su idealni za vašu kožu.`,
     html: `<div class="blog_details-image_container">
         <img
@@ -811,7 +830,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
     id: 12,
     title: `Bakuchiol – Prirodna Zamena Za Retinol Bez Nuspojava`,
     imagePath: "/assets/pictures/slike za blog/bakuchiol.webp",
-
+    metaDescription: "Koje su prednosti bakuchiola u anti-age nezi kože?",
     excerpt: `Retinol je dugo bio zlatni standard u anti-age nezi kože, ali sa sobom nosi rizik iritacije i osetljivosti, posebno kod onih sa osetljivom kožom. Srećom, bakuchiol, prirodni biljni sastojak, nudi alternativu sa sličnim prednostima bez rizika od nuspojava.`,
     html: `<div class="blog_details-image_container">
         <img

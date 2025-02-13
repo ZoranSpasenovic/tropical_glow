@@ -4,6 +4,7 @@ const Product = require("../models/product");
 const nodemailer = require("nodemailer");
 const { Sequelize } = require("sequelize");
 const { name } = require("ejs");
+const { noStringOperators } = require("sequelize/lib/utils/deprecations");
 
 const validateOrder = Joi.object({
   email: Joi.string().email().required().messages({
@@ -47,7 +48,7 @@ const validateOrder = Joi.object({
 const getCheckoutPage = async (req, res, next) => {
   const { cart, totalPrice } = await getCartProducts(req);
   res.render("checkout", {
-    pageTitle: "Tropical Glow - Napravi Porudzbinu",
+    pageTitle: "Kupovina - Tropical Glow",
     cartCount: cart.length,
     path: "/checkout",
     cart,
@@ -65,6 +66,8 @@ const getCheckoutPage = async (req, res, next) => {
       city: "",
       deliveryNote: "",
     },
+    metaDescription: false,
+    noIndex: true,
   });
 };
 
@@ -83,6 +86,8 @@ const createOrder = async (req, res, next) => {
       jsFiles: ["/js/checkout.js"],
       errors: error.details.map((err) => err.message),
       formData: req.body,
+      metaDescription: false,
+      noIndex: true,
     });
   }
   try {
@@ -105,6 +110,8 @@ const createOrder = async (req, res, next) => {
           jsFiles: [],
           errors,
           formData: req.body,
+          metaDescription: false,
+          noIndex: true,
         });
       }
     }
@@ -307,5 +314,4 @@ const createOrder = async (req, res, next) => {
   res.redirect("/checkout");
 };
 
-
-module.exports = { getCheckoutPage, createOrder,};
+module.exports = { getCheckoutPage, createOrder };

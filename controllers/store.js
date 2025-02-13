@@ -29,7 +29,7 @@ const getHomePage = (req, res, next) => {
   const cartCount = getCartCount(req);
   findByCtg("nova_ponuda").then((newProducts) => {
     res.render("homepage", {
-      pageTitle: "Tropical Glow",
+      pageTitle: "Tropical Glow - Prirodna nega kože",
       path: "home",
       newProducts,
       cartCount,
@@ -45,12 +45,14 @@ const getBlog = (req, res, next) => {
   const cartCount = getCartCount(req);
 
   res.render("blog", {
-    pageTitle: "Tropical Glow - Blog",
+    pageTitle: "Blog o nezi kože - Tropical Glow",
     path: "blog",
     cssFiles: ["/css/blog.css"],
     jsFiles: ["/js/blog.js"],
     cartCount,
     blogContent,
+    metaDescription:
+      "Saznajte najnovije savete, vodiče i recenzije o negi kože i prirodnim proizvodima na blogu Tropical Glow. Otkrijte najbolje proizvode za zdravlje i lepotu!",
   });
 };
 const getBlogDetails = (req, res, next) => {
@@ -59,12 +61,13 @@ const getBlogDetails = (req, res, next) => {
   const blogData = blogContent.find((blog) => blog.id === +blogId);
 
   res.render("blog_details", {
-    pageTitle: "Tropical Glow - Proizvodi",
+    pageTitle: `${blogData.title} - Tropical Glow`,
     path: "blog",
     blogData,
     cartCount,
     cssFiles: ["/css/blogDetails.css", "/css/contactForm.css"],
     jsFiles: ["/js/blogDetails.js"],
+    metaDescription: blogData.metaDescription,
   });
 };
 
@@ -74,7 +77,7 @@ const getProductsPage = (req, res, next) => {
 
   findByCtg(ctg).then((products) => {
     res.render("products", {
-      pageTitle: "Tropical Glow - Proizvodi",
+      pageTitle: "Prirodni kozmetički proizvodi  - Tropical Glow",
       path: "products",
       products,
       cartCount,
@@ -92,7 +95,7 @@ const getSkinConcernPage = (req, res, next) => {
   const cartCount = getCartCount(req);
   findByCtg(ctg).then((products) => {
     res.render("skin_concern", {
-      pageTitle: "Rešenje za Svaki Izazov",
+      pageTitle: "Rešenje za Svaki Izazov - Tropical Glow",
       path: "skin-concern",
       image: ctg,
       products,
@@ -116,12 +119,13 @@ const getProductDetails = async (req, res, next) => {
 
   res.render("product", {
     product,
-    pageTitle: product.name,
+    pageTitle: `${product.name} - Tropical Glow`,
     path: "products",
     cartCount,
     cssFiles: ["/css/product.css"],
     jsFiles: ["/js/product_detail.js"],
     naturalIngredients,
+    metaDescription: product.name,
   });
 };
 
@@ -129,7 +133,7 @@ const getAllProducts = (req, res, next) => {
   const cartCount = getCartCount(req);
   Product.findAll().then((products) => {
     res.render("products", {
-      pageTitle: "Tropical Glow - Proizvodi",
+      pageTitle: "Prirodni kozmetički proizvodi  - Tropical Glow",
       path: "products",
       products,
       cartCount,
@@ -159,13 +163,15 @@ const getSearchPage = async (req, res, next) => {
       },
     });
     res.render("products", {
-      pageTitle: "Tropical Glow - Proizvodi",
+      pageTitle: "Rezultati pretrage - Tropical Glow",
       path: "products",
       products,
       cartCount,
       cssFiles: [],
       jsFiles: ["/js/products.js"],
       search: req.query.query,
+      metaDescription: false,
+      noIndex: true,
     });
   } catch (error) {
     console.log(error);

@@ -12,6 +12,8 @@ const getAdminPage = (req, res) => {
       cartCount,
       cssFiles: ["/css/admin.css"],
       jsFiles: ["/js/admin.js"],
+      metaDescription: false,
+      noIndex: true,
     });
   });
 };
@@ -56,6 +58,8 @@ const adminLogin = (req, res, next) => {
     cartCount,
     cssFiles: ["/css/adminLogin.css"],
     jsFiles: [],
+    metaDescription: false,
+    noIndex: true,
   });
 };
 const adminAuth = (req, res, next) => {

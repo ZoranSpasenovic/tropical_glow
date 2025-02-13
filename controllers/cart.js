@@ -1,4 +1,3 @@
-
 const getCartProducts = require("../helpers/cartProducts");
 
 const addToCart = (req, res, next) => {
@@ -33,13 +32,15 @@ const getCartPage = async (req, res, next) => {
   const { cart, totalPrice } = await getCartProducts(req);
 
   res.render("cart", {
-    pageTitle: "Tropical Glow Korpa",
+    pageTitle: "Vaša korpa - Tropical Glow",
     cartCount: cart.length,
     path: "/korpa",
     cart,
     totalPrice,
     cssFiles: ["/css/cart.css"],
     jsFiles: ["/js/cart.js"],
+    metaDescription: false,
+    noIndex: true,
   });
 };
 

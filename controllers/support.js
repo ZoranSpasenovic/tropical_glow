@@ -5,32 +5,38 @@ const getCartCount = require("../helpers/getCartCount");
 const getTermsConditionsPage = (req, res, next) => {
   const cartCount = getCartCount(req);
   res.render("terms_conditions", {
-    pageTitle: "Uslovi koriscenja Tropical Glow",
+    pageTitle: "Uslovi koriscenja - Tropical Glow",
     cssFiles: ["/css/terms.css", "/css/contactForm.css"],
     jsFiles: ["/js/support.js"],
     cartCount,
     path: "",
+    metaDescription: false,
+    noIndex: true,
   });
 };
 const getContactPage = (req, res, next) => {
   const cartCount = getCartCount(req);
   res.render("contact", {
-    pageTitle: "Tropical Glow - Kontaktirajte nas",
+    pageTitle: "Kontaktirajte nas - Tropical Glow",
     cssFiles: ["/css/contactForm.css", "/css/contact.css"],
     jsFiles: ["/js/support.js"],
     cartCount,
     path: "",
+    metaDescription: false,
+    noIndex: true,
   });
 };
 
 const getPrivacyPolicyPage = (req, res, next) => {
   const cartCount = getCartCount(req);
   res.render("privacy_policy", {
-    pageTitle: "Politika Privatnosti Tropical Glow",
+    pageTitle: "Politika Privatnosti - Tropical Glow",
     cssFiles: ["/css/privacyPolicy.css", "/css/contactForm.css"],
     jsFiles: ["/js/support.js"],
     cartCount,
     path: "",
+    metaDescription: false,
+    noIndex: true,
   });
 };
 

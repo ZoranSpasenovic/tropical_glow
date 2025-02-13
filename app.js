@@ -56,6 +56,6 @@ app.use((req, res, next) => {
 });
 
 const server = http.createServer(app);
-server.listen(PORT, () => {
+server.listen(PORT, "127.0.0.1", () => {
   console.log(`Server je pokrenut na portu ${PORT}`);
 });

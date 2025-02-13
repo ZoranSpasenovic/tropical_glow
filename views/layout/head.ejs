@@ -1,10 +1,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Tropical Glow - Online prodavnica za kozmetiku"
-  />
+  <% if (metaDescription) { %>
+  <meta name="description" content="<%=metaDescription%>" />
+  <% }%>
+
   <meta
     name="keywords"
     content="kozmetika, spa ceylon, kreme za lice, ayurveda, spa ceylon srbija, bakuchiol"

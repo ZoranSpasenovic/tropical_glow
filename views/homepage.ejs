@@ -55,7 +55,10 @@
         <% newProducts?.forEach((product) => { %>
         <a class="product_details-link" href="/proizvod/<%=product.id%>">
           <div class="new_product-card">
-            <img src="assets/pictures/products/<%=product.image%>.webp" />
+            <img
+              src="assets/pictures/products/<%=product.image%>.webp"
+              alt="<%=product.name%>"
+            />
             <h3 class="product_title"><%= product.name %></h3>
             <p class="product_price"><%= product.price %>RSD</p>
             <button data-id="<%= product.id %>" id="add-to-cart">
@@ -66,7 +69,10 @@
         <% }) %> <% newProducts.forEach((product) => { %>
         <a class="product_details-link" href="/proizvod/<%=product.id%>">
           <div class="new_product-card">
-            <img src="assets/pictures/products/<%=product.image%>.webp" />
+            <img
+              src="assets/pictures/products/<%=product.image%>.webp"
+              alt="<%=product.name%>"
+            />
             <h3 class="product_title"><%= product.name %></h3>
             <p class="product_price"><%= product.price %>RSD</p>
             <button
@@ -81,7 +87,10 @@
         <% }) %> <% newProducts.forEach((product) => { %>
         <a class="product_details-link" href="/proizvod/<%=product.id%>">
           <div class="new_product-card">
-            <img src="assets/pictures/products/<%=product.image%>.webp" />
+            <img
+              src="assets/pictures/products/<%=product.image%>.webp"
+              alt="<%=product.name%>"
+            />
             <h3 class="product_title"><%= product.name %></h3>
             <p class="product_price"><%= product.price %>RSD</p>
             <button data-id="<%= product.id %>" id="add-to-cart">
@@ -94,13 +103,16 @@
     </section>
     <section class="awards-section">
       <div class="awards_heading">
-        <h1>Spa Ceylon</h1>
+        <h2>Spa Ceylon</h2>
         <p>Najbolji Wellbeing Brend 2024</p>
       </div>
       <div class="awards_container">
         <div class="award_container">
           <div class="award_image-container">
-            <img src="assets/pictures/awards/nagrade_1.webp" />
+            <img
+              src="assets/pictures/awards/nagrade_1.webp"
+              alt="Najbolji prirodni organski proizvodi"
+            />
           </div>
           <div class="award_content-container">
             <p>Najbolji prirodni</p>
@@ -109,7 +121,10 @@
         </div>
         <div class="award_container">
           <div class="award_image-container">
-            <img src="assets/pictures/awards/nagrade_2.webp" />
+            <img
+              src="assets/pictures/awards/nagrade_2.webp"
+              alt="Najbolji wellbeign brend 2024.godine"
+            />
           </div>
           <div class="award_content-container">
             <p>Najbolji wellbeing</p>
@@ -119,7 +134,10 @@
 
         <div class="award_container">
           <div class="award_image-container">
-            <img src="assets/pictures/awards/nagrade_3.webp" />
+            <img
+              src="assets/pictures/awards/nagrade_3.webp"
+              alt="Najbolji wellness proizvod"
+            />
           </div>
           <div class="award_content-container">
             <p>Najbolji wellness</p>
@@ -130,17 +148,17 @@
     </section>
     <section class="stats-section">
       <div class="stats-container">
-        <h2 class="stats-number">>150.000</h2>
+        <h3 class="stats-number">>150.000</h3>
         <p class="stats-description">Zadovoljnih Korisnika</p>
       </div>
       <div class="stats-container">
-        <h2 class="stats-number">30</h2>
+        <h3 class="stats-number">30</h3>
         <p class="stats-description">Zemalja Sveta</p>
       </div>
     </section>
     <section class="testimonials-section">
       <div class="testimonial-header-container">
-        <h1>Utisci Kupaca</h1>
+        <h2>Utisci Kupaca</h2>
       </div>
       <div class="testimonials_carousel">
         <button class="arrow left">
@@ -163,61 +181,61 @@
             <div class="testimonial_card">
               <img
                 src="/assets/pictures/testimonials/1.webp"
-                alt="utisak kupca"
+                alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
               />
             </div>
             <div class="testimonial_card">
               <img
                 src="/assets/pictures/testimonials/2.webp"
-                alt="utisak kupca"
+                alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože spa ceylon proizvoda"
               />
             </div>
             <div class="testimonial_card">
               <img
                 src="/assets/pictures/testimonials/3.webp"
-                alt="utisak kupca"
+                alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
               />
             </div>
             <div class="testimonial_card">
               <img
                 src="/assets/pictures/testimonials/4.webp"
-                alt="utisak kupca"
+                alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
               />
             </div>
             <div class="testimonial_card">
               <img
                 src="/assets/pictures/testimonials/5.webp"
-                alt="utisak kupca"
+                alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
               />
             </div>
             <div class="testimonial_card">
               <img
                 src="/assets/pictures/testimonials/6.webp"
-                alt="utisak kupca"
+                alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
               />
             </div>
             <div class="testimonial_card">
               <img
                 src="/assets/pictures/testimonials/7.webp"
-                alt="utisak kupca"
+                alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
               />
             </div>
             <div class="testimonial_card">
               <img
                 src="/assets/pictures/testimonials/8.webp"
-                alt="utisak kupca"
+                alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
               />
             </div>
             <div class="testimonial_card">
               <img
                 src="/assets/pictures/testimonials/9.webp"
-                alt="utisak kupca"
+                alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
               />
             </div>
             <div class="testimonial_card">
               <img
                 src="/assets/pictures/testimonials/10.webp"
-                alt="utisak kupca"
+                alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
               />
             </div>
           </div>
@@ -240,7 +258,7 @@
       </div>
     </section>
     <section class="blog-section">
-      <h1 class="blog_heading">Blog</h1>
+      <h2 class="blog_heading">Blog</h2>
       <div class="blog-item-container">
         <div class="blog-video-container">
           <video
@@ -255,9 +273,9 @@
           </video>
         </div>
         <div class="blog-content">
-          <h2 class="blog-item-heading">
+          <h3 class="blog-item-heading">
             Bakuchiol – Prirodna <br />Zamena Za Retinol
-          </h2>
+          </h3>
           <p class="blog-text">
             Retinol je dugo bio zlatni standard u anti-age nezi kože, ali sa
             sobom nosi rizik iritacije i osetljivosti, posebno kod onih sa
@@ -283,9 +301,9 @@
       </div>
       <div class="blog-item-container">
         <div class="blog-content">
-          <h2 class="blog-item-heading">
+          <h3 class="blog-item-heading">
             Vitamin C i Kurkuma <br />Tajna Prirodnog Sjaja
-          </h2>
+          </h3>
           <p class="blog-text">
             U svetu prirodne nege kože, vitamin C i kurkuma su postali ključni
             sastojci za postizanje zdravog i blistavog tena. U našoj ponudi
@@ -325,13 +343,13 @@
       </div>
     </section>
     <section class="skin-concern-section">
-      <h1 class="skin-concern-heading">Rešenje Za Svaki Izazov</h1>
+      <h2 class="skin-concern-heading">Rešenje Za Svaki Izazov</h2>
       <div class="skin-concern-content">
         <a href="/skin_concern/wrinkles"
           ><div class="skin-concern-card">
             <img
               src="assets//pictures/resenje za svaki izazov slike/bore i fine linije, nakrivljena.webp"
-              alt="skin concern image"
+              alt="Rešenje za bore i finije linije na licu"
             />
             <h3>Bore i Fine Linije</h3>
           </div></a
@@ -340,7 +358,7 @@
           ><div class="skin-concern-card">
             <img
               src="assets//pictures/resenje za svaki izazov slike/kontrola masnoce.webp"
-              alt="skin concern image"
+              alt="Kontrola masnoće lica"
             />
             <h3>Kontrola Masnoće</h3>
           </div></a
@@ -349,7 +367,7 @@
           ><div class="skin-concern-card">
             <img
               src="assets//pictures/resenje za svaki izazov slike/neujednacen ten.webp"
-              alt="skin concern image"
+              alt="Rešenje za neujednačen ten na licu"
             />
             <h3>Neujednačen Ten</h3>
           </div></a
@@ -358,7 +376,7 @@
           ><div class="skin-concern-card">
             <img
               src="assets//pictures/resenje za svaki izazov slike/opustanje i balans.webp"
-              alt="skin concern image"
+              alt="Opuštanje i balans kože"
             />
             <h3>Opuštanje i Balans</h3>
           </div></a
@@ -367,7 +385,7 @@
           ><div class="skin-concern-card">
             <img
               src="assets//pictures/resenje za svaki izazov slike/Prosirene pore.webp"
-              alt="skin concern image"
+              alt="Rešenje za proširene pore na licu"
             />
             <h3>Proširene Pore</h3>
           </div></a
@@ -376,7 +394,7 @@
           ><div class="skin-concern-card">
             <img
               src="assets//pictures/resenje za svaki izazov slike/suva koža i dehidratacija.webp"
-              alt="skin concern image"
+              alt="Spa Ceylon rešenje za suvu kožu i dehidrataciju"
             />
             <h3>Suva Koža i Dehidratacija</h3>
           </div></a
@@ -385,7 +403,7 @@
           ><div class="skin-concern-card">
             <img
               src="assets//pictures/resenje za svaki izazov slike/umorna koža.webp"
-              alt="skin concern image"
+              alt="Rešenje za umornu kožu"
             />
             <h3>Umorna Koža</h3>
           </div></a
@@ -394,7 +412,7 @@
           ><div class="skin-concern-card">
             <img
               src="assets//pictures/resenje za svaki izazov slike/urbana zagadjenost.webp"
-              alt="skin concern image"
+              alt="Kako rešiti posledice urbane zagađenosti na licu"
             />
             <h3>Urbana Zagađenost</h3>
           </div></a
@@ -404,7 +422,10 @@
     <section class="about-us-section">
       <div id="about-us" class="about-us-container">
         <div class="about-us-image-container">
-          <img src="assets/pictures/about us/O nama manja.webp" alt="O nama" />
+          <img
+            src="assets/pictures/about us/O nama manja.webp"
+            alt="O nama - Spa Ceylon distributeru"
+          />
         </div>
         <div class="about-us-content">
           <h2 class="centered-underline">O Nama</h2>
@@ -455,7 +476,7 @@
         <div class="about-us-image-container">
           <img
             src="assets//pictures/about us/Spa Ceylon nas partner manja.webp"
-            alt="O nama"
+            alt="Spa Ceylon naš partner u poslovanju"
           />
         </div>
       </div>
@@ -467,7 +488,10 @@
             media="(max-width:850px)"
             srcset="/assets/pictures/TG_VEGAN.webp"
           />
-          <img src="/assets/pictures/Vegan 0.webp" alt="vegan-products" />
+          <img
+            src="/assets/pictures/Vegan 0.webp"
+            alt="Kozmetički proizvodi biljnog porekla"
+          />
         </picture>
       </div>
     </section>

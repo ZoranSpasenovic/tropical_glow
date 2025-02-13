@@ -35,6 +35,8 @@ const getHomePage = (req, res, next) => {
       cartCount,
       cssFiles: [],
       jsFiles: ["/js/testimonial_carousel.js"],
+      metaDescription:
+        "Otkrijte prirodnu lepotu sa Spa Ceylon i TropicalGlow proizvodima za negu kože. Iskoristite snagu azijske kozmetike za glatku, zdravu i blistavu kožu.",
     });
   });
 };
@@ -79,6 +81,8 @@ const getProductsPage = (req, res, next) => {
       cssFiles: [],
       jsFiles: ["/js/products.js"],
       search: false,
+      metaDescription:
+        "Otkrijte proizvode iz kategorije negovanja kože i tela. Prirodna kozmetika Spa Ceylon i Tropical Glow za zdravlje i lepotu vašeg tela.",
     });
   });
 };
@@ -96,6 +100,7 @@ const getSkinConcernPage = (req, res, next) => {
       cartCount,
       cssFiles: ["/css/skin_concern.css"],
       jsFiles: ["/js/products.js"],
+      metaDescription: headings[ctg].meta,
     });
   });
 };
@@ -131,6 +136,8 @@ const getAllProducts = (req, res, next) => {
       cssFiles: [],
       jsFiles: ["/js/products.js"],
       search: false,
+      metaDescription:
+        "Otkrijte proizvode iz kategorije negovanja kože i tela. Prirodna kozmetika Spa Ceylon i Tropical Glow za zdravlje i lepotu vašeg tela.",
     });
   });
 };

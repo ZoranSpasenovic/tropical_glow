@@ -1,4 +1,8 @@
 {
+  "name": "tropical_glow",
+  "version": "1.0.0",
+  "main": "app.js",
+  "description": "E-commerce sajt za Tropical Glow",
   "scripts": {
     "start": "nodemon app.js"
   },
@@ -10,6 +14,7 @@
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
+    "helmet": "^8.0.0",
     "joi": "^17.13.3",
     "mysql2": "^3.12.0",
     "nodemailer": "^6.9.16",

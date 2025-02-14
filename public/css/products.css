@@ -132,11 +132,6 @@
     padding: 0 0.5rem;
   }
 
-  .out_of_stock {
-    position: absolute;
-    bottom: -2rem;
-  }
-
   #add-to-cart {
     width: 75%;
     font-size: 1.3rem;

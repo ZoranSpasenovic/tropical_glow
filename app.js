@@ -13,6 +13,7 @@ const adminRoutes = require("./routes/admin");
 const cartRoutes = require("./routes/cart");
 const supportRoutes = require("./routes/support");
 const checkoutRoutes = require("./routes/checkout");
+const sitemapRoutes = require("./routes/sitemap");
 
 const PORT = process.env.PORT || 3000;
 
@@ -49,6 +50,7 @@ app.use(adminRoutes);
 app.use(cartRoutes);
 app.use(supportRoutes);
 app.use(checkoutRoutes);
+app.use(sitemapRoutes);
 app.use(helmet());
 
 app.use((req, res, next) => {

@@ -5,3 +5,4 @@ Disallow: /checkout
 Disallow: /kontakt
 Disallow: /politika_privatnosti
 Disallow: /uslovi_koriscenja
+Sitemap: https://tropicalglow.rs/sitemap.xml

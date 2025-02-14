@@ -30,12 +30,20 @@
               src="/assets/pictures/products/<%= product.image %>.webp"
               alt="<%=product.name%>"
             />
-
-            <h3 class="product_title"><%= product.name %></h3>
-            <p class="product_price"><%= product.price %>RSD</p>
+            <% if (product.sale) { %>
+            <p class="product_price original_price"><%= product.price %> RSD</p>
+            <p class="product_price sale_price">
+              <%= product.sale_price %> RSD
+            </p>
+            <% } else { %>
+            <p class="product_price"><%= product.price %> RSD</p>
+            <% } %> <% if(product.amount < 1 ) { %>
+            <p class="out_of_stock">Nema na stanju</p>
+            <% } else { %>
             <button data-id="<%= product.id %>" id="add-to-cart">
               Dodaj u korpu
             </button>
+            <% }%>
           </div></a
         >
         <% }) %>

@@ -65,7 +65,7 @@ header {
   z-index: 100;
   font-family: SeasonsLight;
 }
-h1 h2 {
+h1, h2 {
   font-family: SeasonsLight;
 }
 

@@ -140,8 +140,11 @@
                 <p>PDV uračunat u cenu</p>
               </div>
               <div class="checkout_subtotal-delivery_price">
-                <p>Troškovi Dostave:</p>
-                <span>450RSD</span>
+                <% if(totalPrice < 10000) { %>
+                <p>Troškovi dostave nisu uračunati u cenu.</p>
+                <%} else { %>
+                <p>Dostava je besplatna.</p>
+                <% }%>
               </div>
               <div class="checkout_total">
                 <p>Iznos za plaćanje:</p>

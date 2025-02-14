@@ -148,6 +148,23 @@
 .error_message {
   color: #805240;
 }
+.checkout_success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.checkout_success-container {
+  max-width: 600px;
+}
+.checkout_success-container h1 {
+  font-size: 3rem;
+}
+
 @media (max-width: 850px) {
   .checkout_content {
     flex-direction: column-reverse;
@@ -198,5 +215,11 @@
 
   .checkout_subtotal {
     width: 100%;
+  }
+  .checkout_success-container {
+    padding: 2rem;
+  }
+  .checkout_success-container h1 {
+    font-size: 3rem;
   }
 }

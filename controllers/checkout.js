@@ -158,6 +158,10 @@ const createOrder = async (req, res, next) => {
       city,
       deliveryNote,
     } = req.body;
+    const shippingMsg =
+      totalPrice < 10000
+        ? "Troškovi isporuke nisu uključeni u cenu proizvoda i biće naplaćeni prema standardnoj tarifi kurirske službe prilikom isporuke."
+        : "Dostava je besplatna!";
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -267,8 +271,7 @@ const createOrder = async (req, res, next) => {
           <td style="text-align: right; padding: 10px">RSD${totalPrice}</td>
         </tr>
         <tr>
-          <td style="text-align: left; padding: 10px">Dostava</td>
-          <td style="text-align: right; padding: 10px">RSD450.00</td>
+          <td style="text-align: left; padding: 10px">${shippingMsg}</td>
         </tr>
         <tr>
           <td style="text-align: left; padding: 10px; font-weight: bold">
@@ -281,6 +284,7 @@ const createOrder = async (req, res, next) => {
       </table>
   
       <div style="margin-top: 30px; text-align: center">
+      ${deliveryNote ? `<p>Napomena: ${deliveryNote}</p>` : ""}
         <p>
           ukoliko imate dodatnih pitanja vezano za isporuku mozete nam se obratiti
           na email :
@@ -307,11 +311,39 @@ const createOrder = async (req, res, next) => {
     }
 
     req.session.cart = null;
-  } catch (err) {
-    console.log(err);
+    res.redirect(`/checkout_success?order=${orderId}`);
+  } catch (error) {
+    const { cart, totalPrice } = await getCartProducts(req);
+    return res.render("checkout", {
+      pageTitle: "Tropical Glow - Napravi Porudzbinu",
+      cartCount: cart.length,
+      path: "/checkout",
+      cart,
+      totalPrice,
+      cssFiles: ["/css/checkout.css"],
+      jsFiles: ["/js/checkout.js"],
+      errors: error.details.map((err) => err.message),
+      formData: req.body,
+      metaDescription: false,
+      noIndex: true,
+    });
   }
-
-  res.redirect("/checkout");
 };
 
-module.exports = { getCheckoutPage, createOrder };
+const getCheckoutSuccess = async (req, res, next) => {
+  const { cart } = await getCartProducts(req);
+  const { order } = req.query;
+
+  res.render("checkout_success", {
+    pageTitle: "Kupovina - Tropical Glow",
+    cartCount: cart.length,
+    path: "/checkout",
+    cssFiles: ["/css/checkout.css"],
+    jsFiles: ["/js/checkout_success.js"],
+    metaDescription: false,
+    noIndex: true,
+    orderId: order,
+  });
+};
+
+module.exports = { getCheckoutPage, createOrder, getCheckoutSuccess };

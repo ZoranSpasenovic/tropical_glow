@@ -8,7 +8,7 @@
         <div class="product_detail-img">
           <img
             src="/assets/pictures/products/<%=product.image%>.webp"
-            alt="slika prozivoda"
+            alt="<%= product.name %>"
           />
           <span class="package"><%=product.package%><%=product.unit%></span>
           <% if(product.amount < 1) { %>

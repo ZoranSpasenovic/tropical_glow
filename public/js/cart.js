@@ -5,6 +5,7 @@ const progressBar = document.querySelector(".progress_bar");
 const progressText = document.querySelector(".progress_text");
 const progressPrice = progressText?.querySelector("span");
 const cartCount = document.querySelector(".cart_count");
+const deliveryPrice = document.querySelector(".cart_subtotal-delivery_price");
 
 // PROGRESS BAR LOGIC
 
@@ -74,7 +75,12 @@ tableBody?.addEventListener("click", async (event) => {
   }
 
   subTotal.textContent = totalPrice + "RSD";
-  cartTotal.textContent = totalPrice + 450 + "RSD";
+  cartTotal.textContent = totalPrice + "RSD";
+  if (+totalPrice < 10000) {
+    deliveryPrice.innerHTML = `<p>Troškovi isporuke nisu uključeni u cenu.</p>`;
+  } else {
+    deliveryPrice.innerHTML = `<p>Dostava je besplatna.</p>`;
+  }
   cartCount.textContent = cart.length;
 
   updateProgressBar();

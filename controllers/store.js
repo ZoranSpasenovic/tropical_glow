@@ -112,10 +112,12 @@ const getProductDetails = async (req, res, next) => {
   const prodId = req.params.prodId;
   const cartCount = getCartCount(req);
   const product = await Product.findByPk(prodId);
+
+  const natural = Array.isArray(product.natural)
+    ? product.natural
+    : JSON.parse(product.natural);
   const naturalIngredients = {};
-  product.natural.forEach(
-    (item) => (naturalIngredients[item] = naturalEffects[item])
-  );
+  natural.forEach((item) => (naturalIngredients[item] = naturalEffects[item]));
 
   res.render("product", {
     product,

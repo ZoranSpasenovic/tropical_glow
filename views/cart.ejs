@@ -123,13 +123,16 @@
               <p>PDV uračunat u cenu</p>
             </div>
             <div class="cart_subtotal-delivery_price">
-              <p>Troškovi Dostave:</p>
-              <span>450RSD</span>
+              <% if(totalPrice < 10000) { %>
+              <p>Troškovi isporuke nisu uključeni u cenu.</p>
+              <% } else { %>
+              <p>Dostava je besplatna.</p>
+              <% } %>
             </div>
           </div>
           <div class="cart_total-price">
             <p>Iznos za plaćanje:</p>
-            <span><%=(totalPrice + 450) %>RSD</span>
+            <span><%=totalPrice %>RSD</span>
           </div>
           <div class="cart_to-checkout">
             <a href="/checkout">
@@ -146,11 +149,8 @@
       </div>
       <% } else { %>
       <div class="empty_cart">
-        <a href="/"> <button>Nastavi Kupovinu</button></a>
         <h1 class="empty_cart-header">Vaša Korpa je Prazna!</h1>
-        <div class="empty_cart-image_container">
-          <img src="/assets/pictures/cart/empty-cart.webp" alt="prazna korpa" />
-        </div>
+        <button><a href="/">Nastavi Kupovinu</a></button>
       </div>
 
       <%} %>

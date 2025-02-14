@@ -65,9 +65,10 @@ header {
   z-index: 100;
   font-family: SeasonsLight;
 }
-h1 {
+h1 h2 {
   font-family: SeasonsLight;
 }
+
 footer {
   font-family: SeasonsLight;
 }
@@ -666,6 +667,7 @@ header.header_phone {
   margin-top: 2rem;
   border-top: 1px solid #3b5947;
   padding: 2rem 0;
+  
 }
 
 .blog-item-container {

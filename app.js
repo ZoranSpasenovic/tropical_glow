@@ -19,6 +19,15 @@ const sitemapRoutes = require("./routes/sitemap");
 
 const PORT = process.env.PORT || 3000;
 
+app.set("trust proxy", true);
+
+app.use((req, res, next) => {
+  if (req.headers.host.startsWith("www.")) {
+    const newHost = req.headers.host.replace("www.", "");
+    return res.redirect(301, `https://${newHost}${req.url}`);
+  }
+  next();
+});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

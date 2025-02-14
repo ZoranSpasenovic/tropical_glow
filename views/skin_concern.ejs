@@ -30,6 +30,7 @@
               src="/assets/pictures/products/<%= product.image %>.webp"
               alt="<%=product.name%>"
             />
+            <h3 class="product_title"><%= product.name %></h3>
             <% if (product.sale) { %>
             <p class="product_price original_price"><%= product.price %> RSD</p>
             <p class="product_price sale_price">

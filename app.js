@@ -6,6 +6,8 @@ const session = require("cookie-session");
 require("dotenv").config();
 const helmet = require("helmet");
 
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
+
 app.set("view engine", "ejs");
 
 const shopRoutes = require("./routes/shop");

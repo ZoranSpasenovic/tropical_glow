@@ -18,13 +18,7 @@ const checkoutRoutes = require("./routes/checkout");
 const sitemapRoutes = require("./routes/sitemap");
 
 const PORT = process.env.PORT || 3000;
-app.use((req, res, next) => {
-  if (req.secure || process.env.NODE_ENV !== "production") {
-    next();
-  } else {
-    res.redirect(`https://${req.headers.host}${req.url}`);
-  }
-});
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

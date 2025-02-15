@@ -5,6 +5,7 @@ const app = express();
 const session = require("cookie-session");
 require("dotenv").config();
 const helmet = require("helmet");
+const compression = require("compression");
 
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
@@ -18,20 +19,12 @@ const checkoutRoutes = require("./routes/checkout");
 const sitemapRoutes = require("./routes/sitemap");
 
 const PORT = process.env.PORT || 3000;
-
-app.set("trust proxy", true);
-
-app.use((req, res, next) => {
-  if (req.headers.host.startsWith("www.")) {
-    const newHost = req.headers.host.replace("www.", "");
-    return res.redirect(301, `https://${newHost}${req.url}`);
-  }
-  next();
-});
+app.use(compression());
+app.use(helmet());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"), { maxAge: "1d" }));
 app.use(
   session({
     name: "cart",
@@ -63,7 +56,6 @@ app.use(cartRoutes);
 app.use(supportRoutes);
 app.use(checkoutRoutes);
 app.use(sitemapRoutes);
-app.use(helmet());
 
 app.use((req, res, next) => {
   res.status(404).send("<h1>Page is not found </h1>");

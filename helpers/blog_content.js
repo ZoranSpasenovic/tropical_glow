@@ -8,7 +8,7 @@ const blogContent = [
     excerpt:
       "Sa ponosom predstavljamo Spa Ceylon, našeg partnera čije proizvode sada možete pronaći u našoj online prodavnici. Iz srca tropskih šuma, ovaj brend donosi esenciju ajurvedske tradicije u vašu rutinu lepote, nudeći ne samo proizvode za negu, već i ultimativno iskustvo luksuza i blagostanja.",
     html: ` <div class="blog_details-image_container">
-        <img
+        <img loading="lazy" 
           src="/assets/pictures/blog_details/spa_ceylon_nas_partner.webp"
           alt="slika za blog"
         />
@@ -94,7 +94,7 @@ const blogContent = [
     excerpt:
       "Itekako zna. Kada je reč o nezi kože, nije svejedno koje proizvode koristimo u različitim delovima dana. Naša koža ima različite potrebe preko dana i noći, što zahteva specijalizovane proizvode koji će odgovarati tim specifičnim potrebama.",
     html: `<div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/Kako_koza_zna_da_li_je_dan_ili_noc_1.webp"
           alt="slika za blog"
         />
@@ -180,7 +180,7 @@ const blogContent = [
     excerpt:
       "U svetu napredne nege kože, dvostruko čišćenje je postalo nezaobilazan korak za sve koji teže temeljno čistoj i zdravoj koži. Ovaj proces uključuje dva koraka: najpre korišćenje uljanog čistača, a zatim umivalice na bazi vode, osiguravajući dubinsko čišćenje koje efikasno uklanja nečistoće, šminku i višak sebuma.",
     html: ` <div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/znacaj_duplog_ciscenja_2.webp"
           alt="slika za blog"
         />
@@ -247,7 +247,7 @@ const blogContent = [
     excerpt:
       "Hijaluronska kiselina može zadržati do 1000 puta svoju težinu u vodi, što je čini idealnom za duboku hidrataciju kože. Ovaj prirodni sastojak kože postao je nezaobilazni sastojak u svetu moderne kozmetike, naročito zbog svoje sposobnosti da intenzivno hidrira i revitalizuje kožu.",
     html: ` <div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/hijaluronska_kiselina_3.webp"
           alt="slika za blog"
         />
@@ -336,7 +336,7 @@ const blogContent = [
     excerpt:
       "Ravnoteža pH vrednosti kože je ključni element u održavanju zdrave, čiste i sjajne kože. pH, koji predstavlja nivo kiselosti ili alkalnosti, igra vitalnu ulogu u zaštiti kože i održavanju njenog prirodnog zaštitnog sloja.",
     html: `  <div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/znacaj_ph_balansa_1.webp"
           alt="slika za blog"
         />
@@ -409,7 +409,7 @@ const blogContent = [
     excerpt:
       "U misiji da pruži samo najkvalitetniju, luksuznu prirodnu kozmetiku, Spa Ceylon Luxury Ayurveda posebnu pažnju posvećuje ne samo formulacijama proizvoda, već i načinu na koji ih pakuje. Iz tog razloga, staklo je primarni materijal za pakovanja proizvoda za negu. Staklo nije samo simbol čistoće i elegancije, već i garancija očuvanja kvaliteta i integriteta svakog proizvoda.",
     html: `<div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/odrzivi_luksuz_staklo_3.webp"
           alt="slika za blog"
         />
@@ -483,7 +483,7 @@ const blogContent = [
     excerpt:
       "Eksfolijacija je proces uklanjanja mrtvih ćelija sa površine kože, koristeći hemijske ili fizičke eksfolijante. Ovaj postupak poboljšava teksturu kože, povećava njenu sposobnost upijanja proizvoda za negu, i može smanjiti pojavu bora, akni, i pigmentacije.",
     html: ` <div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/nezna_eksfolijacija_2.webp"
           alt="slika za blog"
         />
@@ -555,7 +555,7 @@ const blogContent = [
 Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno formulisane glinene maske koje su prilagođene različitim tipovima kože, obe obećavaju unapređenje zdravlja i izgleda kože, kao i sužene pore. 
 `,
     html: `<div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/Efekat_glinenih_maski_2.webp"
           alt="slika za blog"
         />
@@ -590,7 +590,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
               media="(max-width: 680px)"
             />
 
-            <img
+            <img loading="lazy"
               src="/assets/pictures/blog_details/Efekat_glinenih_maski_1.webp"
               alt="slika za blog"
             />
@@ -642,7 +642,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
     excerpt:
       "Hiperpigmentacija je stanje kože karakterisano prekomernom produkcijom melanina, što rezultira tamnim mrljama i neujednačenim tenom. Uzroci ovog upornog i dosadnog problema mogu uključivati izlaganje suncu, hormonske promene, oštećenja kože, i upotrebu određenih lekova. Za efikasno rešenje ovog problema, predstavljamo serum koji sadrži medveđu bobicu i seme grožđa.",
     html: `<div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/dva_najefikasnija_sastojka.webp"
           alt="slika za blog"
         />
@@ -669,7 +669,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
               media="(max-width: 680px)"
             />
 
-            <img
+            <img loading="lazy"
               src=""
               alt="slika za blog"
            
@@ -705,7 +705,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
     metaDescription: "Šta je jagodasta koža i kako nastaje?",
     excerpt: `"Strawberry skin" ili "jagodasta koža" je pojam koji se koristi za opisivanja izgleda kože koji nastaje kada se pore na nogama i drugim delovima tela začepe i postanu vidljive poput sitnih tačkica na jagodama. Evo nekoliko saveta kako da ublažite ovaj problem i poboljšate izgled svoje kože:`,
     html: `<div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/strategije_za_borbu_protiv_strawberry_skin.webp"
           alt="slika za blog"
         />
@@ -757,7 +757,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
                 /assets/pictures/blog_details/strategije_za_borbu_protiv_strawberry_skin2.webp
               "
             />
-            <img src="" alt="slika za blog" />
+            <img loading="lazy" src="" alt="slika za blog" />
           </picture>
         </div>
         <div class="blog_details-div">
@@ -778,7 +778,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
       "Koje su prednosti korišćenja proizvoda sa vitaminom C i kurkumom u svakodnevnoj nezi kože?",
     excerpt: `U svetu prirodne nege kože, vitamin C i kurkuma su postali ključni sastojci za postizanje zdravog i blistavog tena. U našoj ponudi luksuzne ajurvede, donosimo vam dva proizvoda koji sadrže ovu moćnu kombinaciju – Vitamin C Pena za čišćenje lica i Glinena maska za lice. Zahvaljujući sinergiji vitamina C i kurkume, ovi proizvodi ne samo da čiste kožu, već je i revitalizuju, ujednačavaju ten i podstiču prirodan sjaj. Evo kako ovi sastojci deluju i zašto su idealni za vašu kožu.`,
     html: `<div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/cvitamin.webp"
           alt="slika za blog"
         />
@@ -833,7 +833,7 @@ Ako ste u potrazi za efikasnom negom lica, naša ponuda uključuje dve posebno f
     metaDescription: "Koje su prednosti bakuchiola u anti-age nezi kože?",
     excerpt: `Retinol je dugo bio zlatni standard u anti-age nezi kože, ali sa sobom nosi rizik iritacije i osetljivosti, posebno kod onih sa osetljivom kožom. Srećom, bakuchiol, prirodni biljni sastojak, nudi alternativu sa sličnim prednostima bez rizika od nuspojava.`,
     html: `<div class="blog_details-image_container">
-        <img
+        <img loading="lazy"
           src="/assets/pictures/blog_details/bakuchiol.webp"
           alt="slika za blog"
         />

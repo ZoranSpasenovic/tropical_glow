@@ -5,7 +5,6 @@ const app = express();
 const session = require("cookie-session");
 require("dotenv").config();
 const helmet = require("helmet");
-const compression = require("compression");
 
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
@@ -19,7 +18,7 @@ const checkoutRoutes = require("./routes/checkout");
 const sitemapRoutes = require("./routes/sitemap");
 
 const PORT = process.env.PORT || 3000;
-app.use(compression());
+
 app.use(helmet());
 
 app.use(express.urlencoded({ extended: true }));

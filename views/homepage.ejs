@@ -56,49 +56,65 @@
         <a class="product_details-link" href="/proizvod/<%=product.id%>">
           <div class="new_product-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets/pictures/products/<%=product.image%>.webp"
               alt="<%=product.name%>"
+              width="305"
+              height="305"
             />
             <h3 class="product_title"><%= product.name %></h3>
             <p class="product_price"><%= product.price %>RSD</p>
-            <button data-id="<%= product.id %>" id="add-to-cart">
-              Dodaj u korpu
-            </button>
+            <div class="button_container">
+              <button
+                data-nosnippet
+                data-id="<%= product.id %>"
+                id="add-to-cart"
+              >
+                Dodaj u korpu
+              </button>
+            </div>
           </div></a
         >
         <% }) %> <% newProducts.forEach((product) => { %>
         <a class="product_details-link" href="/proizvod/<%=product.id%>">
           <div class="new_product-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets/pictures/products/<%=product.image%>.webp"
               alt="<%=product.name%>"
+              width="305"
+              height="305"
             />
             <h3 class="product_title"><%= product.name %></h3>
             <p class="product_price"><%= product.price %>RSD</p>
-            <button
-              data-id="<%= product.id %>"
-              id="add-to-cart"
-              class="new_product-add_to_cart"
-            >
-              Dodaj u korpu
-            </button>
+            <div class="button_container">
+              <button
+                data-id="<%= product.id %>"
+                id="add-to-cart"
+                class="new_product-add_to_cart"
+              >
+                Dodaj u korpu
+              </button>
+            </div>
           </div></a
         >
         <% }) %> <% newProducts.forEach((product) => { %>
         <a class="product_details-link" href="/proizvod/<%=product.id%>">
           <div class="new_product-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets/pictures/products/<%=product.image%>.webp"
               alt="<%=product.name%>"
+              width="305"
+              height="305"
             />
             <h3 class="product_title"><%= product.name %></h3>
             <p class="product_price"><%= product.price %>RSD</p>
-            <button data-id="<%= product.id %>" id="add-to-cart">
-              Dodaj u korpu
-            </button>
+            <div class="button_container">
+              <button data-id="<%= product.id %>" id="add-to-cart">
+                Dodaj u korpu
+              </button>
+            </div>
           </div></a
         >
         <% }) %>
@@ -113,9 +129,11 @@
         <div class="award_container">
           <div class="award_image-container">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets/pictures/awards/nagrade_1.webp"
               alt="Najbolji prirodni organski proizvodi"
+              width="200"
+              height="200"
             />
           </div>
           <div class="award_content-container">
@@ -126,9 +144,11 @@
         <div class="award_container">
           <div class="award_image-container">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets/pictures/awards/nagrade_2.webp"
               alt="Najbolji wellbeign brend 2024.godine"
+              width="200"
+              height="200"
             />
           </div>
           <div class="award_content-container">
@@ -140,9 +160,11 @@
         <div class="award_container">
           <div class="award_image-container">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets/pictures/awards/nagrade_3.webp"
               alt="Najbolji wellness proizvod"
+              width="200"
+              height="200"
             />
           </div>
           <div class="award_content-container">
@@ -186,72 +208,92 @@
           <div class="carousel_track">
             <div class="testimonial_card">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="/assets/pictures/testimonials/1.webp"
                 alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
+                width="250"
+                height="320"
               />
             </div>
             <div class="testimonial_card">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="/assets/pictures/testimonials/2.webp"
                 alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože spa ceylon proizvoda"
+                width="250"
+                height="320"
               />
             </div>
             <div class="testimonial_card">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="/assets/pictures/testimonials/3.webp"
                 alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
+                width="250"
+                height="320"
               />
             </div>
             <div class="testimonial_card">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="/assets/pictures/testimonials/4.webp"
                 alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
+                width="250"
+                height="320"
               />
             </div>
             <div class="testimonial_card">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="/assets/pictures/testimonials/5.webp"
                 alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
+                width="250"
+                height="320"
               />
             </div>
             <div class="testimonial_card">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="/assets/pictures/testimonials/6.webp"
                 alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
+                width="250"
+                height="320"
               />
             </div>
             <div class="testimonial_card">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="/assets/pictures/testimonials/7.webp"
                 alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
+                width="250"
+                height="320"
               />
             </div>
             <div class="testimonial_card">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="/assets/pictures/testimonials/8.webp"
                 alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
+                width="250"
+                height="320"
               />
             </div>
             <div class="testimonial_card">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="/assets/pictures/testimonials/9.webp"
                 alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
+                width="250"
+                height="320"
               />
             </div>
             <div class="testimonial_card">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="/assets/pictures/testimonials/10.webp"
                 alt="Utisci zadovoljnih kupaca Spa Ceylon proizvoda za negu kože"
+                width="250"
+                height="320"
               />
             </div>
           </div>
@@ -364,9 +406,11 @@
         <a href="/skin_concern/wrinkles"
           ><div class="skin-concern-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets//pictures/resenje za svaki izazov slike/bore i fine linije, nakrivljena.webp"
               alt="Rešenje za bore i finije linije na licu"
+              width="180"
+              height="140"
             />
             <h3>Bore i Fine Linije</h3>
           </div></a
@@ -374,9 +418,11 @@
         <a href="/skin_concern/oily"
           ><div class="skin-concern-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets//pictures/resenje za svaki izazov slike/kontrola masnoce.webp"
               alt="Kontrola masnoće lica"
+              width="180"
+              height="140"
             />
             <h3>Kontrola Masnoće</h3>
           </div></a
@@ -384,9 +430,11 @@
         <a href="/skin_concern/tan"
           ><div class="skin-concern-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets//pictures/resenje za svaki izazov slike/neujednacen ten.webp"
               alt="Rešenje za neujednačen ten na licu"
+              width="180"
+              height="140"
             />
             <h3>Neujednačen Ten</h3>
           </div></a
@@ -394,9 +442,11 @@
         <a href="/skin_concern/relax"
           ><div class="skin-concern-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets//pictures/resenje za svaki izazov slike/opustanje i balans.webp"
               alt="Opuštanje i balans kože"
+              width="180"
+              height="140"
             />
             <h3>Opuštanje i Balans</h3>
           </div></a
@@ -404,9 +454,11 @@
         <a href="/skin_concern/pores"
           ><div class="skin-concern-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets//pictures/resenje za svaki izazov slike/Prosirene pore.webp"
               alt="Rešenje za proširene pore na licu"
+              width="180"
+              height="140"
             />
             <h3>Proširene Pore</h3>
           </div></a
@@ -414,9 +466,11 @@
         <a href="/skin_concern/dry"
           ><div class="skin-concern-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets//pictures/resenje za svaki izazov slike/suva koža i dehidratacija.webp"
               alt="Spa Ceylon rešenje za suvu kožu i dehidrataciju"
+              width="180"
+              height="140"
             />
             <h3>Suva Koža i Dehidratacija</h3>
           </div></a
@@ -424,9 +478,11 @@
         <a href="/skin_concern/tired"
           ><div class="skin-concern-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets//pictures/resenje za svaki izazov slike/umorna koža.webp"
               alt="Rešenje za umornu kožu"
+              width="180"
+              height="140"
             />
             <h3>Umorna Koža</h3>
           </div></a
@@ -434,9 +490,11 @@
         <a href="/skin_concern/urban"
           ><div class="skin-concern-card">
             <img
-            loading="lazy"
+              loading="lazy"
               src="assets//pictures/resenje za svaki izazov slike/urbana zagadjenost.webp"
               alt="Kako rešiti posledice urbane zagađenosti na licu"
+              width="180"
+              height="140"
             />
             <h3>Urbana Zagađenost</h3>
           </div></a
@@ -447,9 +505,11 @@
       <div id="about-us" class="about-us-container">
         <div class="about-us-image-container">
           <img
-          loading="lazy"
+            loading="lazy"
             src="assets/pictures/about us/O nama manja.webp"
             alt="O nama - Spa Ceylon distributeru"
+            width="350"
+            height="350"
           />
         </div>
         <div class="about-us-content">
@@ -503,6 +563,8 @@
             loading="lazy"
             src="assets//pictures/about us/Spa Ceylon nas partner manja.webp"
             alt="Spa Ceylon naš partner u poslovanju"
+            width="350"
+            height="350"
           />
         </div>
       </div>
@@ -515,9 +577,11 @@
             srcset="/assets/pictures/TG_VEGAN.webp"
           />
           <img
-          loading="lazy"
+            loading="lazy"
             src="/assets/pictures/Vegan 0.webp"
             alt="Kozmetički proizvodi biljnog porekla"
+            width="390"
+            height="150"
           />
         </picture>
       </div>

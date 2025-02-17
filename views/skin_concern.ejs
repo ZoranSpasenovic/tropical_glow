@@ -31,6 +31,8 @@
               loading="lazy"
               src="/assets/pictures/products/<%= product.image %>.webp"
               alt="<%=product.name%>"
+              width="300"
+              height="300"
             />
             <h3 class="product_title"><%= product.name %></h3>
             <% if (product.sale) { %>
@@ -43,9 +45,12 @@
             <% } %> <% if(product.amount < 1 ) { %>
             <p class="out_of_stock">Nema na stanju</p>
             <% } else { %>
-            <button data-id="<%= product.id %>" id="add-to-cart">
-              Dodaj u korpu
-            </button>
+            <div class="button_container">
+              <button data-id="<%= product.id %>" id="add-to-cart">
+                Dodaj u korpu
+              </button>
+            </div>
+
             <% }%>
           </div></a
         >

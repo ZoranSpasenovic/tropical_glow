@@ -315,7 +315,6 @@ const createOrder = async (req, res, next) => {
     req.session.cart = null;
     res.redirect(`/checkout_success?order=${orderId}`);
   } catch (error) {
-    console.log(error)
     const { cart, totalPrice } = await getCartProducts(req);
     return res.render("checkout", {
       pageTitle: "Tropical Glow - Napravi Porudzbinu",

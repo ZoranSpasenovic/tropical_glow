@@ -113,7 +113,7 @@
   }
 
   .products_container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     row-gap: 4rem;
     padding: 3rem 1rem 5rem;
@@ -130,6 +130,9 @@
   }
   .products-section {
     padding: 0 0.5rem;
+  }
+  .products_container {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   #add-to-cart {

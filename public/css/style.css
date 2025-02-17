@@ -506,9 +506,11 @@ header.header_phone {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-
   color: #3b5947;
   flex-grow: 1;
+}
+.button_container {
+  width: 100%;
 }
 
 .new_product-card img {

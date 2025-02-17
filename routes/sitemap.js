@@ -4,6 +4,7 @@ const { createGzip } = require("zlib");
 const Product = require("../models/product");
 const blogData = require("../helpers/blog_content");
 const router = express.Router();
+const skinConcernHeadings = require("../helpers/skin_concern_headings");
 
 let sitemapCache;
 router.get("/sitemap.xml", async (req, res) => {
@@ -15,7 +16,6 @@ router.get("/sitemap.xml", async (req, res) => {
     res.send(sitemapCache);
     return;
   }
-  console.log("new sitemap created");
 
   try {
     const sitemap = new SitemapStream({ hostname: "https://tropicalglow.rs" });
@@ -23,6 +23,14 @@ router.get("/sitemap.xml", async (req, res) => {
     sitemap.write({ url: "/", changefreq: "daily", priority: 1.0 });
     sitemap.write({ url: "/proizvodi", changefreq: "weekly", priority: 0.9 });
     sitemap.write({ url: "/blog", changefreq: "weekly", priority: 0.8 });
+
+    for (const key in skinConcernHeadings) {
+      sitemap.write({
+        url: `/skin_concern/${key}`,
+        changefreq: "weekly",
+        priority: 0.8,
+      });
+    }
 
     const products = await Product.findAll();
     products.forEach((product) => {

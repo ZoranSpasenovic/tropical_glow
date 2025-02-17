@@ -3,16 +3,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <% if (metaDescription) { %>
   <meta name="description" content="<%=metaDescription%>" />
-  <% var noIndex = typeof noIndex !== "undefined" ? noIndex : false %> <%}%> <%
-  if(noIndex) { %>
+  <%}%> <% if(typeof noIndex !== "undefined") { %>
   <meta name="robots" content="noindex, nofollow" />
   <%}%>
   <meta name="msvalidate.01" content="3B729C600EB66A662112BF1F41819DA2" />
-  <meta name="google-site-verification" content="wp34qsMU0ZHVUKvhxK8JMmtvq3ZkwI5hpsexcFA_8pI" />
+  <meta
+    name="google-site-verification"
+    content="wp34qsMU0ZHVUKvhxK8JMmtvq3ZkwI5hpsexcFA_8pI"
+  />
   <meta
     name="keywords"
     content="kozmetika, spa ceylon, kreme za lice, ayurveda, spa ceylon srbija, bakuchiol"
   />
+  <% if(typeof canonical !== "undefined") { %>
+  <link rel="canonical" href="https://tropicalglow.rs/<%=canonical%>" />
+  <% } %>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -39,6 +44,25 @@
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart"
   />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/icon/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/icon/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/icon/favicon-16x16.png"
+  />
+  <link rel="manifest" href="/icon/site.webmanifest" />
+
   <script type="module" src="/js/script.js"></script>
 
   <title><%= pageTitle %></title>

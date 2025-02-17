@@ -47,15 +47,17 @@ const sendMessage = async (req, res, next) => {
     res.status(400).json({ message: "sva polja su obavezna !" });
   }
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "mail.tropicalglow.rs",
+    port: 465,
+    secure: true,
     auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_KEY,
+      user: process.env.MAIL_INFO,
+      pass: process.env.MAIL_INFO_KEY,
     },
   });
   const mailOptions = {
-    from: email,
-    to: "tropicalglowsrbija@gmail.com",
+    from: process.env.MAIL_INFO,
+    to: process.env.MAIL_TO_INFO,
     subject: `Nova poruka od ${name} ${last_name}`,
     text: `Primili ste novu poruku od korisnika " ${name} ${last_name} ", poruka glasi : "${message}", odgovor na ovu poruku mozete poslati na email adresu : ${email} `,
   };

@@ -37,6 +37,7 @@ const getHomePage = (req, res, next) => {
       jsFiles: ["/js/testimonial_carousel.js"],
       metaDescription:
         "Otkrijte prirodnu lepotu sa Spa Ceylon i TropicalGlow proizvodima za negu kože. Iskoristite snagu azijske kozmetike za glatku, zdravu i blistavu kožu.",
+      canonical: "",
     });
   });
 };
@@ -53,6 +54,7 @@ const getBlog = (req, res, next) => {
     blogContent,
     metaDescription:
       "Saznajte najnovije savete, vodiče i recenzije o negi kože i prirodnim proizvodima na blogu Tropical Glow. Otkrijte najbolje proizvode za zdravlje i lepotu!",
+    canonical: "blog",
   });
 };
 const getBlogDetails = (req, res, next) => {
@@ -68,6 +70,7 @@ const getBlogDetails = (req, res, next) => {
     cssFiles: ["/css/blogDetails.css", "/css/contactForm.css"],
     jsFiles: ["/js/blogDetails.js"],
     metaDescription: blogData.metaDescription,
+
   });
 };
 

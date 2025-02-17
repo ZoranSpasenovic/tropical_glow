@@ -163,16 +163,18 @@ const createOrder = async (req, res, next) => {
         ? "Troškovi isporuke nisu uključeni u cenu proizvoda i biće naplaćeni prema standardnoj tarifi kurirske službe prilikom isporuke."
         : "Dostava je besplatna!";
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "mail.tropicalglow.rs",
+      port: 465,
+      secure: true,
       auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_KEY,
+        user: process.env.MAIL_ORDER,
+        pass: process.env.MAIL_ORDER_KEY,
       },
     });
     const orderId = "" + Math.floor(Math.random() * 1000000);
     const mailOrder = (mail) => {
       return {
-        from: process.env.MAIL_USER,
+        from: process.env.MAIL_ORDER,
         to: mail,
         subject: `Uspesno kreiranje porudzbine br. ${orderId}`,
         text: `Uspesno ste kreirali porudzbinu br. ${orderId} , podaci o vasoj porudzbini su : 
@@ -297,7 +299,7 @@ const createOrder = async (req, res, next) => {
       };
     };
     const mailToUser = mailOrder(email);
-    const mailToAdmin = mailOrder(process.env.MAIL_USER);
+    const mailToAdmin = mailOrder(process.env.MAIL_TO_ORDER);
     await transporter.sendMail(mailToUser);
     await transporter.sendMail(mailToAdmin);
 
@@ -313,6 +315,7 @@ const createOrder = async (req, res, next) => {
     req.session.cart = null;
     res.redirect(`/checkout_success?order=${orderId}`);
   } catch (error) {
+    console.log(error)
     const { cart, totalPrice } = await getCartProducts(req);
     return res.render("checkout", {
       pageTitle: "Tropical Glow - Napravi Porudzbinu",

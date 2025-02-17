@@ -53,7 +53,7 @@
       <div class="heading_container-new_products"><h2>Novi Proizvodi</h2></div>
       <div class="new_products-container">
         <% newProducts?.forEach((product) => { %>
-        <a class="product_details-link" href="/proizvod/<%=product.id%>">
+        <a class="product_details-link" href="/proizvod/<%=product.slug%>">
           <div class="new_product-card">
             <img
               loading="lazy"
@@ -64,7 +64,7 @@
             />
             <h3 class="product_title"><%= product.name %></h3>
             <p class="product_price"><%= product.price %>RSD</p>
-            <div class="button_container">
+            <div data-nosnippet class="button_container">
               <button
                 data-nosnippet
                 data-id="<%= product.id %>"
@@ -76,7 +76,7 @@
           </div></a
         >
         <% }) %> <% newProducts.forEach((product) => { %>
-        <a class="product_details-link" href="/proizvod/<%=product.id%>">
+        <a class="product_details-link" href="/proizvod/<%=product.slug%>">
           <div class="new_product-card">
             <img
               loading="lazy"
@@ -87,7 +87,7 @@
             />
             <h3 class="product_title"><%= product.name %></h3>
             <p class="product_price"><%= product.price %>RSD</p>
-            <div class="button_container">
+            <div data-nosnippet class="button_container">
               <button
                 data-id="<%= product.id %>"
                 id="add-to-cart"
@@ -99,7 +99,7 @@
           </div></a
         >
         <% }) %> <% newProducts.forEach((product) => { %>
-        <a class="product_details-link" href="/proizvod/<%=product.id%>">
+        <a class="product_details-link" href="/proizvod/<%=product.slug%>">
           <div class="new_product-card">
             <img
               loading="lazy"
@@ -110,7 +110,7 @@
             />
             <h3 class="product_title"><%= product.name %></h3>
             <p class="product_price"><%= product.price %>RSD</p>
-            <div class="button_container">
+            <div data-nosnippet class="button_container">
               <button data-id="<%= product.id %>" id="add-to-cart">
                 Dodaj u korpu
               </button>

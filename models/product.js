@@ -1,6 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 const sequelize = require("../util/database");
+const { allow } = require("joi");
 
 const Product = sequelize.define("product", {
   id: {
@@ -71,6 +72,10 @@ const Product = sequelize.define("product", {
     allowNull: false,
     defaultValue: false,
   },
+  slug: {
+    type: DataTypes.STRING(255),
+    allowNull : true,
+  }
 });
 
 module.exports = Product;

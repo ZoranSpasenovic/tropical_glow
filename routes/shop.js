@@ -26,7 +26,7 @@ router.get("/proizvodi", getAllProducts);
 
 router.get("/proizvodi/:ctg", getProductsPage);
 
-router.get("/proizvod/:prodId", getProductDetails);
+router.get("/proizvod/:slug", getProductDetails);
 
 router.get("/search", getSearchPage);
 

@@ -35,7 +35,7 @@ router.get("/sitemap.xml", async (req, res) => {
     const products = await Product.findAll();
     products.forEach((product) => {
       sitemap.write({
-        url: `/proizvod/${product.id}`,
+        url: `/proizvod/${product.slug}`,
         changefreq: "weekly",
         priority: 0.8,
       });

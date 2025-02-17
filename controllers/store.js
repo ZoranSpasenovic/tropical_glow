@@ -28,6 +28,7 @@ const findByCtg = async (ctg) => {
 const getHomePage = (req, res, next) => {
   const cartCount = getCartCount(req);
   findByCtg("nova_ponuda").then((newProducts) => {
+    console.log(newProducts)
     res.render("homepage", {
       pageTitle: "Tropical Glow - Prirodna nega kože",
       path: "home",
@@ -70,7 +71,6 @@ const getBlogDetails = (req, res, next) => {
     cssFiles: ["/css/blogDetails.css", "/css/contactForm.css"],
     jsFiles: ["/js/blogDetails.js"],
     metaDescription: blogData.metaDescription,
-
   });
 };
 
@@ -112,9 +112,13 @@ const getSkinConcernPage = (req, res, next) => {
 };
 
 const getProductDetails = async (req, res, next) => {
-  const prodId = req.params.prodId;
+  const slug = req.params.slug;
   const cartCount = getCartCount(req);
-  const product = await Product.findByPk(prodId);
+  const product = await Product.findOne({
+    where: {
+      slug: slug,
+    },
+  });
 
   const natural = Array.isArray(product.natural)
     ? product.natural

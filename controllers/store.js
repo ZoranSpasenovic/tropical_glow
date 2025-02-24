@@ -28,7 +28,6 @@ const findByCtg = async (ctg) => {
 const getHomePage = (req, res, next) => {
   const cartCount = getCartCount(req);
   findByCtg("nova_ponuda").then((newProducts) => {
-    console.log(newProducts)
     res.render("homepage", {
       pageTitle: "Tropical Glow - Prirodna nega kože",
       path: "home",

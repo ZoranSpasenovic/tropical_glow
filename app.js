@@ -25,7 +25,17 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public"), { maxAge: "1d" }));
+
+
+
+app.use(express.static(path.join(__dirname, "public"), {
+  maxAge: 86400000,
+  setHeaders: (res, path) => {
+    res.setHeader("Cache-Control", "public, max-age=86400, must-revalidate");
+  }
+}));
+
+
 app.use(
   session({
     name: "cart",
@@ -66,3 +76,4 @@ const server = http.createServer(app);
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`Server je pokrenut na portu ${PORT}`);
 });
+

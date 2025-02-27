@@ -150,6 +150,19 @@
   margin-bottom: 2rem;
   font-weight: 300;
 }
+.product_detail-original_price {
+  text-align: center;
+  font-size: 1.2rem;
+  text-decoration: line-through;
+  color: #805240;
+  font-weight: 300;
+}
+.product_detail-sale_price {
+  font-size: 1.9rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
 
 .product_detail-text {
   visibility: hidden;

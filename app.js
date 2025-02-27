@@ -12,7 +12,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || "development";
 app.set("view engine", "ejs");
 
 app.use(compression());
-app.use(helmet());
+app.use();
 
 const shopRoutes = require("./routes/shop");
 const adminRoutes = require("./routes/admin");
@@ -25,16 +25,41 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+const cacheOptions = {
+  dotfiles: "ignore",
+  etag: true,
+  extensions: ["htm", "html"],
+  index: false,
+  maxAge: "1d",
+  redirect: false,
+  setHeaders: function (res, path, stat) {
+    const oneDay = 86400;
+    const oneMonth = 2592000;
 
+    if (path.endsWith(".css") || path.endsWith(".js")) {
+      res.set("Cache-Control", `public, max-age=${oneDay}, must-revalidate`);
+    } else if (
+      path.endsWith(".jpg") ||
+      path.endsWith(".png") ||
+      path.endsWith(".webp") ||
+      path.endsWith(".gif") ||
+      path.endsWith(".mp4")
+    ) {
+      res.set("Cache-Control", `public, max-age=${oneMonth}, immutable`);
+    } else if (path.endsWith(".html") || path.endsWith(".htm")) {
+      res.set(
+        "Cache-Control",
+        "no-store, no-cache, must-revalidate, max-age=0"
+      );
+      res.set("Pragma", "no-cache");
+      res.set("Expires", "Thu, 01 Jan 1970 00:00:00 GMT");
+    }
 
+    res.set("Last-Modified", stat.mtime.toUTCString());
+  },
+};
 
-app.use(express.static(path.join(__dirname, "public"), {
-  maxAge: 86400000,
-  setHeaders: (res, path) => {
-    res.setHeader("Cache-Control", "public, max-age=86400, must-revalidate");
-  }
-}));
-
+app.use(express.static(path.join(__dirname, "public"), cacheOptions));
 
 app.use(
   session({
@@ -76,4 +101,3 @@ const server = http.createServer(app);
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`Server je pokrenut na portu ${PORT}`);
 });
-

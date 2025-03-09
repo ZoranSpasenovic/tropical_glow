@@ -1,7 +1,7 @@
 .product_details-section {
   min-height: 100vh;
   background-color: #f9f5f2;
-  padding: 2rem 4rem 10rem;
+  padding: 2rem 4rem 12rem;
   overflow: hidden;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -223,7 +223,7 @@
 }
 @media (max-width: 1080px) {
   .product_details-section {
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 16rem;
   }
   .product_detail-list_item {
     padding: 0.5rem;
@@ -231,7 +231,7 @@
 }
 @media (max-width: 850px) {
   .product_details-section {
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 28rem;
     height: auto;
   }
   .product_detail-container {

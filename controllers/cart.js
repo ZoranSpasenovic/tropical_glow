@@ -38,7 +38,7 @@ const getCartPage = async (req, res, next) => {
     cart,
     totalPrice,
     cssFiles: ["/css/cart.css"],
-    jsFiles: ["/js/cart.js"],
+    jsFiles: ["/js/cart.js?v=1"],
     metaDescription: false,
     noIndex: true,
   });

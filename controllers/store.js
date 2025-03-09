@@ -130,7 +130,7 @@ const getProductDetails = async (req, res, next) => {
     pageTitle: `${product.name} - Tropical Glow`,
     path: "products",
     cartCount,
-    cssFiles: ["/css/product.css"],
+    cssFiles: ["/css/product.css?v=1"],
     jsFiles: ["/js/product_detail.js"],
     naturalIngredients,
     metaDescription: product.name,

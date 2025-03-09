@@ -4,7 +4,7 @@ const cartTotal = document.querySelector(".cart_total-price span");
 const progressBar = document.querySelector(".progress_bar");
 const progressText = document.querySelector(".progress_text");
 const progressPrice = progressText?.querySelector("span");
-const cartCount = document.querySelector(".cart_count");
+const cartCounts = document.querySelectorAll(".cart_count");
 const deliveryPrice = document.querySelector(".cart_subtotal-delivery_price");
 
 // PROGRESS BAR LOGIC
@@ -81,7 +81,9 @@ tableBody?.addEventListener("click", async (event) => {
   } else {
     deliveryPrice.innerHTML = `<p>Dostava je besplatna.</p>`;
   }
-  cartCount.textContent = cart.length;
+  cartCounts.forEach((cartCount) => {
+    cartCount.textContent = cart.length;
+  });
 
   updateProgressBar();
   if (tableBody.children.length === 0) {

@@ -4,10 +4,15 @@ const getCartCount = require("../helpers/getCartCount");
 
 const getTermsConditionsPage = (req, res, next) => {
   const cartCount = getCartCount(req);
+  const timestamp = res.locals.timestamp;
+
   res.render("terms_conditions", {
     pageTitle: "Uslovi koriscenja - Tropical Glow",
-    cssFiles: ["/css/terms.css", "/css/contactForm.css"],
-    jsFiles: ["/js/support.js"],
+    cssFiles: [
+      "/css/terms.css?v=" + timestamp,
+      "/css/contactForm.css?v=" + timestamp,
+    ],
+    jsFiles: [""],
     cartCount,
     path: "",
     metaDescription: false,
@@ -16,10 +21,15 @@ const getTermsConditionsPage = (req, res, next) => {
 };
 const getContactPage = (req, res, next) => {
   const cartCount = getCartCount(req);
+  const timestamp = res.locals.timestamp;
+
   res.render("contact", {
     pageTitle: "Kontaktirajte nas - Tropical Glow",
-    cssFiles: ["/css/contactForm.css", "/css/contact.css"],
-    jsFiles: ["/js/support.js"],
+    cssFiles: [
+      "/css/contactForm.css?v=" + timestamp,
+      "/css/contact.css?v=" + timestamp,
+    ],
+    jsFiles: [""],
     cartCount,
     path: "",
     metaDescription: false,
@@ -29,10 +39,15 @@ const getContactPage = (req, res, next) => {
 
 const getPrivacyPolicyPage = (req, res, next) => {
   const cartCount = getCartCount(req);
+  const timestamp = res.locals.timestamp;
+
   res.render("privacy_policy", {
     pageTitle: "Politika Privatnosti - Tropical Glow",
-    cssFiles: ["/css/privacyPolicy.css", "/css/contactForm.css"],
-    jsFiles: ["/js/support.js"],
+    cssFiles: [
+      "/css/privacyPolicy.css?v=" + timestamp,
+      "/css/contactForm.css?v=" + timestamp,
+    ],
+    jsFiles: [""],
     cartCount,
     path: "",
     metaDescription: false,

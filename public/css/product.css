@@ -3,8 +3,7 @@
   background-color: #f9f5f2;
   padding: 2rem 4rem 12rem;
   overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+
 }
 
 .product_detail-container {

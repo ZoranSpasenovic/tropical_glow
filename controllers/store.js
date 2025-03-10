@@ -26,7 +26,9 @@ const findByCtg = async (ctg) => {
 };
 
 const getHomePage = (req, res, next) => {
+  const timestamp = res.locals.timestamp;
   const cartCount = getCartCount(req);
+
   findByCtg("nova_ponuda").then((newProducts) => {
     res.render("homepage", {
       pageTitle: "Tropical Glow - Prirodna nega kože",
@@ -34,7 +36,7 @@ const getHomePage = (req, res, next) => {
       newProducts,
       cartCount,
       cssFiles: [],
-      jsFiles: ["/js/testimonial_carousel.js"],
+      jsFiles: ["/js/testimonial_carousel.js?v=" + timestamp],
       metaDescription:
         "Otkrijte prirodnu lepotu sa Spa Ceylon i TropicalGlow proizvodima za negu kože. Iskoristite snagu azijske kozmetike za glatku, zdravu i blistavu kožu.",
       canonical: "",
@@ -44,12 +46,13 @@ const getHomePage = (req, res, next) => {
 
 const getBlog = (req, res, next) => {
   const cartCount = getCartCount(req);
+  const timestamp = res.locals.timestamp;
 
   res.render("blog", {
     pageTitle: "Blog o nezi kože - Tropical Glow",
     path: "blog",
-    cssFiles: ["/css/blog.css"],
-    jsFiles: ["/js/blog.js"],
+    cssFiles: ["/css/blog.css?v=" + timestamp],
+    jsFiles: [],
     cartCount,
     blogContent,
     metaDescription:
@@ -61,14 +64,18 @@ const getBlogDetails = (req, res, next) => {
   const blogId = req.params.blogId;
   const cartCount = getCartCount(req);
   const blogData = blogContent.find((blog) => blog.id === +blogId);
+  const timestamp = res.locals.timestamp;
 
   res.render("blog_details", {
     pageTitle: `${blogData.title} - Tropical Glow`,
     path: "blog",
     blogData,
     cartCount,
-    cssFiles: ["/css/blogDetails.css", "/css/contactForm.css"],
-    jsFiles: ["/js/blogDetails.js"],
+    cssFiles: [
+      "/css/blogDetails.css?v=" + timestamp,
+      "/css/contactForm.css?v=" + timestamp,
+    ],
+    jsFiles: [],
     metaDescription: blogData.metaDescription,
   });
 };
@@ -84,7 +91,7 @@ const getProductsPage = (req, res, next) => {
       products,
       cartCount,
       cssFiles: [],
-      jsFiles: ["/js/products.js"],
+      jsFiles: [],
       search: false,
       metaDescription:
         "Otkrijte proizvode iz kategorije negovanja kože i tela. Prirodna kozmetika Spa Ceylon i Tropical Glow za zdravlje i lepotu vašeg tela.",
@@ -95,6 +102,8 @@ const getProductsPage = (req, res, next) => {
 const getSkinConcernPage = (req, res, next) => {
   const ctg = req.params.ctg;
   const cartCount = getCartCount(req);
+  const timestamp = res.locals.timestamp;
+
   findByCtg(ctg).then((products) => {
     res.render("skin_concern", {
       pageTitle: "Rešenje za Svaki Izazov - Tropical Glow",
@@ -103,8 +112,8 @@ const getSkinConcernPage = (req, res, next) => {
       products,
       header: headings[ctg],
       cartCount,
-      cssFiles: ["/css/skin_concern.css"],
-      jsFiles: ["/js/products.js"],
+      cssFiles: ["/css/skin_concern.css?v=" + timestamp],
+      jsFiles: [],
       metaDescription: headings[ctg].meta,
     });
   });
@@ -118,6 +127,7 @@ const getProductDetails = async (req, res, next) => {
       slug: slug,
     },
   });
+  const timestamp = res.locals.timestamp;
 
   const natural = Array.isArray(product.natural)
     ? product.natural
@@ -130,8 +140,8 @@ const getProductDetails = async (req, res, next) => {
     pageTitle: `${product.name} - Tropical Glow`,
     path: "products",
     cartCount,
-    cssFiles: ["/css/product.css?v=1"],
-    jsFiles: ["/js/product_detail.js"],
+    cssFiles: ["/css/product.css?v=" + timestamp],
+    jsFiles: ["/js/product_detail.js?v=" + timestamp],
     naturalIngredients,
     metaDescription: product.name,
   });
@@ -146,7 +156,7 @@ const getAllProducts = (req, res, next) => {
       products,
       cartCount,
       cssFiles: [],
-      jsFiles: ["/js/products.js"],
+      jsFiles: [],
       search: false,
       metaDescription:
         "Otkrijte proizvode iz kategorije negovanja kože i tela. Prirodna kozmetika Spa Ceylon i Tropical Glow za zdravlje i lepotu vašeg tela.",
@@ -176,7 +186,7 @@ const getSearchPage = async (req, res, next) => {
       products,
       cartCount,
       cssFiles: [],
-      jsFiles: ["/js/products.js"],
+      jsFiles: [],
       search: req.query.query,
       metaDescription: false,
       noIndex: true,

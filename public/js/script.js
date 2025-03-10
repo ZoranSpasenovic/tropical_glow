@@ -237,19 +237,30 @@ window.addEventListener("pageshow", function () {
 
 const loader = document.querySelector(".loader");
 const video = document.querySelector(".background-video");
+const sections = document.querySelectorAll("section");
 if (window.location.pathname === "/") {
   video.pause();
   document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       loader.style.display = "none";
-      video.style.opacity = "1";
+      sections.forEach((section) => (section.style.opacity = "1"));
+
       video.play();
     }, 350);
   });
-}
-if (
-  window.location.pathname === "admin" ||
+} else if (
+  window.location.pathname === "/admin" ||
   window.location.pathname === "/admin/login"
 ) {
-  loader.style.display = "none";
+  document.addEventListener("DOMContentLoaded", () => {
+    loader.style.display = "none";
+    sections.forEach((section) => (section.style.opacity = "1"));
+  });
+} else {
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      loader.style.display = "none";
+      sections.forEach((section) => (section.style.opacity = "1"));
+    }, 350);
+  });
 }

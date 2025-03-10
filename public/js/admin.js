@@ -52,6 +52,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// LOADER
-const loader = document.querySelector(".loader");
-loader.style.display = "none";
+

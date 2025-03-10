@@ -78,13 +78,3 @@ addToCart?.addEventListener("click", async () => {
   cartCount.textContent = data.cart.length;
 });
 
-// LOADER
-const loader = document.querySelector(".loader");
-
-document.addEventListener("DOMContentLoaded", () => {
-  console.log(loader, productDetailSection)
-  setTimeout(() => {
-    loader.style.display = "none";
-    productDetailSection.style.opacity = "1";
-  }, 350);
-});

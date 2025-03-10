@@ -4,8 +4,6 @@
   flex-direction: column;
   align-items: center;
   color: #3b5947;
-  opacity: 0;
-  transition: opacity 0.5s ease;
 }
 
 .terms-heading {

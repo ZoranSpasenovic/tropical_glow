@@ -47,14 +47,15 @@ const validateOrder = Joi.object({
 
 const getCheckoutPage = async (req, res, next) => {
   const { cart, totalPrice } = await getCartProducts(req);
+  const timestamp = res.locals.timestamp;
   res.render("checkout", {
     pageTitle: "Kupovina - Tropical Glow",
     cartCount: cart.length,
     path: "/checkout",
     cart,
     totalPrice,
-    cssFiles: ["/css/checkout.css"],
-    jsFiles: ["/js/checkout.js"],
+    cssFiles: ["/css/checkout.css?v=" + timestamp],
+    jsFiles: ["/js/checkout.js?v=" + timestamp],
     errors: [],
     formData: {
       email: "",
@@ -72,6 +73,8 @@ const getCheckoutPage = async (req, res, next) => {
 };
 
 const createOrder = async (req, res, next) => {
+  const timestamp = res.locals.timestamp;
+
   try {
     await validateOrder.validateAsync(req.body);
   } catch (error) {
@@ -82,8 +85,8 @@ const createOrder = async (req, res, next) => {
       path: "/checkout",
       cart,
       totalPrice,
-      cssFiles: ["/css/checkout.css"],
-      jsFiles: ["/js/checkout.js"],
+      cssFiles: ["/css/checkout.css?v=" + timestamp],
+      jsFiles: ["/js/checkout.j?v=" + timestamp],
       errors: error.details.map((err) => err.message),
       formData: req.body,
       metaDescription: false,
@@ -106,7 +109,7 @@ const createOrder = async (req, res, next) => {
           path: "/checkout",
           cart,
           totalPrice,
-          cssFiles: ["/css/checkout.css"],
+          cssFiles: ["/css/checkout.css?v=" + timestamp],
           jsFiles: [],
           errors,
           formData: req.body,
@@ -322,8 +325,8 @@ const createOrder = async (req, res, next) => {
       path: "/checkout",
       cart,
       totalPrice,
-      cssFiles: ["/css/checkout.css"],
-      jsFiles: ["/js/checkout.js"],
+      cssFiles: ["/css/checkout.css?v=" + timestamp],
+      jsFiles: [],
       errors: error.details.map((err) => err.message),
       formData: req.body,
       metaDescription: false,
@@ -335,13 +338,14 @@ const createOrder = async (req, res, next) => {
 const getCheckoutSuccess = async (req, res, next) => {
   const { cart } = await getCartProducts(req);
   const { order } = req.query;
+  const timestamp = res.locals.timestamp;
 
   res.render("checkout_success", {
     pageTitle: "Kupovina - Tropical Glow",
     cartCount: cart.length,
     path: "/checkout",
-    cssFiles: ["/css/checkout.css"],
-    jsFiles: ["/js/checkout_success.js"],
+    cssFiles: ["/css/checkout.css?v=" + timestamp],
+    jsFiles: [],
     metaDescription: false,
     noIndex: true,
     orderId: order,

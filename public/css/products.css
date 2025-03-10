@@ -93,8 +93,7 @@
 .products_container {
   display: grid;
   margin: auto;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
   row-gap: 2rem;

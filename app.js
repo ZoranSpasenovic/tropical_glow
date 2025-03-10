@@ -52,6 +52,10 @@ app.use(
     },
   })
 );
+app.use((req, res, next) => {
+  res.locals.timestamp = Date.now();
+  next();
+});
 
 app.use(shopRoutes);
 app.use(adminRoutes);

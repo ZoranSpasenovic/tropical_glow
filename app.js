@@ -52,8 +52,10 @@ app.use(
     },
   })
 );
+
+const globalTimeStamp = Date.now();
 app.use((req, res, next) => {
-  res.locals.timestamp = Date.now();
+  res.locals.timestamp = globalTimeStamp;
   next();
 });
 

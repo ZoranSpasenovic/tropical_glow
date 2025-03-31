@@ -60,7 +60,7 @@ const addToCart = document.querySelector(".product_detail-button");
 const addQty = document.querySelector(".fa-plus");
 const removeQty = document.querySelector(".fa-minus");
 const qty = document.querySelector(".qty_value");
-const cartCount = document.querySelector(".cart_count");
+const cartCounts = document.querySelectorAll(".cart_count");
 
 addQty?.addEventListener("click", () => {
   qty.value = +qty.value + 1;
@@ -75,6 +75,7 @@ const prodId = addToCart?.dataset.id;
 addToCart?.addEventListener("click", async () => {
   const req = { qty: +qty.value, id: +prodId };
   const data = await addToCartFn(req);
-  cartCount.textContent = data.cart.length;
+  cartCounts.forEach((cartCount) => {
+    cartCount.textContent = data.cart.length;
+  });
 });
-

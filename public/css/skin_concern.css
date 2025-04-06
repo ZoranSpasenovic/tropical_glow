@@ -39,7 +39,13 @@
   padding: 0 2rem;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1150px) {
+  .skin_concern-header_content {
+    padding: 0 6rem;
+  }
+}
+
+@media (max-width: 900px) {
   html {
     font-size: 14px;
   }

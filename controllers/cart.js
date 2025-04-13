@@ -30,7 +30,7 @@ const addToCart = (req, res, next) => {
 
 const getCartPage = async (req, res, next) => {
   const { cart, totalPrice } = await getCartProducts(req);
-  const timestamp = res.locals.timestamp
+  const version = res.locals.version
 
   res.render("cart", {
     pageTitle: "Vaša korpa - Tropical Glow",
@@ -38,8 +38,8 @@ const getCartPage = async (req, res, next) => {
     path: "/korpa",
     cart,
     totalPrice,
-    cssFiles: ["/css/cart.css?v=" + timestamp],
-    jsFiles: ["/js/cart.js?v=" + timestamp],
+    cssFiles: ["/css/cart.css?v=" + version],
+    jsFiles: ["/js/cart.js?v=" + version],
     metaDescription: false,
     noIndex: true,
   });

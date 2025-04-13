@@ -53,9 +53,9 @@ app.use(
   })
 );
 
-const globalTimeStamp = Date.now();
+
 app.use((req, res, next) => {
-  res.locals.timestamp = globalTimeStamp;
+  res.locals.version = "1.0.1"
   next();
 });
 

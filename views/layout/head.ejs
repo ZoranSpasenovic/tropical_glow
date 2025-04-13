@@ -24,8 +24,8 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/css/normalize.css?v=<%= timestamp %>" />
-  <link rel="stylesheet" href="/css/style.css?v=<%= timestamp %>" />
+  <link rel="stylesheet" href="/css/normalize.css?v=<%= version %>" />
+  <link rel="stylesheet" href="/css/style.css?v=<%= version %>" />
 
   <% if (cssFiles && cssFiles.length) { %> <% cssFiles.forEach((file) => { %>
   <link rel="stylesheet" href="<%= file %>" />
@@ -34,7 +34,7 @@
   <script type="module" src="<%= file %>"></script>
   <% }) %> <% } %>
 
-  <link rel="stylesheet" href="/css/products.css?v=<%= timestamp %>" />
+  <link rel="stylesheet" href="/css/products.css?v=<%= version %>" />
 
   <link
     rel="stylesheet"
@@ -63,7 +63,7 @@
   />
   <link rel="manifest" href="/icon/site.webmanifest" />
 
-  <script type="module" src="/js/script.js?v=<%= timestamp %>"></script>
+  <script type="module" src="/js/script.js?v=<%= version %>"></script>
 
   <title><%= pageTitle %></title>
 </head>

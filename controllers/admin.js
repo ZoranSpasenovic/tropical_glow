@@ -3,7 +3,7 @@ const getCartCount = require("../helpers/getCartCount");
 
 const getAdminPage = (req, res) => {
   const cartCount = getCartCount(req);
-  const timestamp = res.locals.timestamp;
+  const version = res.locals.version;
 
 
   Product.findAll().then((products) => {
@@ -12,8 +12,8 @@ const getAdminPage = (req, res) => {
       pageTitle: "Tropical Glow",
       path: "admin",
       cartCount,
-      cssFiles: ["/css/admin.css?v=" + timestamp],
-      jsFiles: ["/js/admin.js?v=" + timestamp],
+      cssFiles: ["/css/admin.css?v=" + version],
+      jsFiles: ["/js/admin.js?v=" + version],
       metaDescription: false,
       noIndex: true,
     });
@@ -52,14 +52,14 @@ const editProduct = (req, res, next) => {
 };
 
 const adminLogin = (req, res, next) => {
-  const timestamp = res.locals.timestamp;
+  const version = res.locals.version;
   const cartCount = getCartCount(req);
   res.render("adminLogin", {
     products: [],
     pageTitle: "Tropical Glow",
     path: "admin",
     cartCount,
-    cssFiles: ["/css/adminLogin.css?v=" + timestamp],
+    cssFiles: ["/css/adminLogin.css?v=" + version],
     jsFiles: [],
     metaDescription: false,
     noIndex: true,

@@ -73,7 +73,7 @@
 .product_price.original_price {
   text-decoration: line-through;
   color: #805240;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 .product_price.sale_price {
   font-size: 1.4rem;

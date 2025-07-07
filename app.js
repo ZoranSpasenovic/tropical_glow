@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 const session = require("cookie-session");
 require("dotenv").config();
-const helmet = require("helmet");
+
 const compression = require("compression");
 
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
@@ -12,7 +12,6 @@ process.env.NODE_ENV = process.env.NODE_ENV || "development";
 app.set("view engine", "ejs");
 
 app.use(compression());
-app.use(helmet());
 
 const shopRoutes = require("./routes/shop");
 const adminRoutes = require("./routes/admin");

@@ -53,7 +53,7 @@ app.use(
 );
 
 app.use((req, res, next) => {
-  res.locals.version = "1.0.2";
+  res.locals.version = "1.0.3";
   next();
 });
 

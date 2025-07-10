@@ -883,7 +883,7 @@ footer {
     transform: translateX(49%);
     transition: translateX 0.3s ease;
   }
-  #add-to-cart.new_products-add_to_cart {
+  .add-to-cart_button.new_products-add_to_cart {
     width: 50%;
   }
   .awards-section {

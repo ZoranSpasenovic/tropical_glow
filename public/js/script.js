@@ -264,3 +264,28 @@ if (window.location.pathname === "/") {
     }, 350);
   });
 }
+
+// META PIXEL EVENTS
+
+document.addEventListener("DOMContentLoaded", () => {
+  const addToCartBtns = document.querySelectorAll("#add-to-cart");
+
+  if (!addToCartBtns) return;
+
+  addToCartBtns.forEach((addToCartBtn) => {
+    addToCartBtn.addEventListener("click", () => {
+      const productId = addToCartBtn.dataset.id;
+      const productName = addToCartBtn.dataset.name;
+      const price = addToCartBtn.dataset.price;
+      console.log(productId, productName, price);
+
+      fbq("track", "AddToCart", {
+        content_ids: [productId],
+        content_name: productName,
+        content_type: "product",
+        value: parseFloat(price),
+        currency: "RSD",
+      });
+    });
+  });
+});

@@ -3,6 +3,12 @@
   <%- include("layout/head.ejs") %>
   <body>
     <%- include("layout/header.ejs") %>
+    <div
+      id="checkout-data"
+      data-total-price="<%= totalPrice %>"
+      data-cart="<%= JSON.stringify(cart)%>"
+    ></div>
+
     <section class="checkout_section">
       <div class="checkout_content">
         <div class="checkout_form-container">

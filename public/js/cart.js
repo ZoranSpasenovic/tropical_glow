@@ -90,4 +90,3 @@ tableBody?.addEventListener("click", async (event) => {
     window.location.reload();
   }
 });
-

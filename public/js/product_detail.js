@@ -79,3 +79,20 @@ addToCart?.addEventListener("click", async () => {
     cartCount.textContent = data.cart.length;
   });
 });
+
+// META PIXEL EVENT LOGIC
+
+document.addEventListener("DOMContentLoaded", function () {
+  const addToCartBtn = document.querySelector("#add-to-cart");
+  const productId = addToCartBtn.dataset.id;
+  const productName = addToCartBtn.dataset.name;
+  const price = addToCartBtn.dataset.price;
+
+  fbq("track", "ViewContent", {
+    content_ids: [productId],
+    content_name: productName,
+    content_type: "product",
+    value: parseFloat(price),
+    currency: "RSD",
+  });
+});

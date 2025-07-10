@@ -22,7 +22,13 @@
               <input value="1" type="number" class="qty_value" />
               <i class="fa-solid fa-plus"></i>
             </div>
-            <button data-id="<%=product.id%>" class="product_detail-button">
+            <button
+              data-id="<%=product.id%>"
+              data-price="<%=product.price%>"
+              data-name="<%=product.name%>"
+              class="product_detail-button"
+              id="add-to-cart"
+            >
               <span class="material-symbols-outlined"> shopping_cart </span>
               Dodaj u Korpu
             </button>

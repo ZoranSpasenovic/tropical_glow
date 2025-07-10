@@ -33,7 +33,13 @@
             <p class="out_of_stock">Nema na stanju</p>
             <% } else { %>
             <div data-nosnippet class="button_container">
-              <button data-id="<%= product.id %>" id="add-to-cart">
+              <button
+                data-id="<%= product.id %>"
+                data-price="<%=product.price%>"
+                data-name="<%=product.name%>"
+                class="add-to-cart_button"
+                id="add-to-cart"
+              >
                 Dodaj u korpu
               </button>
             </div>

@@ -4,11 +4,39 @@ const path = require("path");
 const app = express();
 const session = require("cookie-session");
 require("dotenv").config();
+const helmet = require("helmet");
 
 const compression = require("compression");
 
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          "https://connect.facebook.net",
+        ],
+        imgSrc: [
+          "'self'",
+          "https://www.facebook.com",
+          "https://connect.facebook.net",
+          "https://*.facebook.com",
+          "data:",
+        ],
+        connectSrc: [
+          "'self'",
+          "https://connect.facebook.net",
+          "https://*.facebook.com",
+        ],
+        frameSrc: ["'self'", "https://*.facebook.com"],
+      },
+    },
+  })
+);
 app.set("view engine", "ejs");
 
 app.use(compression());

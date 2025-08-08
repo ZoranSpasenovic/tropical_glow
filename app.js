@@ -81,7 +81,7 @@ app.use(
 );
 
 app.use((req, res, next) => {
-  res.locals.version = "1.0.4";
+  res.locals.version = "1.0.5";
   next();
 });
 

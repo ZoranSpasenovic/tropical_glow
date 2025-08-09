@@ -11,6 +11,17 @@ edit_buttons.forEach((btn) => {
     const salePriceLabel = listItem.querySelector(".sale-label_price");
     const salePriceInput = listItem.querySelector(".sale_price");
 
+    const ctgBtn = listItem.querySelector(".ctg-button");
+    const ctgDiv = listItem.querySelector(".ctg-wrapper");
+    const ctgDoneBtn = listItem.querySelector("#ctg-done");
+
+    ctgBtn.addEventListener("click", () => {
+      ctgDiv.classList.add("active");
+    });
+    ctgDoneBtn.addEventListener("click", () => {
+      ctgDiv.classList.remove("active");
+    });
+
     form.style.display = "flex";
     saveButton.classList.remove("hidden");
     editButton.classList.add("hidden");
@@ -51,5 +62,3 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("scrollPosition", window.scrollY);
   });
 });
-
-

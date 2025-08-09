@@ -5,10 +5,16 @@ const getAdminPage = (req, res) => {
   const cartCount = getCartCount(req);
   const version = res.locals.version;
 
-
   Product.findAll().then((products) => {
+    const parsedProducts = products.map((prod) => {
+      return {
+        ...prod.dataValues,
+        ctg: JSON.parse(prod.dataValues.ctg),
+      };
+    });
+
     res.render("admin", {
-      products,
+      products: parsedProducts,
       pageTitle: "Tropical Glow",
       path: "admin",
       cartCount,
@@ -21,6 +27,12 @@ const getAdminPage = (req, res) => {
 };
 const editProduct = (req, res, next) => {
   const id = req.params.prodId;
+  const ctgArray = [];
+  for (const key in req.body) {
+    if (key.includes("ctg")) {
+      ctgArray.push(req.body[key]);
+    }
+  }
 
   const {
     price,
@@ -39,6 +51,7 @@ const editProduct = (req, res, next) => {
       sale: sale_check ? true : false,
       package: +package,
       unit: unit,
+      ctg: ctgArray,
     },
     {
       where: {

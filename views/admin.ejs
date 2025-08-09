@@ -19,6 +19,117 @@
               action="/admin/edit-product/<%= product.id %>"
               class="edit-form"
             >
+              <div id="select_categories-div">
+                <div class="select-heading">
+                  <button class="ctg-button" type="button">
+                    Izaberi Katergorije:
+                  </button>
+                </div>
+                <div class="ctg-wrapper">
+                  <div>
+                    <input type="checkbox" id="ctg-nega_lica"
+                    name="ctg-nega_lica" value="nega_lica" <%=
+                    product.ctg.includes("nega_lica") ? "checked" : "" %> />
+                    <label for="ctg-nega_lica">Nega Lica</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-nega_tela"
+                    name="ctg-nega_tela" value="nega_tela" <%=
+                    product.ctg.includes("nega_tela") ? "checked" : "" %> />
+                    <label for="ctg-nega_tela">Nega Tela</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-nova_ponuda"
+                    name="ctg-nova_ponuda" value="nova_ponuda" <%=
+                    product.ctg.includes("nova_ponuda") ? "checked" : "" %> />
+                    <label for="ctg-nova_ponuda">Nova Ponuda</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-serumi" name="ctg-serumi"
+                    value="serumi" <%= product.ctg.includes("serumi") ?
+                    "checked" : "" %> />
+                    <label for="ctg-serumi">Serumi</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-pilinzi" name="ctg-pilinzi"
+                    value="pilinzi" <%= product.ctg.includes("pilinzi") ?
+                    "checked" : "" %> />
+                    <label for="ctg-pilinzi">Pilinzi</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-tan" name="ctg-tan"
+                    value="tan" <%= product.ctg.includes("tan") ? "checked" : ""
+                    %> />
+                    <label for="ctg-tan">Neujednačen ten</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-urban" name="ctg-urban"
+                    value="urban" <%= product.ctg.includes("urban") ? "checked"
+                    : "" %> />
+                    <label for="ctg-urban">Urbana Zagađenost</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-de_stress"
+                    name="ctg-de_stress" value="de_stress" <%=
+                    product.ctg.includes("de_stress") ? "checked" : "" %> />
+                    <label for="ctg-de_stress">De Stress</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-relax" name="ctg-relax"
+                    value="relax" <%= product.ctg.includes("relax") ? "checked"
+                    : "" %> />
+                    <label for="ctg-relax">Opustanje i Balans</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-dry" name="ctg-dry"
+                    value="dry" <%= product.ctg.includes("dry") ? "checked" : ""
+                    %> />
+                    <label for="ctg-dry">Suva Koža i Dehidratacija</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-tired" name="ctg-tired"
+                    value="tired" <%= product.ctg.includes("tired") ? "checked"
+                    : "" %> />
+                    <label for="ctg-tired">Umorna Koža</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-oily" name="ctg-oily"
+                    value="oily" <%= product.ctg.includes("oily") ? "checked" :
+                    "" %> />
+                    <label for="ctg-oily">Kontrola Masnoce</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-pores" name="ctg-pores"
+                    value="pores" <%= product.ctg.includes("pores") ? "checked"
+                    : "" %> />
+                    <label for="ctg-pores">Prosirene Pore</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="ctg-wrinkles" name="ctg-wrinkles"
+                    value="wrinkles" <%= product.ctg.includes("wrinkles") ?
+                    "checked" : "" %> />
+                    <label for="ctg-wrinkles">Bore i Finije linije</label>
+                  </div>
+
+                  <div class="ctg-button-wrapper">
+                    <button type="button" id="ctg-done">Done</button>
+                  </div>
+                </div>
+              </div>
+
               <label class="edit-label" for="price"
                 >Cena:
                 <input

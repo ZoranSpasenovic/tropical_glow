@@ -63,30 +63,16 @@
               height="305"
             />
             <h3 class="product_title"><%= product.name %></h3>
-            <p class="product_price"><%= product.price %>RSD</p>
-            <div data-nosnippet class="button_container">
-              <button
-                data-nosnippet
-                data-id="<%= product.id %>"
-                id="add-to-cart"
-              >
-                Dodaj u korpu
-              </button>
-            </div>
-          </div></a
-        >
-        <% }) %> <% newProducts.forEach((product) => { %>
-        <a class="product_details-link" href="/proizvod/<%=product.slug%>">
-          <div class="new_product-card">
-            <img
-              loading="lazy"
-              src="assets/pictures/products/<%=product.image%>.webp"
-              alt="<%=product.name%>"
-              width="305"
-              height="305"
-            />
-            <h3 class="product_title"><%= product.name %></h3>
-            <p class="product_price"><%= product.price %>RSD</p>
+            <% if (product.sale) { %>
+            <p class="product_price original_price"><%= product.price %> RSD</p>
+            <p class="product_price sale_price">
+              <%= product.sale_price %> RSD
+            </p>
+            <% } else { %>
+            <p class="product_price"><%= product.price %> RSD</p>
+            <% } %> <% if(product.amount) { %>
+            <p class="out_of_stock">Nema na stanju</p>
+            <% } else { %>
             <div data-nosnippet class="button_container">
               <button
                 data-id="<%= product.id %>"
@@ -98,6 +84,7 @@
                 Dodaj u korpu
               </button>
             </div>
+            <% } %>
           </div></a
         >
         <% }) %> <% newProducts.forEach((product) => { %>
@@ -111,12 +98,63 @@
               height="305"
             />
             <h3 class="product_title"><%= product.name %></h3>
-            <p class="product_price"><%= product.price %>RSD</p>
+            <% if (product.sale) { %>
+            <p class="product_price original_price"><%= product.price %> RSD</p>
+            <p class="product_price sale_price">
+              <%= product.sale_price %> RSD
+            </p>
+            <% } else { %>
+            <p class="product_price"><%= product.price %> RSD</p>
+            <% } %> <% if(product.amount) { %>
+            <p class="out_of_stock">Nema na stanju</p>
+            <% } else { %>
             <div data-nosnippet class="button_container">
-              <button data-id="<%= product.id %>" id="add-to-cart">
+              <button
+                data-id="<%= product.id %>"
+                data-price="<%=product.price%>"
+                data-name="<%=product.name%>"
+                id="add-to-cart"
+                class="add-to-cart_button new_product-add_to_cart"
+              >
                 Dodaj u korpu
               </button>
             </div>
+            <% } %>
+          </div></a
+        >
+        <% }) %> <% newProducts.forEach((product) => { %>
+        <a class="product_details-link" href="/proizvod/<%=product.slug%>">
+          <div class="new_product-card">
+            <img
+              loading="lazy"
+              src="assets/pictures/products/<%=product.image%>.webp"
+              alt="<%=product.name%>"
+              width="305"
+              height="305"
+            />
+            <h3 class="product_title"><%= product.name %></h3>
+            <% if (product.sale) { %>
+            <p class="product_price original_price"><%= product.price %> RSD</p>
+            <p class="product_price sale_price">
+              <%= product.sale_price %> RSD
+            </p>
+            <% } else { %>
+            <p class="product_price"><%= product.price %> RSD</p>
+            <% } %> <% if(product.amount) { %>
+            <p class="out_of_stock">Nema na stanju</p>
+            <% } else { %>
+            <div data-nosnippet class="button_container">
+              <button
+                data-id="<%= product.id %>"
+                data-price="<%=product.price%>"
+                data-name="<%=product.name%>"
+                id="add-to-cart"
+                class="add-to-cart_button new_product-add_to_cart"
+              >
+                Dodaj u korpu
+              </button>
+            </div>
+            <% } %>
           </div></a
         >
         <% }) %>
